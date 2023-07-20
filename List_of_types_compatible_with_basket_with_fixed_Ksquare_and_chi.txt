@@ -1,0 +1,267 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// We need to find, for each K^2 and chi, which are the possible baskets of
+// singularities. By Corollary 4.4.3 the sum of the invariants B of the
+// singularities must equal 3*(8*chi-K^2).
+//
+// We will represent a singular point of type 1/n(1,a) by the rational 
+// number a/n; hence a basket of singularities will be a multiset of 
+// rational numbers. Remember that cyclic quotient singularities 1/n(1,a) and
+// 1/n(1,a') are isomorphic if a*a'=1 mod n, so we must consider rational
+// numbers in the open interval (0,1) modulo the equivalence relation a/n~a'/n.
+//
+// The invariant B of a singularity 1/n(1,a) equals (a+a')/n+sum(b_i),
+// where b_i are the entries of the continuous fraction of n/a: we see
+// them as the sequence [b_1,...,b_r].  Note that the continuous
+// fraction of n/a' is the "reversed" sequence [b_r,...,b_1].
+//
+// This can be seen as a bijection between rational numbers in (0,1)
+// and sequences of integers strictly bigger than 1.
+// We make this bijiection explicit by the following scripts.
+
+ContFrac:=function(s)
+  CF:=[ ]; r:=1/s;
+  while not IsIntegral(r) do
+    Append(~CF, Ceiling(r)); r:=1/(Ceiling(r)-r);
+  end while;
+  return Append(CF, r);
+end function;
+
+Nq:=func<cf|#cf eq 1 select cf[1] else cf[1]-1/$$(Remove(cf,1))>;
+
+RatNum:=func<seq|1/Nq(seq)>;
+
+// "Wgt" computes the weight of a sequence, i.e., the sum of its
+// entries. It bounds strictly from below B of the corresponding
+// singular point.
+
+Wgt:=function(seq)
+  w:=0; for i in seq do w+:=i; end for; return w;
+end function;
+
+// The next script computes all rational numbers whose continuous
+// fraction has small weight, by listing all sequences (modulo
+// "reverse") and storing the corresponding rational number.
+
+RatNumsWithSmallWgt:=function(maxW)
+  S:={ }; T:={}; setnums:={RationalField()| };
+  for i in [2..maxW] do Include(~S, [i]); end for;
+  for i in [1..Floor(maxW/2)-1] do
+  for seq in S do
+    if #seq eq i then
+    if maxW-Wgt(seq) ge 2 then
+    for k in [2..maxW-Wgt(seq)] do
+     Include(~S,Append(seq, k));
+    end for; end if; end if;
+  end for; end for;
+  for seq in S do
+  if Reverse(seq) notin T then Include(~T,seq);
+  end if; end for;
+  for seq in T do Include(~setnums, RatNum(seq)); end for;
+  return setnums;
+end function;
+
+// The next two scripts compute the invariants B and e of a rational
+// number (i.e., of the corresponding singular point).
+
+InvB:=func<r|Wgt(ContFrac(r))+r+RatNum(Reverse(ContFrac(r)))>;
+
+Inve:=func<r|#ContFrac(r)+1-1/Denominator(RationalField()!r)>;
+
+// The next two scripts compute the invariants B and e of a multiset
+// of rational numbers (corresponding to a basket of singular points).
+
+InvBSet:= function(basket)
+  B:=0; for r in basket do B+:=InvB(r); end for; return B;
+end function;
+
+InveSet:= function(basket)
+  e:=0; for r in basket do e+:=Inve(r); end for; return e;
+end function;
+
+// Here is the invariant k of the basket:
+
+Invk:=func<r|InvBSet(r)-2*InveSet(r)>;
+
+// The next script computes all rational numbers with weight bounded
+// from above by maxW, as computed by RatNumsWithSmallWgt, and returns
+// them in a sequence ordered by the value of their invariant B,
+// starting from the one with biggest B.
+
+OrderedRatNums:=function(maxW)
+   seq:=[RationalField()| ]; seqB:=[RationalField()| ];
+   set:=RatNumsWithSmallWgt(Floor(maxW));
+     for r in set do i:=1;
+       for s in seqB do
+       if s gt InvB(r) then i+:=1;
+       else break s;
+       end if; end for;
+     Insert(~seq, i, r); Insert(~seqB, i, InvB(r));
+     end for;
+  return seq;
+end function;
+
+// The next one, CutSeqByB, takes a sequence "seq" and recursively
+// removes the first element if its invariant B is at least maxB.
+
+CutSeqByB:=function(seq,maxB)
+  Seq:=seq;
+  while #Seq ge 1 and InvB(Seq[1]) gt maxB do Remove(~Seq,1); end while;
+  return Seq;
+end function;
+
+// Now we have a way to compute the set of rationals with B bounded by
+// the integer maxB, ordered by B:
+// CutSeqByB(OrderedRatNums(maxB-1),maxB)
+//
+// The next script takes a sequence of rationals ordered by B
+// and computes the baskets with invariant exactly B that use only these
+// rationals.
+// The function is as follows:
+// -- first remove the elements with B too big to be in a basket
+// -- then take the first element, say r, if B(r)=B, store {* r *}
+// -- else attach it to each basket with invariant B-B(r)
+//    (computed recalling the function with the same sequence)
+//     and store the result
+// -- now we have all baskets containing r: remove r from the sequence
+//    and repeat the procedure until the sequence is empty
+
+BasketsWithSeqAndB:=function(seq,B)
+  ratnums:=CutSeqByB(seq,B); baskets:={ };
+  while #ratnums gt 0 do
+    bigguy:=ratnums[1];
+    if InvB(bigguy) eq B then Include(~baskets,{* bigguy *}); else
+    for basket in $$(ratnums, B-InvB(bigguy)) do
+      Include(~baskets, Include(basket, bigguy));
+    end for; end if;
+    Remove(~ratnums,1);
+  end while;
+  return baskets;
+end function;
+
+// Now we can compute all Baskets with a given B:
+
+BasketsWithSmallB:=func<B|
+                   BasketsWithSeqAndB(OrderedRatNums(Ceiling(B)-1),B)>;
+
+// We do not need all these baskets, since most of them violate the Lemma 4.4.7.
+// The next two scripts take care of this: "TestBasket" will check if a basket
+// violates Lemma 4.4.7; "Basket" will take the output of BasketsWithSmallB and
+// removes all the baskets which violate the condition.
+
+TestBasket:=function(basket)
+  firstseq:=[];
+  for r in basket do Append(~firstseq,r); end for;
+  setofseqs:={ firstseq };
+  for i in [1..#firstseq] do newseqs:={};
+    for seq in setofseqs do
+      Include(~newseqs,
+             Insert(Remove(seq,i),i,RatNum(Reverse(ContFrac(seq[i])))));
+    end for;
+    setofseqs:=setofseqs join newseqs;
+  end for;
+  test:=false;
+  for seq in setofseqs do
+    if IsIntegral(Wgt(seq)) then test:=true;
+    end if;
+  end for;
+  return test;
+end function;
+
+Baskets:=function(B)
+  baskets:={ };
+  for basket in BasketsWithSmallB(B) do
+    if TestBasket(basket) then Include(~baskets, basket);
+    end if;
+  end for;
+  if B eq 0 then
+      Include(~baskets, {* *});
+  end if;
+  return baskets;
+end function;
+
+// Now we have found, for each K^2 and chi, a finite and rather small number of
+// possible baskets. The next step is to restrict, for each basket, to finitely
+// many signatures. We will represent a signature as the multiset of naturals 
+// {* m_i *}.
+//
+// We first define the index of a basket of singularities as the lowest 
+// common multiple of the indices of the singularities
+
+GI:=func<r|Denominator(r)/GCD(Numerator(r)+1,Denominator(r))>;
+
+GorInd:= function(bas)
+  I:=1; 
+  for r in bas do I:=LCM(IntegerRing()!I,IntegerRing()!GI(r)); end for;
+  return I;
+end function;
+
+// We need moreover the invariant Theta of a signature
+
+Theta:=function(type)
+  t:=-2; for n in type do t+:=1-1/n; end for;
+  return t;
+end function;
+
+// The input of the next program are 4 numbers, CardBasket, Length, SBound and
+// HBound (SBound<=HBound), and its output are all signatures with 
+// #signature=Length such that (for C:=max(1/6,(Length-3)/2)
+// 1) each m_i is smaller than HBound/C;
+// 2) most m_i are smaller than SBound/C, the number of exceptions
+//    being bounded from above by half of CardBasket.
+// For sparing time, the script first checks if the length is smaller
+// than the number of possible exceptions to 2, in which case only the
+// inequality 1 is to consider.
+
+CandTypes:=function(CardBasket,Length,SBound,HBound)
+  C:=Maximum(1/6,(Length-3)/2); S:=Floor(SBound/C); H:=Floor(HBound/C);
+  Exc:=Floor(CardBasket/2);
+  if Length le Exc then Types:=Multisets({x: x in [2..H]},Length);
+  else Types:=Multisets({x: x in [2..S]},Length);
+    for k in [1..Exc] do
+    for TypeBegin in Multisets({x: x in [2..S]},Length-k) do
+    for TypeEnd in Multisets({x: x in [S+1..H]},k) do
+      Include(~Types, TypeBegin join TypeEnd);
+    end for; end for; end for;
+  end if;
+  return Types;
+end function;
+
+// The next script, ListOfTypesBas, finds all signatures compatible with the
+// basket in the input (i.e., which respect Proposition 4.6.4).
+// We use
+// 1) Theta<= maxTh:=(K^2+k)/4 (follows from Proposition 1.14.a),
+// 2) #signature<= 2*Theta+4 (follows from the definition of Theta).
+
+ListOfTypesBas:=function(basket, chi)
+   S:={ }; B:=InvBSet(basket); k:=Invk(basket); I:=GorInd(basket);
+   Ksquare:=8*chi-B/3; maxTh:=(Ksquare+k)/4;
+   for h in [3..Floor(2*maxTh+4)] do
+   for cand in CandTypes(#basket,h,maxTh+1,2*I*maxTh+1) do
+         T:=Theta(cand);
+   if T le maxTh then
+   if T gt 0 then Alpha:=maxTh/T;
+   if Alpha in IntegerRing() then
+   if forall{n : n in cand | 2*Alpha*I/n in IntegerRing()} then bads:=0;
+     for n in cand do
+     if Alpha/n notin IntegerRing() then bads +:=1;
+     end if; end for;
+   if bads le #basket/2 then Include(~S,cand);
+   end if; end if; end if; end if; end if; end for; end for;
+ return S;
+end function;
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Finally, we can conlude the second step, by writing a script which
+// lists, for given K^2 and chi, all possible baskets (by using Baskets) and for
+// each basket all possible signatures (by using ListOfTypesBas)
+
+ListOfTypes:=function(Ksquare, chi)
+  S:=[* *];
+  for basket in Baskets(3*(8*chi-Ksquare)) do L:=ListOfTypesBas(basket, chi);
+  if not IsEmpty(L) then Append(~S,[* basket, L *]);
+  end if; end for;
+ return S;
+end function;

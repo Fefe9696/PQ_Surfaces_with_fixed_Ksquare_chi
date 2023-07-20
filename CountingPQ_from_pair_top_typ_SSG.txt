@@ -1,0 +1,235 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// The first two scripts takes in input a spherical system of generators V of G and an automorphism f 
+// of G. It returns true if f is of braid type on V, and false otherwise. 
+// The first script works for G abelian group, and the second for G not abelian (in which case we 
+// need to give one input more, namely the orbit of V by the braid group. This is computable through
+// a function written below). 
+
+
+IsBraidType_Abelian:=function(V, f);
+  IsBraidType:=false;
+  if {*f(V[i ]) : i in [1..#V] *} eq {* V[i ] : i in [1..#V] *} then
+     IsBraidType:=true;
+  end if;
+  return IsBraidType;
+end function;
+
+
+IsBraidType_NotAb:=function(V, BraidV, f)
+    IsBraidType_NoAb:=false;
+    if [f(V[i ]) : i in [1..#V]] in BraidV then 
+      IsBraidType_NoAb:=true;
+    end if;
+    return IsBraidType_NoAb;
+end function;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// The function "BraidMove"  performs the i-th Hurwitz move 
+
+BraidMove:=function(V,i)
+   c:=V[i]*V[i+1]*V[i]^-1;
+   return Insert(Remove(V,i+1),i,c); 
+end function;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// The function "BraidOrbit" determines the orbit of a given spherical system of generators V of 
+// length r wrt the braid group B_r. Hence the output is the set {sigma* V: sigma in Br}.  
+
+BraidOrbit:=function(V)
+orb:={ }; sortorb:={ }; Trash:={V}; 
+repeat
+    ExtractRep(~Trash,~gens); Include(~orb, gens);
+		for i in [1..#V-1] do newgens:=BraidMove(gens,i);
+			if newgens notin orb then 
+				Include(~Trash, newgens);
+			end if; 
+		end for;
+until IsEmpty(Trash);
+return orb; 
+end function;
+
+//This is more performant
+
+BAutGV:=function(V,r,P)
+orb:={ }; Trash:={V}; GENSBrGroupV:=[];
+ repeat
+    ExtractRep(~Trash,~gens); Include(~orb, gens);
+		for i in [1..#V-1] do newgens:=BraidMove(gens,i);
+			if newgens notin orb then 
+				Include(~Trash, newgens);
+                                  S:={p : p in P | [(p @@ r)(V[i]) : i in [1..#V]] eq newgens};
+                                  if not IsEmpty(S) then 
+                                     phi:=Random(S); Include(~GENSBrGroupV, phi);
+                                  end if;
+			end if; 
+		end for;
+                 H:=sub<P | GENSBrGroupV>; 
+                 //subgroup:={(r^-1)(F): F in H};
+                 //#subgroup;
+                 //#orb;
+until Order(H) eq Order(P) or IsEmpty(Trash);
+
+if Order(H) eq Order(P) then 
+   BrGroupV:=H;
+else 
+   BrGroupV:={p : p in P | IsBraidType_NotAb(V, orb, p @@ r) eq true };
+end if;
+return BrGroupV;
+end function;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+test_ordering:=function(V) 
+     test:= true;
+     for i in [1..#V-1] do 
+       if Order(V[i ]) gt Order(V[i+1 ]) then 
+            test:= false;
+            break i;
+       end if;
+     end for;
+     return test;
+end function;
+
+// This function returns a ordered spherical system of generators V' which belongs to the same braid 
+// orbit of V
+
+Ordering:=function(V)
+    repeat 
+       signature :=[Order(V[i ]) : i in [1..#V]];
+       for i in [1..#V-1] do 
+          if Order(V[i ]) ge Order(V[i +1]) then
+             vi :=V[i];
+             V[i]:=V[i]*V[i+1]*V[i]^-1;
+             V[i+1]:=vi;
+          end if;
+       end for;
+    until (signature eq Sort(signature)); 
+    return V;
+end function;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// This function takes in input a pair of spherical systems V1 and V2 
+// of a group G and the automorphism group AutG of G (viewed as a permutation group r, P). 
+// The script produces a list of automorphisms of G, one for each equivalence class of the double 
+// coset relation of the Definition 4.5.6. 
+// If the pair of spherical systems of generators V1 and V2 are not in the same AutGxBr-orbit, then 
+// the produced list is in bijection with the set of families of product-quotient surfaces given 
+// by the pair of topological types of $G$-coverings of V1 and V2, from Theorem 4.5.8. 
+// Instead, if V1 and V2 are in the same orbit, then we have to mod out 
+// the produced list by the involution relation Phi-->Phi^{-1}, as stated in Corollary 4.5.10. 
+// The output of the script is the set of pairwise distinct families of 
+// product-quotient surfaces given by the pair of topological types of $G$-coverings of V1 
+// and V2.
+
+// WARNING: If V1 and V2 are in the same orbit, please fix V2:=V1 and run the code with the pair 
+// V1,V1.  
+
+CountingPQ_from_V1V2:=function(V1,V2, G, r, P)
+  if IsAbelian(G) then 
+     BAutGV1:={p : p in P | IsBraidType_Abelian(V1, p @@ r ) eq true};
+     if V2 ne V1 then // Here we are assuming that if V1 and V2  share the same orbit, then we have V2:=V1. 
+       //Hence if V1 ne V2, then they do not share the same orbit.
+       BAutGV2:={p  : p in P | IsBraidType_Abelian(V2, p @@ r) eq true};
+     else 
+        BAutGV2:=BAutGV1;
+     end if; 
+  else
+     BAutGV1:= BAutGV(V1,r,P);
+     if V2 ne V1 then 
+       BAutGV2:=BAutGV(V2,r,P);
+     else 
+        BAutGV2:=BAutGV1;
+     end if; 
+  end if; 
+
+  BAutGV1:=sub<P| BAutGV1>;
+  BAutGV2:=sub<P| BAutGV2>;
+  QAutG_V1V2:= DoubleCosetRepresentatives(P,BAutGV1,BAutGV2);
+  if V1 ne V2 then
+     Rep_QAutG_V1V2:=[p @@ r: p in QAutG_V1V2];
+     return {[V1, [f(V2[j]): j in [1..#V2]]] : f in Rep_QAutG_V1V2};
+  else 
+   PasFP, f:=FPGroup(P);
+   BAutGV1asFP:=sub<PasFP| {phi @@ f: phi in BAutGV1}>;
+   QAutG_V1V2modZ2:={};
+   repeat     
+    x := QAutG_V1V2[1];                                                                  
+    Exclude(~QAutG_V1V2, x);
+    if {DoubleCoset(PasFP, BAutGV1asFP, x @@ f, BAutGV1asFP)} eq {DoubleCoset(PasFP,BAutGV1asFP, (x @@ f)^-1, BAutGV1asFP)} then
+      Include(~QAutG_V1V2modZ2,x);
+    else
+      for y in QAutG_V1V2 do 
+        if {DoubleCoset(PasFP, BAutGV1asFP, y @@ f, BAutGV1asFP)} eq {DoubleCoset(PasFP,BAutGV1asFP, (x @@ f)^-1, BAutGV1asFP)} then
+          Include(~QAutG_V1V2modZ2,x);
+          Exclude(~QAutG_V1V2, y);   
+          break y;
+        end if;
+      end for;
+    end if;
+   until IsEmpty(QAutG_V1V2);
+  end if;
+  Rep_QAutG_V1V2modZ2:=[p @@ r: p in QAutG_V1V2modZ2];
+  return {[V1, [f(V2[j]): j in [1..#V2]]] : f in Rep_QAutG_V1V2modZ2};
+end function;
+
+//This version is more performant
+
+CountingPQ_from_V1V2:=function(V1,V2, G, r, P) 
+    if IsAbelian(G) then 
+       BAutGV1:={p : p in P | IsBraidType_Abelian(V1, p @@ r ) eq true};
+       if V1 ne V2 then 
+          BAutGV2:={p  : p in P | IsBraidType_Abelian(V2, p @@ r) eq true};
+          BAutGV1xBAutGV2:=CartesianProduct(BAutGV1, BAutGV2);
+       else 
+          BAutGV1xBAutGV2:=CartesianProduct(BAutGV1, BAutGV1);
+       end if;
+    else  
+       BAutGV1:= BAutGV(V1,r,P);
+       if V1 ne V2 then 
+          BAutGV2:=BAutGV(V2,r,P);
+          BAutGV1xBAutGV2:=CartesianProduct(BAutGV1, BAutGV2);
+       else 
+          BAutGV1xBAutGV2:=CartesianProduct(BAutGV1, BAutGV1);
+       end if;
+    end if;
+
+   QAutG_V1V2:={};
+   PairsUpToIso:={};
+   PasSet:=Set(P);
+   if V1 ne V2 then
+
+   repeat
+     ExtractRep(~PasSet,~lambda); 
+     Include(~QAutG_V1V2, lambda);
+     lambdaV2:=[(lambda @@ r)(V2[i]) : i in [1..#V2]];
+     Include(~PairsUpToIso, [V1, Ordering(lambdaV2)]);
+     //Class_lambda:={(phi_x_k[2]*lambda)*phi_x_k[1] : phi_x_k in BrGroupV1xBrGroupV2}; //the composition is in the other side because magma compute the composition f*g=g \circ f 
+      for  phi_x_k in BAutGV1xBAutGV2 do 
+       Exclude(~PasSet, (phi_x_k[2]*lambda)*phi_x_k[1]);
+      end for;
+   until IsEmpty(PasSet);
+   
+   else
+     repeat
+      ExtractRep(~PasSet,~lambda); 
+      Include(~QAutG_V1V2, lambda);
+      lambdaV2:=[(lambda @@ r)(V2[i]) : i in [1..#V2]];
+      Include(~PairsUpToIso, [V1, Ordering(lambdaV2)]);
+      //Class_lambda:={(phi_x_k[2]*phi)*phi_x_k[1] : phi in {lambda, lambda^-1}, phi_x_k in BrGroupV1xBrGroupV2};
+      for  phi_x_k in BAutGV1xBAutGV2 do 
+       Exclude(~PasSet, (phi_x_k[2]*lambda)*phi_x_k[1]); Exclude(~PasSet, (phi_x_k[2]*lambda^-1)*phi_x_k[1]);
+      end for;
+     until IsEmpty(PasSet);
+
+   end if;
+   return PairsUpToIso;
+end function;
+
+
+
+

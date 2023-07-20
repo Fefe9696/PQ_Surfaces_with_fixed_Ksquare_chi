@@ -1,0 +1,1255 @@
+rec<recformat<schema: MonStgElt, object, parameters: SeqEnum> | 
+    schema := "Centone 1",
+    object := [ PowerSequence(PowerStructure(Rec)) |
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 2, 2 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 2, 3 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 2, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 3, 3 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 2, 13 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 2, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 2, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 2, 78 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 3, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 4, 4 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 3, 3 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 3, 13 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 3, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 3, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 3, 78 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 4, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 6, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 3, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 4, 4 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 3, 3 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 4, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 4, 156 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 6, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 3, 13 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 6, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 3, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 6, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 3, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 6, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 3, 78 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 12, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 4, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 6, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 4, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 3, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 4, 4 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 13, 13 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 13, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 12, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 13, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 4, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 12, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 13, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 4, 156 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 6, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 4, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 3, 13 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 26, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 39, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 6, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 4, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 3, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 6, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 4, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 3, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 2, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 6, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 4, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 3, 78 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 12, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 6, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 6, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 4, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 6, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 4, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 4, 4 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 13, 13 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 13, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 12, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 13, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 6, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 4, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 12, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 13, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 6, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 4, 156 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 12, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 6, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 6, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 4, 13 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 26, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 39, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 12, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 6, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 6, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 4, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 12, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 6, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 6, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 4, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 3, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 12, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 13, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 6, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 6, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 4, 78 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 13, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 12, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 12, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 6, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 6, 6 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 4, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 6, 6 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 13, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 13, 13 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 26, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 26, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 39, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 39, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 52, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 13, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 13, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 4, 78, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 12, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 13, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 12, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 13, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 6, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 4, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 12, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 13, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 12, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 13, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 6, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 4, 156 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 12, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 12, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 6, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 6, 13 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 26, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 13, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 26, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 39, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 39, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 12, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 12, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 6, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 6, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 12, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 13, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 12, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 6, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 6, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 6, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 12, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 13, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 13, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 3, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 12, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 13, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 6, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 6, 78 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 13, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 13, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 13, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 12, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 12, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 6, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 6, 6 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 13, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 13, 13 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 26, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 26, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 26, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 26, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 39, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 39, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 26, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 39, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 39, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 52, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 26, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 39, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 52, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 13, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 13, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 12, 78, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 26, 26, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 4, 78, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 12, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 13, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 12, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 13, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 6, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 13, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 26, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 26, 39, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 12, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 13, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 12, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 13, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 6, 156 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 26, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 26, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 39, 39, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 12, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 12, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 6, 13 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 26, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 26, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 39, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 39, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 26, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 13, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 26, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 26, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 39, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 39, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 52, 52, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 39, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 39, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 39, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 52, 78, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 78, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 12, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 12, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 6, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 2, 78, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 12, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 13, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 12, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 6, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 6, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 12, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 13, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 13, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 4, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 12, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 13, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 6, 78 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 13, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 13, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 13, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 12, 12 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 12, 12 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 13, 13 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 13, 13 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 26, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 26, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 26, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 26, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 39, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 39, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 26, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 39, 52 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 39, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 52, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 26, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 39, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 52, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 13, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 13, 26 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 12, 78, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 26, 26, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 6, 78, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 12, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 13, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 12, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 13, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 13, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 26, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 26, 39, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 12, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 13, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 13, 13, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 12, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 13, 78 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 26, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 26, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 39, 39, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 13, 13, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 26, 26 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 12, 12, 13 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 26, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 26, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 39, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 39, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 26, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 26, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 13, 13, 13 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 26, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 39, 52, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 39, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 52, 52, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 39, 39 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 13, 26, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 26, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 39, 39 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 39, 156, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 52, 78, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 3, 78, 78, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 12, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 13, 26, 156 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 4, 13, 39, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 39, 78 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 6, 52, 52 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 156,
+                M := \[ 6, 12, 12, 26 ]>
+        ]
+    ],
+    parameters := \[ 156, 4 ]>

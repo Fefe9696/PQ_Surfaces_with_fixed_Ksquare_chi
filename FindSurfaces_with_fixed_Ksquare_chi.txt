@@ -1,0 +1,67 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+load"List_of_types_compatible_with_basket_with_fixed_Ksquare_and_chi.txt";
+load"ExSphSyst.txt";
+load"Existing_Surfaces_with_fixed_Ksquare_chi.txt";
+load"CountingPQ_from_pair_top_typ_SSG.txt";
+
+load"gullinbursti14-Jul-23/magma/hurwitz/computegenerators.m";
+load"gullinbursti14-Jul-23/magma/include/admissible.m";
+
+load"BasketAndInvariants.txt";
+
+// This function takes in input a triple (basket, pairoftypes, group) and returns 
+// the list of all pairs of spherical systems of generators of group which are compatible with 
+// the pair of signatures pairoftypes and whose family of product-quotient surfaces has
+// basket as basket of singularities. 
+
+FindSurfaces:=function(basket, pairoftypes, IdG)
+   Pairs_Top_Types_comp_types:=[];
+   G:=SmallGroup(IdG[1],IdG[2]);
+
+
+   for type in pairoftypes do 
+      test, generators:=generatorsFromDb(G, MultisetToSequence(type));
+      if test then 
+        Include(~Pairs_Top_Types_comp_types, generators); 
+      elif generators eq "not present in database" then 
+            Append(~Pairs_Top_Types_comp_types, FindGenerators(G, MultisetToSequence(type)));
+      else
+            Append(~Pairs_Top_Types_comp_types, {});
+      end if;
+
+      if #MultisetToSet(pairoftypes) eq 1 then 
+          Append(~Pairs_Top_Types_comp_types, Pairs_Top_Types_comp_types[1]);
+          break type;
+      end if;
+   end for;
+   Pairs_Top_Types_comp_types:={{* x, y*}: x in Pairs_Top_Types_comp_types[1], y in Pairs_Top_Types_comp_types[2]};
+   
+   r,P:=PermutationRepresentation(AutomorphismGroup(G));
+   PQ_from_V1V2_comp_with_basket:=[*basket, [**], IdG*];
+   for pair_of_ssg in Pairs_Top_Types_comp_types do 
+     pair_of_ssg_seq:=MultisetToSequence(pair_of_ssg);
+     PQ_from_V1V2:=CountingPQ_from_V1V2(pair_of_ssg_seq[1], pair_of_ssg_seq[2], G, r,P);
+     for PQ in PQ_from_V1V2 do 
+         if CheckSings(basket, PQ[1], PQ[2], G) then 
+             //Append(~PQ_from_V1V2_comp_with_basket[2], [* BasketAndInvariants(PQ, G)[1], BasketAndInvariants(PQ, G)[2], BasketAndInvariants(PQ, G)[3], BasketAndInvariants(PQ, G)[4], PQ*]); //This is to check that the produced surfaces have the right invariants.
+            Append(~PQ_from_V1V2_comp_with_basket[2], PQ);
+         end if;
+     end for; 
+   end for;
+   return PQ_from_V1V2_comp_with_basket;
+end function;  
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+FindSurfaces_with_Fixed_Ksquare_chi:=function(ExistingSurfaces)
+   AllSurfaces_with_Fixed_Ksquare_chi:=[**];
+   
+   for triple in ExistingSurfaces do 
+      for x in FindSurfaces(triple[1], triple[2], triple[3]) do 
+        Append(~AllSurfaces_with_Fixed_Ksquare_chi, x);
+      end for;
+   end for;
+   return AllSurfaces_with_Fixed_Ksquare_chi;
+end function;
+

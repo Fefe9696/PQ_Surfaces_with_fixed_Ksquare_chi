@@ -1,0 +1,35 @@
+40;3;[ 8, 8, 10, 10, 10 ];0.110; 32;SmallAutG;{[ $.1 * $.4^3, $.3 * $.4, $.3 * $.4^3, $.3 * $.4^4, $.1 * $.2 * $.4^2 ]}
+40;3;[ 8, 8, 8, 8, 20 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+40;4;[ 4, 10, 10, 20, 20 ];0.050; 32;SmallAutG;{}
+40;4;[ 5, 10, 10, 10, 20 ];0.030; 32;SmallAutG;{}
+40;4;[ 5, 5, 20, 20, 20 ];0.040; 32;SmallAutG;{}
+40;4;[ 5, 8, 8, 20, 20 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+40;4;[ 8, 8, 10, 10, 10 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+40;4;[ 8, 8, 8, 8, 20 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+40;5;[ 4, 10, 10, 20, 20 ];0.050; 32;SmallAutG;{}
+40;5;[ 5, 10, 10, 10, 20 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+48;20;[ 2, 8, 8, 8, 12 ];0.010; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;20;[ 3, 3, 6, 12, 24 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;20;[ 3, 3, 6, 16, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;20;[ 3, 3, 8, 12, 12 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;20;[ 3, 3, 8, 8, 24 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;20;[ 3, 4, 4, 12, 24 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;20;[ 3, 4, 4, 16, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;20;[ 3, 4, 6, 6, 24 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;20;[ 3, 4, 6, 8, 12 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;20;[ 3, 4, 8, 8, 8 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;24;[ 3, 3, 6, 16, 16 ];0.010; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;24;[ 3, 3, 8, 12, 12 ];0.130; 32;SmallAutG;{}
+48;24;[ 3, 3, 8, 8, 24 ];0.070; 32;SmallAutG;{}
+48;24;[ 3, 4, 4, 12, 24 ];0.100; 32;SmallAutG;{}
+48;24;[ 3, 4, 4, 16, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+48;24;[ 3, 4, 6, 6, 24 ];0.110; 32;SmallAutG;{}
+48;24;[ 3, 4, 6, 8, 12 ];0.140; 32;SmallAutG;{}
+48;24;[ 3, 4, 8, 8, 8 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+48;24;[ 3, 6, 6, 6, 8 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+48;24;[ 4, 4, 4, 6, 24 ];0.090; 32;SmallAutG;{}
+60;7;[ 6, 12, 12, 30 ];0.010; 32;SmallAutG;{IGNORED:ordini sbagliati}
+60;7;[ 6, 12, 15, 20 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+60;9;[ 6, 10, 15, 30 ];0.010; 32;SmallAutG;{IGNORED:ordini sbagliati}
+60;10;[ 5, 15, 15, 30 ];0.030; 32;SmallAutG;{IGNORED:abelianization}
+60;11;[ 6, 10, 15, 30 ];0.130; 32;SmallAutG;{}

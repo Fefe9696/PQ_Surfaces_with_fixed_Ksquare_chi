@@ -1,0 +1,218 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// The main function of this script is ExistingSurfaces. It takes in input Ksquare
+// and chi and returns the list of all triple [* basket,pairsoftypes,IdentifyGroup(group)*]
+// such that
+// 1) the basket is compatible with Ksquare and chi;
+// 2) pairoftypes is a pair of signatures compatible with the basket;
+// 3) group admits AT LEAST a pair of spherical systems of generators that are 
+//    compatible with the pair of signatures, and gives the prescribed basket. 
+
+// This script uses the function ExSphSyst. For this reason, the reader need to
+// download the folder gullinbursti developed by CGP to the following website
+// "https://mate.unipv.it/ghigi/tipitopo/".
+
+load "ExSphSyst.txt";
+load "List_of_types_compatible_with_basket_with_fixed_Ksquare_and_chi.txt";
+
+// First of all we need some preliminary functions.
+
+// This function takes a signature M=[m_1,...m_r] and returns the order of
+// the abelianization of the associated orbifold group
+// T=<f1,..fr| fi^{m_i}, f1*..*fr>.
+
+AbelianizationOrbifoldGroup:=function(type)
+    type:=MultisetToSequence(type);
+    l:=#type;
+    F:=FreeGroup(l);
+    GensVect:=[F.i : i in [1..l]];
+    Prod:=Id(F);
+    for g in GensVect do 
+        Prod:=Prod*g;
+    end for;
+    Rels:=Append([F.i^type[i ]: i in [1..l]], Prod);
+    T, phi:=  quo< F | Rels>;
+    AbelT:=quo<T|DerivedGroup(T)>;
+    //GN:=GroupName(AbelT); debug
+    return //GN, debug
+    #AbelT;
+end function;
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// The next script runs a systematic search on all finite groups and
+// produces the list of all triples (basket, pair of signatures, group)
+// such that
+// 1) the basket is compatible with the input K^2;
+// 2) the signatures are compatible with the basket;
+// 3) the group has order (K^2+k)/(2*Theta_1*Theta_2) (see Prop. 4.7.4.b)
+//    and sets of spherical generators of both signatures.
+// As remarked in Section 4.9, if the orders of the abelianization of the 
+// orbifold groups T1 and T2 of the pair of signatures are coprime, then 
+// the group must be perfect.
+// In this case, the program first checks if there are perfect groups of
+// the right order: if the answer is negative it jumps directly to the
+// next case.
+// The program skips to check the groups of order bigger than 2000, 1024
+// (since there is no complete list avalaible) or of orders in the set
+// "badorders" which can be chosen by the user.
+// These skipped cases are listed in the second output, and must be
+// considered separately.
+
+ListGroups:=function(Ksquare, chi: badorders:={256,512,640,768,1152,1280,
+                                          1536,1728,1792,1920})
+  checked:=[* *]; tocheck:=[* *];
+  for pair in ListOfTypes(Ksquare, chi) do
+    basket:=pair[1]; types:=pair[2]; k:=Invk(basket);
+  for pairoftypes in Multisets(types,2) do ord:=(Ksquare+k)/2;
+    pairoftypes; //DEBUG
+    for T in pairoftypes do ord:=ord/Theta(T);
+    end for;
+  if IsIntegral(ord) then
+  if GCD([ AbelianizationOrbifoldGroup(T): T  in pairoftypes] ) eq 1 and
+     NumberOfGroups(PerfectGroupDatabase(),IntegerRing()!ord) eq 0
+       then ;
+  elif ord gt 2000 or ord in Include(badorders,1024) then
+     Append(~tocheck, [* basket, pairoftypes, ord *]);
+  else for G in SmallGroups(IntegerRing()!ord: Warning := false) do
+    test:=true;
+    groupData:=GroupData(G);
+    IdentifyGroup(G);  //DEBUG
+    for T in pairoftypes do
+       if not ExSphSystem(groupData,T) then test:=false; break T;
+       end if;
+    end for;
+    if test then Append(~checked, [* basket, pairoftypes, IdentifyGroup(G) *]);
+    end if; end for;
+  end if; end if; end for; end for;
+ return checked, tocheck;
+end function;
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// The following function takes in input a group G and a signature M={*m_1,...m_r*}. It returns
+// the list (up to exchanging the entries) of all sequences [conj_1,...,conj_r] of 
+// conjugacy classes of G compatible with the signature M, namely ord(conj_i)=m_i, and 
+// containing at least one spherical system of generators.
+
+OrderedConjClasses_compatible_with_M_admt_ssg:=function(groupData, M)
+
+ check, orderedConjClasses:=OrderedConjClasses_compatible_with_M(groupData, M);
+ M_set:=MultisetToSet(M); l:=#M_set;
+ M_seq:=MultisetToSequence(M); r:=#M_seq;
+ Final:={};
+ if check then 
+  for x in orderedConjClasses do 
+    seqC :=[];
+    for h in [1..l] do 
+            seqC:= seqC cat MultisetToSequence(x[h]);
+    end for; 
+    
+    
+    if ExSphSystem_from_seq_conj_classes(groupData, seqC) then 
+       Include(~Final, x);
+    end if; 
+  end for; 
+ end if; 
+ return Final;
+end function;
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Given two sets of spherical generators, the singular points of the
+// resulting surface are the image of points in the product of curves
+// C_1xC_2 having nontrivial stabilizer. These correspond to pairs
+// (g_1,n_1,g_2,n_2) where
+// - g_1 is a generator of the first set;
+// - g_2 is a generator of the second set;
+// 1<=n_1<=ord(g_1); 1<=n_2<=ord(g_2); g_1^n_1=g_2^n_2
+// First we write a program which computes the singular points
+// coming from a fixed pair (g1,g2).
+
+BasketByAPairOfGens:=function(group,gen1,gen2)
+  basket:={* *}; RC:={ }; delta:=GCD(Order(gen1),Order(gen2));
+  alpha1:=IntegerRing()!(Order(gen1)/delta);
+  alpha2:=IntegerRing()!(Order(gen2)/delta);
+  RC2,f2:=RightTransversal(group,sub<group | gen2 >);
+  for g2 in RC2 do test:=true;
+    for g in sub<group| gen1 > do
+    if f2(g2*g) in RC then test:=false; break g;
+    end if; end for;
+  if test then Include(~RC, g2);
+  end if; end for;
+  for g in RC do
+  for d1 in [1..delta-1] do
+  for d2 in [1..delta-1] do
+  if (gen1^(d1*alpha1)) eq (gen2^(d2*alpha2))^g then
+     Include(~basket,d2/delta); break d1;
+  end if; end for; end for; end for;
+ return basket;
+end function;
+
+// We could use it to compute the basket of singularities of every
+// constructed surface, but this is too expensive for our purposes.
+// The next program only checks if, given two sets of spherical
+// generators and a "candidate" basket, the resulting surface has the
+// prescribed basket. The advantage is that in the wrong cases, the
+// script stops when it finds a "forbidden" singularities, without
+// losing time computing all the other singular points.
+
+CheckSings:=function(basket,gens1,gens2,group)
+  test:=true; bas:=basket;
+    for gen1 in gens1 do
+    for gen2 in gens2 do pb:=BasketByAPairOfGens(group,gen1,gen2);
+      for r in pb do r1:=RatNum(Reverse(ContFrac(r)));
+      if r in bas then Exclude(~bas,r);
+         elif r1 in bas then Exclude(~bas,r1);
+         else test:=false; break gen1;
+      end if; end for;
+    end for; end for;
+  return test and IsEmpty(bas);
+end function;
+
+
+// The basket of singularities of a surface described by a pair of spherical systems 
+// of generators depends only from the conjugacy classes of their elements,
+// from the Remark 4.7.2.
+// This function takes in input a triple (basket, group, pair_seq_conj_classes)
+// and returns true if the given pair of sequences of conjugacy classes of group gives basket 
+// as basket of singularities.
+
+ChekSings_Classes:=function(basket,group,pair_seq_conj_classes)
+  return CheckSings(basket,[ConjugacyClasses(group)[rep1][3]: rep1 in pair_seq_conj_classes[1]], [ConjugacyClasses(group)[rep2][3]: rep2 in pair_seq_conj_classes[2]], group); 
+end function;
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// ExistingSurfaces runs on the first output of ListGroups(K2,chi), 
+// and throws away all triples giving rise only to surfaces whose singularities 
+// do not correspond to the basket.
+
+ExistingSurfaces:=function(ListGrps)
+  X:=[**];
+  for triple in ListGrps do 
+     basket:=triple[1]; pairoftypes:=triple[2]; G:=SmallGroup(triple[3][1], triple[3][2]);
+     groupData:=GroupData(G);
+     
+     seq_pairoftypes:=MultisetToSequence(pairoftypes);
+     OrdConjClass1:=OrderedConjClasses_compatible_with_M_admt_ssg(groupData, seq_pairoftypes[1]);
+     
+     if seq_pairoftypes[1] eq seq_pairoftypes[2] then OrdConjClass2:=OrdConjClass1;
+     else 
+      OrdConjClass2:=OrderedConjClasses_compatible_with_M_admt_ssg(groupData, seq_pairoftypes[2]);
+     end if;
+     for conj_class1 in OrdConjClass1 do 
+      for conj_class2 in OrdConjClass2 do 
+          seqconj_class1:=&cat[MultisetToSequence(conj_class1[j]): j in [1..#conj_class1]];
+          seqconj_class2:=&cat[MultisetToSequence(conj_class2[j]): j in [1..#conj_class2]];
+          if ChekSings_Classes(basket, G, [seqconj_class1, seqconj_class2]) then 
+            Append(~X, triple);
+            break conj_class1;
+          end if; 
+      end for;
+     end for; 
+   end for;
+   return X;
+end function;

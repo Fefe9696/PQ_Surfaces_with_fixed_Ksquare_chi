@@ -1,0 +1,313 @@
+rec<recformat<schema: MonStgElt, object, parameters: SeqEnum> | 
+    schema := "Centone 1",
+    object := [ PowerSequence(PowerStructure(Rec)) |
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 7 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 7, 14 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 7, 7, 7 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 7, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 2, 2, 7, 7, 7, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 2, 2, 7, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 2, 7, 7, 7, 7, 7 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 2, 7, 7, 7, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 2, 7, 14, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 7, 7, 7, 7, 7, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 7, 7, 7, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 2, 7, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 7, 7, 7, 7, 7, 7, 7 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 7, 7, 7, 7, 7, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 7, 7, 7, 14, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 2, 7, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 7, 7, 7, 7, 7, 7, 7, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 7, 7, 7, 7, 7, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 7, 7, 7, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 7, 7, 7, 7, 7, 7, 7, 7, 7 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 2, 7, 14, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 7, 7, 7, 7, 7, 7, 7, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 7, 7, 7, 7, 7, 14, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 7, 7, 7, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 2, 7, 14, 14, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 7, 7, 7, 7, 7, 7, 7, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 7, 7, 7, 7, 7, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 7, 7, 7, 14, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 2, 7, 14, 14, 14, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 7, 7, 7, 7, 7, 7, 7, 14, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 7, 7, 7, 7, 7, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 7, 7, 7, 14, 14, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 2, 7, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 7, 7, 7, 7, 7, 7, 7, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 7, 7, 7, 7, 7, 14, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 7, 7, 7, 14, 14, 14, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 7, 7, 7, 7, 7, 7, 7, 7, 7, 14, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 2, 7, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 7, 7, 7, 7, 7, 7, 7, 14, 14, 14, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 7, 7, 7, 7, 7, 14, 14, 14, 14, 14, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 7, 7, 7, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 14,
+                M := \[ 7, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ]
+    ],
+    parameters := \[ 14, 13 ]>

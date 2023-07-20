@@ -1,0 +1,4 @@
+60;2;[ 2, 2, 2, 3 ];0.010; 32;FastAbelian;{I:KW}
+40;5;[ 2, 2, 2, 4 ];0.000; 32;FastAbelian;{I:abelianization}
+24;3;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:order}
+40;7;[ 2, 2, 2, 4 ];0.000; 32;FastAbelian;{I:abelianization}

@@ -1,0 +1,90 @@
+Group:  36 , 5	signature: [ 18, 18, 18, 18, 18 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  40 , 10	signature: [ 10, 10, 5, 10, 20 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  40 , 10	signature: [ 4, 10, 10, 20, 20 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  40 , 11	signature: [ 10, 4, 20, 10, 20 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  40 , 11	signature: [ 20, 5, 20, 5, 20 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  40 , 1	signature: [ 10, 10, 10, 8, 8 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  40 , 1	signature: [ 20, 20, 5, 8, 8 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  40 , 1	signature: [ 20, 8, 8, 8, 8 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  40 , 2	signature: [ 8, 10, 10, 10, 8 ]	Generators: [...]	g: 50
+Group:  40 , 2	signature: [ 8, 20, 5, 20, 8 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  40 , 3	signature: [ 8, 10, 10, 10, 8 ]	Generators: [...]	g: 50
+Group:  42 , 3	signature: [ 3, 7, 21, 14, 14 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  42 , 4	signature: [ 21, 7, 7, 6, 6 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  42 , 6	signature: [ 21, 14, 7, 14, 3 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  42 , 6	signature: [ 21, 21, 14, 3, 6 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  42 , 6	signature: [ 6, 6, 7, 7, 21 ]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  44 , 1	signature: [ 4, 11, 11, 11, 4 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  44 , 2	signature: [ 4, 11, 11, 4, 11 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  44 , 4	signature: [ 22, 2, 22, 11, 11 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  45 , 1	signature: [ 3, 9, 9, 5, 15 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  45 , 1	signature: [ 9, 9, 5, 5, 5 ]	Generators: [...]	g: 50
+Group:  48 , 15	signature: [ 12, 12, 6, 8, 2 ]	Generators: [...]	g: 50
+Group:  48 , 16	signature: [ 12, 3, 6, 8, 4 ]	Generators: [...]	g: 50
+Group:  48 , 16	signature: [ 4, 6, 6, 8, 4 ]	Generators: [...]	g: 50
+Group:  48 , 17	signature: [ 12, 6, 8, 12, 2 ]	Generators: [...]	g: 50
+Group:  48 , 17	signature: [ 12, 8, 8, 8, 2 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 18	signature: [ 12, 3, 6, 8, 4 ]	Generators: [...]	g: 50
+Group:  48 , 18	signature: [ 12, 4, 4, 8, 4 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 18	signature: [ 4, 6, 6, 8, 4 ]	Generators: [...]	g: 50
+Group:  48 , 1	signature: [ 12, 2, 4, 16, 16 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 1	signature: [ 2, 6, 6, 16, 16 ]	Generators: [...]	g: 50
+Group:  48 , 1	signature: [ 3, 3, 6, 16, 16 ]	Generators: [...]	g: 50
+Group:  48 , 1	signature: [ 3, 4, 4, 16, 16 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 25	signature: [ 2, 12, 6, 24, 6 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 25	signature: [ 6, 3, 4, 24, 6 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 25	signature: [ 6, 8, 3, 6, 6 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 25	signature: [ 6, 8, 4, 4, 6 ]	Generators: [...]	g: 50
+Group:  48 , 25	signature: [ 8, 2, 12, 12, 6 ]	Generators: [...]	g: 50
+Group:  48 , 25	signature: [ 8, 8, 2, 24, 6 ]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 26	signature: [ 12, 12, 4, 24, 2 ]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 26	signature: [ 12, 6, 6, 24, 2 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 26	signature: [ 3, 3, 24, 6, 12 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 26	signature: [ 3, 6, 24, 6, 4 ]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 26	signature: [ 4, 4, 4, 24, 6 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 26	signature: [ 8, 12, 12, 6, 2 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 26	signature: [ 8, 12, 3, 6, 4 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 26	signature: [ 8, 4, 24, 24, 2 ]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 26	signature: [ 8, 4, 4, 6, 6 ]	Generators: [...]	g: 50
+Group:  48 , 27	signature: [ 2, 12, 4, 24, 12 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 27	signature: [ 2, 12, 6, 8, 12 ]	Generators: [...]	g: 50
+Group:  48 , 27	signature: [ 3, 12, 3, 8, 12 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 27	signature: [ 3, 4, 4, 24, 12 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 27	signature: [ 3, 4, 6, 8, 12 ]	Generators: [...]	g: 50
+Group:  48 , 27	signature: [ 4, 4, 6, 24, 4 ]	Generators: [...]	g: 50
+Group:  48 , 27	signature: [ 4, 6, 6, 8, 4 ]	Generators: [...]	g: 50
+Group:  48 , 28	signature: [ 3, 8, 8, 8, 4 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 28	signature: [ 4, 6, 6, 8, 4 ]	Generators: [...]	g: 50
+Group:  48 , 2	signature: [ 6, 16, 2, 6, 16 ]	Generators: [...]	g: 50
+Group:  48 , 2	signature: [ 6, 16, 3, 3, 16 ]	Generators: [...]	g: 50
+Group:  48 , 6	signature: [ 12, 24, 4, 12, 2 ]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 6	signature: [ 24, 24, 4, 8, 2 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 8	signature: [ 12, 24, 3, 4, 4 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  48 , 8	signature: [ 24, 4, 4, 6, 4 ]	Generators: [...]	g: 50
+Group:  48 , 8	signature: [ 4, 4, 8, 12, 4 ]	Generators: [...]	g: 50
+Group:  48 , 8	signature: [ 4, 6, 6, 8, 4 ]	Generators: [...]	g: 50
+Group:  52 , 1	signature: [ 26, 2, 4, 13, 4 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  52 , 2	signature: [ 4, 2, 4, 13, 26 ]	Generators: [...]	g: 50
+Group:  52 , 4	signature: [ 26, 26, 26, 2, 2 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  52 , 5	signature: [ 26, 26, 2, 2, 26 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  54 , 1	signature: [ 27, 27, 9, 2, 2 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  54 , 2	signature: [ 27, 18, 27, 18 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  54 , 2	signature: [ 27, 27, 9, 2, 2 ]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  56 , 10	signature: [ 7, 28, 28, 28 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  56 , 3	signature: [ 4, 4, 4, 4, 4 ]	Generators: [...]	g: 50
+Group:  56 , 5	signature: [ 28, 2, 7, 14, 2 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  56 , 9	signature: [ 2, 2, 14, 7, 28 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  56 , 9	signature: [ 28, 14, 14, 14 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  60 , 11	signature: [ 15, 10, 10, 10 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  60 , 13	signature: [ 15, 30, 6, 10 ]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  60 , 13	signature: [ 5, 30, 30, 10 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  60 , 1	signature: [ 10, 20, 6, 20 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  60 , 1	signature: [ 20, 15, 5, 20 ]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  60 , 1	signature: [ 4, 30, 30, 20 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  60 , 2	signature: [ 10, 10, 12, 12 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  60 , 2	signature: [ 30, 12, 6, 12 ]	Generators: [...]	Generators: [...]	g: 50
+Group:  60 , 2	signature: [ 30, 2, 2, 4, 12 ]	Generators: [...]	g: 50
+Group:  60 , 4	signature: [ 12, 10, 12, 10 ]	Generators: [...]	g: 50
+Group:  60 , 4	signature: [ 20, 6, 12, 15 ]	Generators: [...]	g: 50
+Group:  60 , 4	signature: [ 30, 20, 5, 12 ]	Generators: [...]	Generators: [...]	Generators: [...]	g: 50
+Group:  60 , 4	signature: [ 30, 4, 20, 30 ]	Generators: [...]	Generators: [...]	g: 50

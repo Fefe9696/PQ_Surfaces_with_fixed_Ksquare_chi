@@ -1,0 +1,40 @@
+4;2;[ 2, 2, 2, 2, 2, 2 ];2;FastAbelian
+8;2;[ 2, 2, 4, 4 ];2;FastAbelian
+8;5;[ 2, 2, 2, 2, 2 ];2;FastAbelian
+12;5;[ 2, 2, 3, 3 ];2;FastAbelian
+4;2;[ 2, 2, 2, 2, 2, 2, 2 ];2;FastAbelian
+6;2;[ 2, 2, 3, 3, 3 ];2;FastAbelian
+8;2;[ 2, 4, 4, 4 ];2;FastAbelian
+9;2;[ 3, 3, 3, 3 ];2;FastAbelian
+10;2;[ 2, 2, 5, 5 ];2;FastAbelian
+12;5;[ 2, 2, 3, 6 ];2;FastAbelian
+18;5;[ 2, 2, 3, 3 ];2;FastAbelian
+4;2;[ 2, 2, 2, 2, 2, 2, 2, 2 ];2;FastAbelian
+6;2;[ 2, 2, 2, 2, 3, 3 ];2;FastAbelian
+8;2;[ 2, 2, 2, 4, 4 ];2;FastAbelian
+8;2;[ 4, 4, 4, 4 ];2;FastAbelian
+8;5;[ 2, 2, 2, 2, 2, 2 ];2;FastAbelian
+12;5;[ 2, 2, 6, 6 ];2;FastAbelian
+12;5;[ 2, 3, 3, 6 ];2;FastAbelian
+16;10;[ 2, 2, 4, 4 ];2;FastAbelian
+16;14;[ 2, 2, 2, 2, 2 ];2;FastAbelian
+16;2;[ 2, 2, 4, 4 ];2;FastAbelian
+24;15;[ 2, 2, 3, 3 ];2;FastAbelian
+4;2;[ 2, 2, 2, 2, 2, 2, 2, 2, 2 ];2;FastAbelian
+6;2;[ 2, 2, 3, 3, 3, 3 ];2;FastAbelian
+8;2;[ 2, 2, 4, 4, 4 ];2;FastAbelian
+12;2;[ 3, 3, 4, 4 ];2;FastAbelian
+12;5;[ 2, 2, 2, 3, 3 ];2;FastAbelian
+12;5;[ 2, 3, 6, 6 ];2;FastAbelian
+14;2;[ 2, 2, 7, 7 ];2;FastAbelian
+4;2;[ 2, 2, 2, 2, 2, 2, 2, 2 ];4;FastAbelian
+6;2;[ 2, 2, 2, 2, 3, 3 ];4;FastAbelian
+8;2;[ 2, 2, 2, 4, 4 ];4;FastAbelian
+8;2;[ 4, 4, 4, 4 ];4;FastAbelian
+8;5;[ 2, 2, 2, 2, 2, 2 ];4;FastAbelian
+12;5;[ 2, 2, 6, 6 ];4;FastAbelian
+12;5;[ 2, 3, 3, 6 ];4;FastAbelian
+16;10;[ 2, 2, 4, 4 ];4;FastAbelian
+16;14;[ 2, 2, 2, 2, 2 ];4;FastAbelian
+16;2;[ 2, 2, 4, 4 ];4;FastAbelian
+24;15;[ 2, 2, 3, 3 ];4;FastAbelian

@@ -1,0 +1,410 @@
+rec<recformat<schema: MonStgElt, object, parameters: SeqEnum> | 
+    schema := "Centone 1",
+    object := [ PowerSequence(PowerStructure(Rec)) |
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 3, 3 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 3, 9 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 3, 11 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 3, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 3, 99 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 9, 9 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 9, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 11, 11 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 9, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 9, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 11, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 11, 99 ]>
+        ],
+        [ PowerStructure(Rec) | ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 33, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 33, 99 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 3, 99, 99 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 9, 9, 9 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 9, 9, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 9, 11, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 11, 11, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 9, 9, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 9, 9, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 9, 11, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 9, 11, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 11, 11, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 11, 11, 99 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 9, 33, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 9, 33, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 11, 33, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 9, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 11, 33, 99 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 11, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 9, 9, 9 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 33, 33, 33 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 9, 9, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 33, 33, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 9, 11, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 33, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 11, 11, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 3, 99, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 9, 9, 33 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 11, 11, 11, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 9, 9, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 9, 11, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 9, 11, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 11, 11, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 11, 11, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 11, 11, 11, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 9, 33, 33 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 11, 11, 11, 99 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 9, 33, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 11, 33, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 9, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 11, 33, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 11, 11, 33, 33 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 11, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 11, 11, 33, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 9, 9, 9, 9, 9 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 33, 33, 33 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 11, 11, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 9, 9, 9, 9, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 33, 33, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 11, 33, 33, 33 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 9, 9, 9, 11, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 33, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 11, 33, 33, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 9, 9, 11, 11, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 9, 99, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 11, 33, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 9, 9, 9, 9, 33 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 9, 11, 11, 11, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 11, 99, 99, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 33, 33, 33, 33 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 9, 9, 9, 9, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 9, 9, 9, 11, 33 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 11, 11, 11, 11, 11 ]>
+        ],
+        [ PowerStructure(Rec) |
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 3, 33, 33, 33, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 9, 9, 9, 11, 99 ]>,
+            rec<recformat<d: IntegerRing(), M: SeqEnum> | 
+                d := 99,
+                M := \[ 9, 9, 11, 11, 33 ]>
+        ]
+    ],
+    parameters := \[ 99, 5 ]>

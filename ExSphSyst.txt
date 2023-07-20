@@ -1,0 +1,141 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// The main function of this script is ExSphSyst, which takes in input a group G and a signature 
+// M and returns true if there exists at least one spherical system of generators of G 
+// compatible with that signature, and false otherwise. 
+
+// This script loads the database developed by CGP and some useful functions of their work, as 
+// FrobeniusSum and ScottTest. In this way, the function ExSphSyst performs faster. 
+// For this reason, we ask to the reader to download also the scripts gullinbursti from the webpage
+// "https://mate.unipv.it/ghigi/tipitopo/".
+
+load "gullinbursti14-Jul-23/magma/include/genus.m";
+load "gullinbursti14-Jul-23/magma/include/sequences.m";
+load "gullinbursti14-Jul-23/magma/include/sequencesuptoaction.m";
+load "gullinbursti14-Jul-23/magma/include/subsetgenerates.m";
+load "gullinbursti14-Jul-23/magma/hurwitz/scott.m";
+load "gullinbursti14-Jul-23/magma/hurwitz/hurwitzmoves.m";
+load "gullinbursti14-Jul-23/magma/hurwitz/refinedpassports.m";
+
+load "gullinbursti14-Jul-23/magma/db/generatorsfromdb.m";
+load "gullinbursti14-Jul-23/magma/signatures/signatures.m";
+
+
+// First of all we need some preliminary functions.
+
+// The following function takes in input a group G and a signature M={*m_1,...m_r*}. It returns
+// the list (up to exchanging the entries) of all sequences [conj_1,...,conj_r] of 
+// conjugacy classes of G compatible with the signature M, namely ord(conj_i)=m_i. 
+// The sentence "up to exchanging the entries" means that the list does not 
+// contain sequences that are equal up to exchanging the entries. 
+// For instance, if m_1=m_2, then the list contains one of
+// [conj_1, conj_2, ...conj_r] or [conj_2, conj_1, ...conj_r] and not both.
+
+
+OrderedConjClasses_compatible_with_M:=function(groupData, M)
+
+ G:=groupData`group;
+ CC_G:=ConjugacyClasses(G);
+
+ check:=true;
+ M_set:=MultisetToSet(M); l:=#M_set;
+  M_seq:=MultisetToSequence(M); r:=#M_seq;
+  S:=[**];
+  for t in SetToSequence(M_set) do 
+     numb_of_t:=#{ k : k in [1..r] | M_seq[k] eq t}; 
+     CC_G_withorder_t:={x : x in [1..#CC_G] | CC_G[x][1] eq t};
+     if #CC_G_withorder_t eq 0 then 
+        check:= false;
+        break t; 
+     end if; 
+     Append(~S, Multisets(CC_G_withorder_t, numb_of_t));
+  end for;
+ 
+Final:={};
+if check then 
+ Final:=CartesianProduct([S[h]: h in [1..l]]); 
+      //C:= CartesianProduct([S[h]: h in [1..l]]); 
+      // for x in C do 
+      //     seq :=[];
+      //     for h in [1..l] do 
+      //      seq:= seq cat MultisetToSequence(x[h]);
+      //     end for; 
+      //     Include(~Final, seq);
+    //   end for;
+end if; 
+ return check, Final;
+end function;
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// The next script takes in input a group G and a sequence of elements of G.
+// It returns true, if the elements of that sequence generates the group G and 
+// their product is one, and false otherwise. 
+
+IsSphSyt:=function(G, seq)
+   test:= false; 
+   seqPrune:=Prune(seq);
+    if  &*seqPrune eq seq[#seq]^-1 then
+       if sub<G|[seqPrune[j]: j in [1..#seqPrune]]> eq G then
+       test:=true;
+    end if; end if; 
+  return test; 
+end function;
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// This function takes in input a group G and a sequence of conjugacy classes of G
+// and returns true if the sequence contains a spherical system of generators and 
+// false otherwise.
+
+ExSphSystem_from_seq_conj_classes:=function(groupData, seqC)
+     Length:=#seqC;
+     G:=groupData`group;
+     CC_G:=ConjugacyClasses(G);
+     if FrobeniusSum(groupData`characterTable, seqC) ne 0 and ScottTest(seqC, groupData`gModulesData) then 
+        for cands in CartesianProduct([Class(G, CC_G[seqC[j]][3]): j in [1..Length-1]]) do 
+                 if IsSphSyt(G, Append([cands[i] : i in [1..Length-1] ], CC_G[seqC[Length]][3])) then 
+                    return true;
+                 end if;
+        end for;
+     end if;
+     return false; 
+end function; 
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// We can now state the main script ExSphSyst. 
+// It takes in input a group G and a signature 
+// M and returns true if there exists at least one spherical system of generators of G 
+// compatible with that signature, and false otherwise. 
+
+ExSphSystem:=function(groupData, M)
+   test, reason, G:=generatorsFromDb(groupData`group, MultisetToSequence(M));
+   CC_G:=ConjugacyClasses(G);
+
+   if test then
+      return test;
+   else
+      if reason eq "not present in database" then 
+          //f:=ClassMap(G);
+          Length:=#MultisetToSequence(M);
+          l:=#MultisetToSet(M);
+         check, orderedConjClasses:=OrderedConjClasses_compatible_with_M(groupData, M);
+         for C in orderedConjClasses do 
+            seqC :=[];
+           for h in [1..l] do 
+            seqC:= seqC cat MultisetToSequence(C[h]);
+           end for; 
+          
+           if ExSphSystem_from_seq_conj_classes(groupData, seqC) then 
+             return true;
+           end if; 
+         end for;
+      end if;
+   end if; 
+   return false;
+end function;
+

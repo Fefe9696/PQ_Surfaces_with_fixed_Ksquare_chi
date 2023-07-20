@@ -1,0 +1,95 @@
+96;8;[ 2, 3, 12, 16 ];0.080; 32;SmallAutG;{}
+96;8;[ 2, 3, 8, 48 ];0.060; 32;SmallAutG;{}
+96;8;[ 2, 4, 6, 16 ];0.050; 32;SmallAutG;{}
+96;8;[ 3, 3, 4, 16 ];0.040; 32;SmallAutG;{}
+96;9;[ 2, 3, 12, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;9;[ 2, 3, 8, 48 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;9;[ 2, 4, 6, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;9;[ 3, 3, 4, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;10;[ 2, 3, 12, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;10;[ 2, 3, 8, 48 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;165;[ 2, 4, 6, 16 ];0.010; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;165;[ 3, 3, 4, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;166;[ 2, 3, 12, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;166;[ 2, 3, 8, 48 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;166;[ 2, 4, 6, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;166;[ 3, 3, 4, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;167;[ 2, 3, 12, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;167;[ 2, 3, 8, 48 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;167;[ 2, 4, 6, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;167;[ 3, 3, 4, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;208;[ 2, 3, 12, 16 ];0.010; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;208;[ 2, 3, 8, 48 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;208;[ 2, 4, 6, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;208;[ 3, 3, 4, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;209;[ 2, 3, 12, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;209;[ 2, 3, 8, 48 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;209;[ 2, 4, 6, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;209;[ 3, 3, 4, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;210;[ 2, 3, 12, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+96;210;[ 2, 3, 8, 48 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+112;27;[ 2, 2, 2, 2, 8 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+112;27;[ 2, 4, 4, 8 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+112;28;[ 2, 2, 16, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+112;28;[ 2, 2, 2, 2, 8 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+112;28;[ 2, 4, 4, 8 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+112;29;[ 2, 2, 16, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+112;29;[ 2, 2, 2, 2, 8 ];0.010; 32;SmallAutG;{IGNORED:ordini sbagliati}
+112;29;[ 2, 4, 4, 8 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+112;30;[ 2, 2, 16, 16 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+112;30;[ 2, 2, 2, 2, 8 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;6;[ 2, 2, 10, 12 ];0.020; 32;SmallAutG;{IGNORED:abelianization}
+120;6;[ 2, 2, 6, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;6;[ 2, 3, 3, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;6;[ 2, 3, 4, 10 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+120;7;[ 2, 2, 10, 12 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+120;7;[ 2, 2, 6, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;7;[ 2, 3, 3, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;7;[ 2, 3, 4, 10 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+120;8;[ 2, 2, 10, 12 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;8;[ 2, 2, 6, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;33;[ 2, 3, 3, 60 ];0.020; 32;SmallAutG;{IGNORED:abelianization}
+120;33;[ 2, 3, 4, 10 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+120;34;[ 2, 2, 10, 12 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;34;[ 2, 2, 6, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;34;[ 2, 3, 3, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;34;[ 2, 3, 4, 10 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;35;[ 2, 2, 10, 12 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;35;[ 2, 2, 6, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;35;[ 2, 3, 3, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;35;[ 2, 3, 4, 10 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;46;[ 2, 2, 10, 12 ];0.010; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;46;[ 2, 2, 6, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;46;[ 2, 3, 3, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;46;[ 2, 3, 4, 10 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;47;[ 2, 2, 10, 12 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;47;[ 2, 2, 6, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;47;[ 2, 3, 3, 60 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+120;47;[ 2, 3, 4, 10 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+126;1;[ 2, 2, 6, 18 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+126;1;[ 2, 2, 9, 9 ];0.100; 32;SmallAutG;{[ $.2^2 * $.4, $.1 * $.4^3, $.1 * $.4^2, $.2 * $.3^2 ]}
+168;4;[ 2, 2, 4, 6 ];0.020; 32;SmallAutG;{IGNORED:abelianization}
+168;4;[ 2, 3, 3, 4 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+168;5;[ 2, 2, 3, 12 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+168;5;[ 2, 2, 4, 6 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+168;5;[ 2, 3, 3, 4 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+168;6;[ 2, 2, 3, 12 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+168;6;[ 2, 2, 4, 6 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+168;6;[ 2, 3, 3, 4 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+168;7;[ 2, 2, 3, 12 ];0.070; 32;SmallAutG;{}
+168;7;[ 2, 2, 4, 6 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+168;41;[ 2, 2, 3, 12 ];0.020; 32;SmallAutG;{IGNORED:abelianization}
+168;41;[ 2, 2, 4, 6 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+168;41;[ 2, 3, 3, 4 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+168;42;[ 2, 2, 3, 12 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+168;42;[ 2, 2, 4, 6 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+168;42;[ 2, 3, 3, 4 ];2.810; 184;SmallAutG;{[
+(1, 2)(3, 6),
+(1, 7)(3, 5, 4, 6),
+(1, 5, 2)(3, 6, 7),
+(2, 6, 3)(4, 5, 7)
+]}
+168;43;[ 2, 2, 3, 12 ];0.000; 64;SmallAutG;{IGNORED:ordini sbagliati}
+168;43;[ 2, 2, 4, 6 ];0.000; 64;SmallAutG;{IGNORED:ordini sbagliati}
+168;43;[ 2, 3, 3, 4 ];0.000; 64;SmallAutG;{IGNORED:ordini sbagliati}
+168;44;[ 2, 2, 3, 12 ];0.000; 64;SmallAutG;{IGNORED:ordini sbagliati}

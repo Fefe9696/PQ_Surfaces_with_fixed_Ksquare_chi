@@ -1,0 +1,39 @@
+64;87;[ 4, 8, 16, 32 ];0.010; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;88;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;89;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;90;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;91;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;92;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;93;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;94;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;95;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;96;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;197;[ 4, 8, 16, 32 ];0.010; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;198;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;199;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;200;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;201;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;202;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;203;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;204;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;205;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+64;206;[ 4, 8, 16, 32 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+72;6;[ 2, 2, 3, 4, 18 ];0.180; 32;SmallAutG;{[ $.3 * $.4^2 * $.5, $.1 * $.4 * $.5, $.5, $.2 * $.3, $.1 * $.2 * $.4^2 * $.5^2 ]}
+72;6;[ 3, 4, 36, 36 ];0.040; 32;SmallAutG;{}
+72;6;[ 3, 6, 12, 18 ];0.030; 32;SmallAutG;{}
+72;6;[ 3, 6, 9, 36 ];0.030; 32;SmallAutG;{}
+72;6;[ 3, 8, 8, 18 ];0.000; 32;SmallAutG;{IGNORED:ordini sbagliati}
+72;6;[ 3, 9, 9, 12 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+72;6;[ 4, 4, 12, 18 ];0.040; 32;SmallAutG;{}
+72;6;[ 4, 4, 9, 36 ];0.050; 32;SmallAutG;{}
+72;6;[ 4, 6, 6, 18 ];0.030; 32;SmallAutG;{}
+72;6;[ 4, 6, 9, 9 ];0.030; 32;SmallAutG;{}
+80;24;[ 2, 2, 2, 4, 40 ];0.010; 32;SmallAutG;{IGNORED:abelianization}
+80;24;[ 2, 5, 20, 40 ];0.310; 32;SmallAutG;{}
+80;24;[ 2, 8, 10, 20 ];0.180; 32;SmallAutG;{}
+80;24;[ 2, 8, 8, 40 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+80;24;[ 4, 4, 4, 40 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+80;24;[ 4, 5, 5, 8 ];0.090; 32;SmallAutG;{}
+80;25;[ 2, 2, 2, 4, 40 ];0.000; 32;SmallAutG;{IGNORED:abelianization}
+80;25;[ 2, 5, 20, 40 ];0.080; 32;SmallAutG;{}
+80;25;[ 2, 8, 10, 20 ];0.170; 32;SmallAutG;{[ $.3^3 * $.4, $.2 * $.3^2, $.1 * $.2 * $.5, $.1 ]}

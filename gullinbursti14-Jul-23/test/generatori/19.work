@@ -1,0 +1,100 @@
+60;7;[ 2, 2, 2, 3 ];0.020; 32;FastAbelian;{I:abelianization}
+24;1;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:abelianization}
+18;2;[ 2, 2, 3, 9 ];0.000; 32;FastAbelian;{I:abelianization}
+24;5;[ 2, 2, 2, 12 ];0.010; 32;FastAbelian;{I:abelianization}
+12;3;[ 2, 4, 4, 6 ];0.000; 32;FastAbelian;{I:order}
+20;4;[ 2, 2, 4, 4 ];0.000; 32;FastAbelian;{I:order}
+28;2;[ 2, 2, 2, 7 ];0.000; 32;FastAbelian;{I:KW}
+24;12;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:order}
+12;4;[ 2, 4, 4, 6 ];0.000; 32;FastAbelian;{I:order}
+12;3;[ 3, 3, 4, 4 ];0.000; 32;FastAbelian;{I:order}
+20;1;[ 2, 2, 2, 2, 2 ];0.000; 32;FastAbelian;{I:abelianization}
+6;2;[ 2, 2, 2, 2, 2, 2, 3 ];0.000; 32;FastAbelian;{I:abelianization}
+20;2;[ 2, 2, 4, 4 ];0.000; 32;FastAbelian;{I:abelianization}
+20;2;[ 2, 2, 2, 2, 2 ];0.000; 32;FastAbelian;{I:abelianization}
+6;1;[ 2, 2, 2, 2, 2, 2, 3 ];0.130; 32;FastAbelian;{[ $.2, $.1 * $.2, $.1 * $.2, $.1, $.1 * $.2^2, $.1 * $.2, $.1 * $.2 ]}
+12;4;[ 3, 3, 4, 4 ];0.000; 32;FastAbelian;{I:order}
+12;4;[ 2, 2, 2, 3, 3 ];0.020; 32;FastAbelian;{[ $.2, $.1 * $.3, $.3^2, $.3^2, $.1 * $.2 * $.3^2 ]}
+24;2;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:KW}
+20;4;[ 2, 2, 2, 2, 2 ];0.040; 32;FastAbelian;{[ $.2, $.1 * $.3^4, $.1 * $.2 * $.3^4, $.1 * $.2, $.1 * $.2 ]}
+24;7;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:order}
+24;11;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:abelianization}
+12;3;[ 2, 2, 2, 2, 6 ];0.000; 32;FastAbelian;{I:order}
+20;1;[ 2, 2, 4, 4 ];0.020; 32;FastAbelian;{}
+12;5;[ 2, 2, 2, 2, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+40;4;[ 2, 2, 2, 4 ];0.010; 32;FastAbelian;{}
+24;8;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:order}
+24;13;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:order}
+12;2;[ 3, 3, 4, 4 ];0.010; 32;FastAbelian;{[ $.2, $.2^2, $.1, $.1 * $.3 ]}
+16;10;[ 2, 2, 4, 8 ];0.000; 32;FastAbelian;{I:order}
+12;2;[ 3, 3, 3, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+16;6;[ 2, 2, 4, 8 ];0.060; 51;FastAbelian;{}
+24;4;[ 2, 2, 2, 12 ];0.010; 32;FastAbelian;{}
+15;1;[ 3, 3, 3, 3 ];0.000; 32;FastAbelian;{I:abelianization}
+24;12;[ 2, 2, 3, 4 ];0.020; 32;FastAbelian;{[ $.4, $.1 * $.2^2 * $.3, $.1 * $.4, $.2^2 * $.4 ]}
+16;11;[ 2, 2, 4, 8 ];0.000; 32;FastAbelian;{I:order}
+60;3;[ 2, 2, 2, 3 ];0.000; 32;FastAbelian;{I:KW}
+12;1;[ 2, 4, 4, 6 ];0.010; 32;FastAbelian;{[ $.2, $.1, $.2 * $.3, $.1 * $.2 * $.3 ]}
+24;10;[ 2, 2, 3, 4 ];0.000; 32;FastAbelian;{I:abelianization}
+40;11;[ 2, 2, 2, 4 ];0.000; 32;FastAbelian;{I:abelianization}
+24;11;[ 2, 2, 3, 4 ];0.000; 32;FastAbelian;{I:abelianization}
+30;2;[ 2, 2, 2, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+12;1;[ 2, 3, 6, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+12;2;[ 2, 3, 6, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+12;5;[ 2, 3, 6, 6 ];0.010; 32;FastAbelian;{[ $.1 * $.2, $.3^2, $.1 * $.3^2, $.2 * $.3^2 ]}
+12;5;[ 3, 3, 3, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+24;14;[ 2, 2, 3, 4 ];0.000; 32;FastAbelian;{I:order}
+12;4;[ 3, 3, 3, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+40;14;[ 2, 2, 2, 4 ];0.000; 32;FastAbelian;{I:order}
+4;2;[ 2, 2, 2, 2, 2, 2, 2, 2, 2 ];0.020; 51;FastAbelian;{[ $.2, $.2, $.2, $.2, $.2, $.2, $.2, $.1, $.1 * $.2 ]:[ $.2, $.2, $.2, $.1, $.1, $.1, $.1 * $.2, $.1 * $.2, $.1 * $.2 ]:[ $.2, $.2, $.2, $.2, $.2, $.1, $.1 * $.2, $.1 * $.2, $.1 * $.2 ]}
+60;9;[ 2, 2, 2, 3 ];0.000; 32;FastAbelian;{I:abelianization}
+24;15;[ 2, 2, 3, 4 ];0.000; 32;FastAbelian;{I:order}
+18;5;[ 2, 2, 3, 9 ];0.000; 32;FastAbelian;{I:order}
+24;9;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:abelianization}
+8;5;[ 2, 2, 4, 4, 4 ];0.000; 32;FastAbelian;{I:order}
+24;6;[ 2, 2, 2, 12 ];0.020; 32;FastAbelian;{[ $.3, $.1, $.2 * $.4^2, $.1 * $.2 * $.3 * $.4^2 ]}
+10;2;[ 2, 2, 2, 2, 2, 2 ];0.000; 32;FastAbelian;{I:abelianization}
+8;2;[ 2, 2, 4, 4, 4 ];0.040; 51;FastAbelian;{}
+16;13;[ 2, 2, 4, 8 ];0.000; 32;FastAbelian;{I:order}
+8;4;[ 2, 2, 4, 4, 4 ];0.030; 51;FastAbelian;{[ $.3, $.3, $.1 * $.2 * $.3, $.2 * $.3, $.1 ]}
+8;5;[ 2, 2, 2, 2, 2, 4 ];0.000; 32;FastAbelian;{I:order}
+12;3;[ 2, 3, 6, 6 ];0.000; 32;FastAbelian;{I:order}
+16;1;[ 2, 2, 4, 8 ];0.000; 32;FastAbelian;{I:abelianization}
+10;1;[ 2, 2, 2, 2, 2, 2 ];0.150; 32;FastAbelian;{[ $.1 * $.2^2, $.1 * $.2^4, $.1 * $.2, $.1 * $.2^4, $.1 * $.2, $.1 * $.2 ]}
+8;4;[ 2, 2, 2, 2, 2, 4 ];0.030; 51;FastAbelian;{}
+8;3;[ 2, 2, 2, 2, 2, 4 ];0.030; 51;FastAbelian;{[ $.3, $.2, $.1 * $.2 * $.3, $.1, $.1 * $.3, $.1 ]:[ $.3, $.3, $.3, $.2, $.1 * $.2, $.1 ]}
+6;2;[ 2, 2, 3, 3, 3, 3 ];0.010; 32;FastAbelian;{[ $.1, $.1, $.2^2, $.2^2, $.2, $.2 ]}
+16;8;[ 2, 2, 4, 8 ];0.050; 51;FastAbelian;{[ $.4, $.1 * $.3, $.1 * $.2, $.2 * $.3 ]}
+24;8;[ 2, 2, 3, 4 ];0.020; 32;FastAbelian;{[ $.2, $.4^2, $.1 * $.2 * $.4^2, $.1 * $.3 ]}
+24;13;[ 2, 2, 3, 4 ];0.000; 32;FastAbelian;{I:order}
+12;3;[ 3, 3, 3, 6 ];0.000; 32;FastAbelian;{I:order}
+20;5;[ 2, 2, 2, 2, 2 ];0.000; 32;FastAbelian;{I:abelianization}
+12;5;[ 2, 4, 4, 6 ];0.000; 32;FastAbelian;{I:order}
+30;1;[ 2, 2, 3, 3 ];0.000; 32;FastAbelian;{I:abelianization}
+8;3;[ 2, 2, 4, 4, 4 ];0.030; 51;FastAbelian;{[ $.2 * $.3, $.1 * $.2, $.1 * $.2 * $.3, $.1 * $.2 * $.3, $.1 * $.3 ]}
+60;11;[ 2, 2, 2, 3 ];0.000; 32;FastAbelian;{I:KW}
+8;2;[ 2, 2, 2, 2, 2, 4 ];0.000; 32;FastAbelian;{I:abelianization}
+12;2;[ 2, 2, 2, 2, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+12;1;[ 2, 2, 2, 3, 3 ];0.000; 32;FastAbelian;{I:abelianization}
+16;2;[ 2, 2, 4, 8 ];0.000; 32;FastAbelian;{I:order}
+12;5;[ 2, 2, 2, 3, 3 ];0.000; 32;FastAbelian;{[ $.1, $.2, $.1 * $.2, $.3, $.3^2 ]}
+12;1;[ 2, 2, 2, 2, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+12;4;[ 2, 2, 2, 2, 6 ];0.030; 32;FastAbelian;{[ $.2, $.2, $.1, $.2 * $.3, $.1 * $.2 * $.3 ]:[ $.1 * $.3^2, $.2 * $.3, $.1 * $.2 * $.3, $.1 * $.2, $.1 * $.2 * $.3^2 ]}
+16;3;[ 2, 2, 4, 8 ];0.000; 32;FastAbelian;{I:order}
+24;10;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:abelianization}
+12;1;[ 3, 3, 3, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+6;1;[ 2, 2, 3, 3, 3, 3 ];0.010; 32;FastAbelian;{[ $.2, $.2, $.2, $.2, $.1 * $.2, $.1 ]}
+8;1;[ 2, 2, 2, 2, 2, 4 ];0.000; 32;FastAbelian;{I:abelianization}
+16;14;[ 2, 2, 4, 8 ];0.000; 32;FastAbelian;{I:order}
+16;9;[ 2, 2, 4, 8 ];0.030; 51;FastAbelian;{}
+16;7;[ 2, 2, 4, 8 ];0.040; 51;FastAbelian;{[ $.2 * $.4, $.3, $.1 * $.2 * $.3, $.1 * $.3 * $.4 ]}
+24;14;[ 2, 2, 2, 12 ];0.000; 32;FastAbelian;{I:order}
+16;4;[ 2, 2, 4, 8 ];0.000; 32;FastAbelian;{I:order}
+18;4;[ 2, 2, 3, 9 ];0.000; 32;FastAbelian;{I:order}
+12;2;[ 2, 4, 4, 6 ];0.000; 32;FastAbelian;{I:abelianization}
+30;4;[ 2, 2, 3, 3 ];0.000; 32;FastAbelian;{I:KW}
+40;1;[ 2, 2, 2, 4 ];0.000; 32;FastAbelian;{I:abelianization}
+30;3;[ 2, 2, 2, 6 ];0.000; 32;FastAbelian;{I:order}
+4;1;[ 2, 2, 2, 2, 2, 2, 2, 2, 2 ];0.000; 32;FastAbelian;{I:abelianization}
+20;3;[ 2, 2, 2, 2, 2 ];0.000; 32;FastAbelian;{I:abelianization}
+20;3;[ 2, 2, 4, 4 ];0.030; 32;FastAbelian;{[ $.1, $.1 * $.2 * $.3^4, $.2 * $.3^4, $.2 ]}
