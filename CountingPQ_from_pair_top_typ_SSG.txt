@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-// The first two scripts takes in input a spherical system of generators V of G and an automorphism f 
+// The first two scripts take in input a spherical system of generators V of G and an automorphism f 
 // of G. It returns true if f is of braid type on V, and false otherwise. 
 // The first script works for G abelian group, and the second for G not abelian (in which case we 
 // need to give one input more, namely the orbit of V by the braid group. This is computable through
