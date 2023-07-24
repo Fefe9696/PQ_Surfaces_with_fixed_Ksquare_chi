@@ -6,6 +6,8 @@ The algorithm is explained in Section 4.8 of
 
 [PhDThesis] F. Fallucca, [On the degree of the canonical map of surfaces of general type](https://fefe9696.github.io/federico.fallucca.github.io/Files/PhDThesis.pdf)
 
+In addition, each function in each script has a brief explanation of what it does and how it works. 
+
 The algorithm uses also a database of topological types of Galois coverings of the projective line, which can be found here: [TipiTopo](https://mate.unipv.it/ghigi/tipitopo/)
 
 The algorithm to produce the database of topological types is explained here
