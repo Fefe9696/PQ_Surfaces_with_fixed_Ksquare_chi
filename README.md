@@ -24,7 +24,7 @@ If you use these codes in your research, please quote our works!
 The program contains three main Magma scripts:
 
 ### FindSurfaces_with_fixed_Ksquare_chi.txt
-Produce the list of all regular Product-Quotinet surfaces as pairs of spherical systems of generators having prescribed invariants Ksquare and chi. 
+Produce the list of all families of regular Product-Quotinet surfaces as pairs of spherical systems of generators having prescribed invariants Ksquare and chi. 
 
 This script works by using the following main secondary scripts:
 1. List_of_types_compatible_with_basket_with_fixed_Ksquare_and_chi <!--It produces a list, for given Ksquare and chi, of all possible baskets and for each basket all possible signatures. The list produced as is passed to the next script.-->
