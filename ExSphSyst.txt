@@ -7,8 +7,6 @@
 
 // This script loads the database developed by CGP and some useful functions of their work, as 
 // FrobeniusSum and ScottTest. In this way, the function ExSphSyst performs faster. 
-// For this reason, we ask to the reader to download also the scripts gullinbursti from the webpage
-// "https://mate.unipv.it/ghigi/tipitopo/".
 
 load "gullinbursti14-Jul-23/magma/include/genus.m";
 load "gullinbursti14-Jul-23/magma/include/sequences.m";

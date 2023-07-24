@@ -8,9 +8,7 @@
 // 3) group admits AT LEAST a pair of spherical systems of generators that are 
 //    compatible with the pair of signatures, and gives the prescribed basket. 
 
-// This script uses the function ExSphSyst. For this reason, the reader need to
-// download the folder gullinbursti developed by CGP to the following website
-// "https://mate.unipv.it/ghigi/tipitopo/".
+// This script uses the function ExSphSyst.
 
 load "ExSphSyst.txt";
 load "List_of_types_compatible_with_basket_with_fixed_Ksquare_and_chi.txt";
@@ -41,13 +39,13 @@ end function;
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 // The next script runs a systematic search on all finite groups and
-// produces the list of all triples (basket, pair of signatures, group)
+// produces the list of all triples (basket, pair of signatures, IdentifyGroup(group))
 // such that
-// 1) the basket is compatible with the input K^2;
+// 1) the basket is compatible with the input Ksqaure;
 // 2) the signatures are compatible with the basket;
-// 3) the group has order (K^2+k)/(2*Theta_1*Theta_2) (see Prop. 4.7.4.b)
+// 3) the group has order (K^2+k)/(2*Theta_1*Theta_2) (see Prop. 4.6.4.b)
 //    and sets of spherical generators of both signatures.
-// As remarked in Section 4.9, if the orders of the abelianization of the 
+// As remarked in Section 4.8, if the orders of the abelianization of the 
 // orbifold groups T1 and T2 of the pair of signatures are coprime, then 
 // the group must be perfect.
 // In this case, the program first checks if there are perfect groups of
@@ -65,7 +63,7 @@ ListGroups:=function(Ksquare, chi: badorders:={256,512,640,768,1152,1280,
   for pair in ListOfTypes(Ksquare, chi) do
     basket:=pair[1]; types:=pair[2]; k:=Invk(basket);
   for pairoftypes in Multisets(types,2) do ord:=(Ksquare+k)/2;
-    pairoftypes; //DEBUG
+   // pairoftypes; //DEBUG
     for T in pairoftypes do ord:=ord/Theta(T);
     end for;
   if IsIntegral(ord) then
@@ -77,7 +75,7 @@ ListGroups:=function(Ksquare, chi: badorders:={256,512,640,768,1152,1280,
   else for G in SmallGroups(IntegerRing()!ord: Warning := false) do
     test:=true;
     groupData:=GroupData(G);
-    IdentifyGroup(G);  //DEBUG
+   // IdentifyGroup(G);  //DEBUG
     for T in pairoftypes do
        if not ExSphSystem(groupData,T) then test:=false; break T;
        end if;
@@ -186,7 +184,7 @@ end function;
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// ExistingSurfaces runs on the first output of ListGroups(K2,chi), 
+// ExistingSurfaces runs on the first output of ListGroups(Ksquare,chi), 
 // and throws away all triples giving rise only to surfaces whose singularities 
 // do not correspond to the basket.
 

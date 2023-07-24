@@ -123,10 +123,10 @@ end function;
 // Instead, if V1 and V2 are in the same orbit, then we have to mod out 
 // the produced list by the involution relation Phi-->Phi^{-1}, as stated in Corollary 4.5.10. 
 // The output of the script is the set of pairwise distinct families of 
-// product-quotient surfaces given by the pair of topological types of $G$-coverings of V1 
+// product-quotient surfaces given by the pair of topological types of G-coverings of V1 
 // and V2.
 
-// WARNING: If V1 and V2 are in the same orbit, please fix V2:=V1 and run the code with the pair 
+// WARNING: If V1 and V2 are in the same orbit, please choose V2:=V1 and run the code with the pair 
 // V1,V1.  
 
 CountingPQ_from_V1V2:=function(V1,V2, G, r, P)

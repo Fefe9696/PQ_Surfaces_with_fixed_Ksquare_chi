@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-// We need to find, for each K^2 and chi, which are the possible baskets of
+// We need to find, for each Ksquare and chi, which are the possible baskets of
 // singularities. By Corollary 4.4.3 the sum of the invariants B of the
-// singularities must equal 3*(8*chi-K^2).
+// singularities must equal 3*(8*chi-Ksquare).
 //
 // We will represent a singular point of type 1/n(1,a) by the rational 
 // number a/n; hence a basket of singularities will be a multiset of 
@@ -180,7 +180,7 @@ Baskets:=function(B)
   return baskets;
 end function;
 
-// Now we have found, for each K^2 and chi, a finite and rather small number of
+// Now we have found, for each Ksquare and chi, a finite and rather small number of
 // possible baskets. The next step is to restrict, for each basket, to finitely
 // many signatures. We will represent a signature as the multiset of naturals 
 // {* m_i *}.
@@ -230,7 +230,7 @@ end function;
 // The next script, ListOfTypesBas, finds all signatures compatible with the
 // basket in the input (i.e., which respect Proposition 4.6.4).
 // We use
-// 1) Theta<= maxTh:=(K^2+k)/4 (follows from Proposition 1.14.a),
+// 1) Theta<= maxTh:=(Ksquare+k)/4 (follows from Proposition 4.6.4),
 // 2) #signature<= 2*Theta+4 (follows from the definition of Theta).
 
 ListOfTypesBas:=function(basket, chi)
@@ -255,7 +255,7 @@ end function;
 
 
 // Finally, we can conlude the second step, by writing a script which
-// lists, for given K^2 and chi, all possible baskets (by using Baskets) and for
+// lists, for given Ksquare and chi, all possible baskets (by using Baskets) and for
 // each basket all possible signatures (by using ListOfTypesBas)
 
 ListOfTypes:=function(Ksquare, chi)

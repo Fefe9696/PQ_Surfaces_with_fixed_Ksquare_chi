@@ -10,10 +10,9 @@ load"gullinbursti14-Jul-23/magma/include/admissible.m";
 
 load"BasketAndInvariants.txt";
 
-// This function takes in input a triple (basket, pairoftypes, group) and returns 
+// This function takes in input a triple (basket, pairoftypes, IdentifyGroup(group)) and returns 
 // the list of all pairs of spherical systems of generators of group which are compatible with 
-// the pair of signatures pairoftypes and whose family of product-quotient surfaces has
-// basket as basket of singularities. 
+// the pair of signatures pairoftypes and gives the prescribed basket as basket of singularities. 
 
 FindSurfaces:=function(basket, pairoftypes, IdG)
    Pairs_Top_Types_comp_types:=[];
