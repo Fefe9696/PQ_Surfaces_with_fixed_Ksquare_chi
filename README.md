@@ -18,7 +18,7 @@ and it is available here: [gulliinbursti](https://github.com/diego-conti/gullinb
 
 If you use these codes in your research, please quote our works!
 
-## Main Magma scripts
+### Main Magma scripts
 The program contains four main Magma scripts:
 
 ###Ciao
