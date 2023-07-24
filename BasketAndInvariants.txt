@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
-//These are the tools to compute the Basket of Singularities of C_1xC_2/G and the invariants of its product quotients surface S. 
+//These are the tools to compute the invariants of a Product-Quotient surface and the basket of singularities of its quotient model. 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -59,8 +59,7 @@ end function;
 
 // Now we focus on product-quotient surfaces.
 // First we plan to study the basket of C1xC2/H
-// In RegP-QByPgGamma.magma we compute the basket of C1xC2/G, 
-// by running several times BasketByAPairOfGens, computing, 
+// We compute the basket of C1xC2/G, computing, 
 // for a pair of elements of G, one for each set of spherical 
 // generators, all the singular points of C1xC2/G lying over 
 // the corresponding point of (C1/G)x(C2/G)
