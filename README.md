@@ -12,9 +12,9 @@ The algorithm uses also a database of topological types of Galois coverings of t
 
 The algorithm to produce the database of topological types is explained here
 
-[CGP] D. Conti, A. Ghigi, R. Pignatelli. Topological types of actions on curves [doi:10.1007/s13398-021-01195-0](https://doi.org/10.1007/s13398-021-01195-0)
+[CGP] D. Conti, A. Ghigi, R. Pignatelli. Topological types of actions on curves [doi:10.1016/j.jsc.2023.01.002](https://www.sciencedirect.com/science/article/abs/pii/S0747717123000020?via%3Dihub)
 
-[CGP2] D. Conti, A. Ghigi, R. Pignatelli. Some evidence for the Coleman-Oort conjecture. [arXiv:2102.12349](http://arxiv.org/abs/2102.12349)
+[CGP2] D. Conti, A. Ghigi, R. Pignatelli. Some evidence for the Coleman-Oort conjecture. [doi:10.1007/s13398-021-01195-0](https://doi.org/10.1007/s13398-021-01195-0)
 
 and it is available here: [gulliinbursti](https://github.com/diego-conti/gullinbursti)
 
