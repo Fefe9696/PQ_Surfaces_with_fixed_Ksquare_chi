@@ -21,7 +21,7 @@ and it is available here: [gulliinbursti](https://github.com/diego-conti/gullinb
 If you use these codes in your research, please quote our works!
 
 ### Main Magma scripts
-The program contains five main Magma scripts:
+The program contains three main Magma scripts:
 
 ### FindSurfaces_with_fixed_Ksquare_chi.txt
 Produce the list of all regular Product-Quotinet surfaces as pairs of spherical systems of generators having prescribed invariants Ksquare and chi. 
