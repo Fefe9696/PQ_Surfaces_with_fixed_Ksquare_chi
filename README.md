@@ -3,6 +3,7 @@
 A [Magma](http://magma.maths.usyd.edu.au/magma/) program which gives in input a pair of natural integers Ksquare and chi and returns all regular surfaces S of general type with Ksequare(S)=Ksquare and chi(S)=chi, which are Product-Quotient surfaces.
 
 The algorithm is explained in Section 4.8 of 
+
 [PhDThesis] F. Fallucca, [On the degree of the canonical map of surfaces of general type](https://fefe9696.github.io/federico.fallucca.github.io/Files/PhDThesis.pdf)
 
 The algorithm uses also a database of topological types of Galois coverings of the projective line, which can be found here: [TipiTopo](https://mate.unipv.it/ghigi/tipitopo/)
