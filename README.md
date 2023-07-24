@@ -40,5 +40,5 @@ In this way, each Product-Quotient surface S of the family given by the pair of 
 The main function of this script is "ExSphSyst", which takes in input a group G and a signature M and returns true if there exists at least one spherical system of generators of G compatible with that signature, and false otherwise. 
 
 ### CountingPQ_from_pair_top_typ_SSG.txt
-This script is the main result of Chapter 4 of my thesis. It takes in input a pair of spherical systems V1 and V2 of a group G
+This is the main original result of Chapter 4 of my thesis. It takes in input a pair of spherical systems V1 and V2 of a group G
 and produces the set of pairwise distinct families of Product-Quotient surfaces given by the pair of topological types of G-coverings of V1 and V2. 
