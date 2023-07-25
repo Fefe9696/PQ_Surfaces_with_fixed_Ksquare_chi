@@ -1,6 +1,6 @@
 # Classification_Product-Quotient_surfaces_with_fixed_Ksquare_and_chi
 
-A [Magma](http://magma.maths.usyd.edu.au/magma/) program which gives in input a pair of natural integers Ksquare and chi and returns all regular surfaces S of general type with Ksequare(S)=Ksquare and chi(S)=chi, which are Product-Quotient surfaces.
+A [Magma](http://magma.maths.usyd.edu.au/magma/) program which gives in input a pair of natural integers Ksquare and chi and returns all regular surfaces S of general type with Ksquare(S)=Ksquare and chi(S)=chi, which are Product-Quotient surfaces.
 
 The algorithm is explained in Section 4.8 of 
 
