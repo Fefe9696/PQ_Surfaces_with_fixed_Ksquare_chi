@@ -20,7 +20,8 @@ FindSurfaces:=function(basket, pairoftypes, IdG)
 
 
    for type in pairoftypes do 
-      test, generators:=generatorsFromDb(G, MultisetToSequence(type));
+      test, generators:=generatorsFromDb(G, MultisetToSequence(type)); 
+      //test, generators:=generatorsFromDb(G,IdG[1],IdG[2], MultisetToSequence(type));
       if test then 
         Include(~Pairs_Top_Types_comp_types, generators); 
       elif generators eq "not present in database" then 
@@ -57,9 +58,11 @@ FindSurfaces_with_Fixed_Ksquare_chi:=function(ExistingSurfaces)
    AllSurfaces_with_Fixed_Ksquare_chi:=[**];
    
    for triple in ExistingSurfaces do 
-      for x in FindSurfaces(triple[1], triple[2], triple[3]) do 
-        Append(~AllSurfaces_with_Fixed_Ksquare_chi, x);
-      end for;
+      //triple ; //DEBUG
+      Append(~AllSurfaces_with_Fixed_Ksquare_chi, FindSurfaces(triple[1], triple[2], triple[3]));
+     // for x in FindSurfaces(triple[1], triple[2], triple[3]) do 
+      //  Append(~AllSurfaces_with_Fixed_Ksquare_chi, x);
+     // end for;
    end for;
    return AllSurfaces_with_Fixed_Ksquare_chi;
 end function;

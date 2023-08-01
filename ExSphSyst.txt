@@ -111,7 +111,7 @@ end function;
 // compatible with that signature, and false otherwise. 
 
 ExSphSystem:=function(groupData, M)
-   test, reason, G:=generatorsFromDb(groupData`group, MultisetToSequence(M));
+   test, reason, G:=generatorsFromDb(groupData`group,MultisetToSequence(M));
    CC_G:=ConjugacyClasses(G);
 
    if test then

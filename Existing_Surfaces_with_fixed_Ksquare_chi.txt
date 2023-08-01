@@ -67,21 +67,30 @@ ListGroups:=function(Ksquare, chi: badorders:={256,512,640,768,1152,1280,
     for T in pairoftypes do ord:=ord/Theta(T);
     end for;
   if IsIntegral(ord) then
-  if GCD([ AbelianizationOrbifoldGroup(T): T  in pairoftypes] ) eq 1 and
+     ordAbelT:=[ AbelianizationOrbifoldGroup(T): T  in pairoftypes];
+  if GCD(ordAbelT ) eq 1 and
      NumberOfGroups(PerfectGroupDatabase(),IntegerRing()!ord) eq 0
        then ;
   elif ord gt 2000 or ord in Include(badorders,1024) then
      Append(~tocheck, [* basket, pairoftypes, ord *]);
   else for G in SmallGroups(IntegerRing()!ord: Warning := false) do
     test:=true;
-    groupData:=GroupData(G);
-   // IdentifyGroup(G);  //DEBUG
-    for T in pairoftypes do
-       if not ExSphSystem(groupData,T) then test:=false; break T;
-       end if;
+    ordAbelG:=#quo<G|DerivedGroup(G)>;
+    if IsDivisibleBy(ordAbelT[1], ordAbelG) then 
+     if IsDivisibleBy(ordAbelT[2], ordAbelG) then 
+        groupData:=GroupData(G);
+        // IdentifyGroup(G);  //DEBUG
+        for T in pairoftypes do
+           if not ExSphSystem(groupData,T) then test:=false; break T;
+        end if;
+        end for;
+      if test then Append(~checked, [* basket, pairoftypes, IdentifyGroup(G) *]);
+         //[* basket, pairoftypes, IdentifyGroup(G) *]; //DEBUG
+      end if; 
+     end if;
+    end if;
     end for;
-    if test then Append(~checked, [* basket, pairoftypes, IdentifyGroup(G) *]);
-    end if; end for;
+    
   end if; end if; end for; end for;
  return checked, tocheck;
 end function;
@@ -191,6 +200,7 @@ end function;
 ExistingSurfaces:=function(ListGrps)
   X:=[**];
   for triple in ListGrps do 
+     //triple; //DEBUG
      basket:=triple[1]; pairoftypes:=triple[2]; G:=SmallGroup(triple[3][1], triple[3][2]);
      groupData:=GroupData(G);
      
