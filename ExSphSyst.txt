@@ -115,7 +115,9 @@ ExSphSystem:=function(groupData, M)
    CC_G:=ConjugacyClasses(G);
 
    if test then
+     if #reason ne 0 then 
       return test;
+     end if;
    else
       if reason eq "not present in database" then 
           //f:=ClassMap(G);
