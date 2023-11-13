@@ -35,11 +35,27 @@ FindSurfaces:=function(basket, pairoftypes, IdG)
           break type;
       end if;
    end for;
+
    Pairs_Top_Types_comp_types:={{* x, y*}: x in Pairs_Top_Types_comp_types[1], y in Pairs_Top_Types_comp_types[2]};
    
    r,P:=PermutationRepresentation(AutomorphismGroup(G));
-   PQ_from_V1V2_comp_with_basket:=[*basket, [**], IdG*];
+   PQ_from_V1V2_comp_with_basket:=[* basket, [**], IdG *];
+   
+   Pairs_Top_Types_comp_types_and_basket:={};
+
    for pair_of_ssg in Pairs_Top_Types_comp_types do 
+     pair_of_ssg_seq:=MultisetToSequence(pair_of_ssg);
+     
+     for phi in P do 
+      phiV2:=[(phi @@ r)(pair_of_ssg_seq[2][i]) : i in [1..#pair_of_ssg_seq[2]] ];
+      if CheckSings(basket, pair_of_ssg_seq[1], phiV2, G) then 
+         Include(~Pairs_Top_Types_comp_types_and_basket, pair_of_ssg); 
+         break phi;
+      end if;
+     end for;
+   end for; 
+
+   for pair_of_ssg in Pairs_Top_Types_comp_types_and_basket do 
      pair_of_ssg_seq:=MultisetToSequence(pair_of_ssg);
      PQ_from_V1V2:=CountingPQ_from_V1V2(pair_of_ssg_seq[1], pair_of_ssg_seq[2], G, r,P);
      for PQ in PQ_from_V1V2 do 
