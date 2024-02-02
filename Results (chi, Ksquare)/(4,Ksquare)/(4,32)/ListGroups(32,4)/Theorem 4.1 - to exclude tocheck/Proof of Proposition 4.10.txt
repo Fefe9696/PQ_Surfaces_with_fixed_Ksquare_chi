@@ -1,0 +1,348 @@
+load"HowToExclude.txt";
+load"HowToExcludePG.txt";
+load"Signatures_Intermediate_Quotients.txt";
+
+// We load tocheck list and select only those triples having an order group greater than 2000 or equal to 1024
+
+List:=[*x : x in tocheck | x[3] gt 2000 or x[3] eq 1024*]; //This is Tables 3 and 4 
+
+#List; 
+65 
+
+// Now we consider only those triples that have not perfect groups and have abelianization that is a prime number. We then generate the intermediate signatures of G' for each of these triples
+
+
+Result, NotSatisfyProp41, PerfectGroups:=List_Intermediate_Sign(List);
+
+#PerfectGroups; // These are the first 18 lines of Table 3 
+18
+
+NotSatisfyProp41;
+[* [*
+    {* *},
+    {*
+        {* 2, 3, 12 *}^^2
+    *},
+    2304
+*], [*
+    {* *},
+    {*
+        {* 2, 4, 6 *}^^2
+    *},
+    2304
+*], [*
+    {* *},
+    {*
+        {* 2, 4, 8 *}^^2
+    *},
+    1024
+*] *]
+
+#Result; \\ These are Tables 7 and 8 
+61
+
+// We prove that there are no perfect groups G' having compatible algebraic data with one of the triples of Result
+
+load"Script_to_remove_tocheckPG.txt"
+
+how_to_excludePG(Result);
+[* *]
+
+// In this way, we have removed triples of Table 5 and 6 from no.19 to no.36 (with the exception of no.19(c),20(c),21(c),25(c),26(c)) together with no.55
+
+// We can automatically exclude 26(c), 53, 57, 61 since from Lemma 4.11 of "BCG - The Classification of surfaces with pg=q=0 isogenous to a product of curves", there are no groups of order 768 having signature [4,4,4]. 
+
+// Note that we have excluded all groups of order 768 of Tables 5 and 6. 
+
+// Now let us consider the list of triples of Table 5 and 6 having an abelianization that is not 1 and a group order different from 768. 
+
+List2:=[*x : x in Result| GCD([AbelianizationOrbifoldGroup(T): T in x[2]]) ne 1 and x[3] ne 768 *];
+
+// We exclude from the list 26(c) and 53
+
+List2:=[* x : x in List2| x ne [*{**},{*{*3,3,4*},{*2,6,6*}*},2304*] and x ne [*{**},{*{*3,3,4*},{*3,3,6*}*},2304*] *];
+
+#List2;
+27
+
+// Now we exclude the triples of List2 that have a group order less than 2000
+
+load"Script_to_remove_tocheck.txt";
+
+tocheck_compatible, tocheck_compatible_ordAbelTi:=how_to_exclude(List2);
+
+tocheck_compatible;
+[*[*
+    {* *},
+    {*
+        {* 2^^3, 3 *},
+        {* 2^^3, 6 *}
+    *},
+    <864, 2225>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^3, 3 *},
+        {* 2^^3, 6 *}
+    *},
+    <864, 4175>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^3, 3 *},
+        {* 2^^3, 10 *}
+    *},
+    <720, 764>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^3, 3 *},
+        {* 2^^3, 10 *}
+    *},
+    <720, 771>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    <1728, 12317>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    <1728, 32133>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    <1728, 46099>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    <1728, 46119>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    <1728, 47853>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    <1728, 47900>
+*]*]
+
+ExistingSurfaces(tocheck_compatible); 
+[* *]
+
+// Let us consider the remain triples no.50,51,52,54
+
+List3:=[* x : x in List2 | x[3] in {2016,4608,3200,2880}*];
+
+List3;
+[* [*
+    {* *},
+    {*
+        {* 3^^2, 4 *},
+        {* 3^^2, 7 *}
+    *},
+    2016
+*], [*
+    {* *},
+    {*
+        {* 3^^2, 4 *}^^2
+    *},
+    4608
+*], [*
+    {* *},
+    {*
+        {* 2, 5^^2 *}^^2
+    *},
+    3200
+*], [*
+    {* *},
+    {*
+        {* 3^^2, 4 *},
+        {* 3^^2, 5 *}
+    *},
+    2880
+*] *]
+
+Result2, NotSatisfyProp41_2, PerfectGroups_2:=List_Intermediate_Sign(List3);
+
+Result2;
+[* [*
+    {* *},
+    {*
+        {* 4^^3 *},
+        {* 7^^3 *}
+    *},
+    672
+*], [*
+    {* *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    1536
+*], [*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    640
+*], [*
+    {* *},
+    {*
+        {* 4^^3 *},
+        {* 5^^3 *}
+    *},
+    960
+*] *]
+
+// We run HowToExcludePG on Result2 to delete List3[1] and List3[4] automatically
+
+time tocheck_compatible2:=how_to_excludePG(Result2);
+
+tocheck_compatible;
+[* *]
+
+// Now we try to exclude List3[3]. We run how_to_exclude on Result2[3] and we obtain 
+
+tocheck_compatible2, tocheck_compatible_ordAbelTi2:=how_to_exclude([*Result2[3]*]);
+
+#tocheck_compatible2;
+130
+
+// Now we run ExistingSurfaces to require the algebraic data match with the empty basket
+
+time ExSurf:=ExistingSurfaces(tocheck_compatible2); 
+
+Time: 952.740
+#ExSurf;
+4
+
+ExSurf;
+[*[*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    <640, 7665>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    <640, 8697>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    <640, 12278>
+*],
+[*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    <640, 15814>
+*]*]
+
+
+// However, since Result2[3] comes from List3[3], then the group G of order 3200 should be a semidirect product of one of the groups H of ExSurf and C5, via an automorphism phi of H of order 5.
+// We see that there are no semidirect products of H and C5 having abelianization C5. 
+
+K:=SmallGroup(5,1);
+Final:=[**];
+for x in ExSurf do 
+  H:=SmallGroup(x[3][1],x[3][2]);
+  AutH:=AutomorphismGroup(H);
+  r, P:=PermutationRepresentation(AutH);
+  ord5:={phi: phi in P| Order(phi) eq 5 };
+  #ord5;
+  for phi in ord5 do
+    t:=hom<K -> AutH| <K.1, phi @@ r>>;
+    G:=SemidirectProduct(H,K,t);
+     cardGab:=#quo<G|DerivedGroup(G)>;
+    if  cardGab eq 5 then
+      Append(~Final, [*x, phi @@ r*]);
+    else 
+      false; cardGab;
+    end if;
+  end for; 
+end for; 
+
+4
+false
+80
+false
+80
+false
+80
+false
+80
+
+4
+false
+80
+false
+80
+false
+80
+false
+80
+
+4
+false
+80
+false
+80
+false
+80
+false
+80
+
+4
+false
+80
+false
+80
+false
+80
+false
+80
+
+// Hence we can also exclude List3[3]
+
+// Now let us discuss List3[2]. We run ExSphSystem on each group of order 1536 to prove that it does not admit a spherical system of generators of signature [4,4,4]. 
+
+Result:=[**];
+for i in [1..NumberOfSmallGroups(1536)] do
+  if ExSphSystem(1536,i,{*4^^3*}) then 
+    Append(~Result, <1536,i>); 
+  end if; 
+  i; // DEBUG 
+end for;
+Result;                                       
+[* *]
+
+Remark: This computation needs more or less 1 week and the following memory usage:
+Total memory usage: 1072.44MB

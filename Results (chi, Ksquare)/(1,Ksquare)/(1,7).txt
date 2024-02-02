@@ -1,0 +1,11 @@
+load"FindSurfaces_with_fixed_Ksquare_chi.txt";
+
+time FindSurfaces_with_Fixed_Ksquare_chi(ExistingSurfaces(ListGroups(7,1)));
+
+
+Time: 0.000
+Total memory usage: 32.09MB
+
+[* *]
+
+

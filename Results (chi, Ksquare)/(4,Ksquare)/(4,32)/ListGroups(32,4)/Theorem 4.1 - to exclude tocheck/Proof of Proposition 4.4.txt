@@ -1,0 +1,205 @@
+
+load"HowToExclude.txt";
+load"HowToExcludePG.txt";
+ 
+// load "tocheck" list, that is the secondary output of ListGroups(32,4).
+
+// We select those triples having a group order different from 1024 and less or equal than 2000. 
+
+List:=[* x : x in tocheck | x[3] ne 1024 and x[3] le 2000 *];
+#List;
+87
+
+{x[3]: x in List};
+{ 512, 594, 640, 768, 960, 1152, 1536, 1920 }
+
+// Let us exclude triples with group order 1536, which takes a lot time and needs to be treated separately 
+
+Interested_orders:={x[3]: x in tocheck | x[3] le 2000 and x[3] ne 1024 and x[3] ne 1536};
+Interested_orders;
+{ 512, 594, 640, 768, 960, 1152, 1920 }
+
+// After loaded how_to_exclude function, we run 
+
+time tocheck_compatible, tocheck_compatible_ordAbelTi:=how_to_exclude(tocheck:Interested_orders:={ 512, 594, 640, 768, 960, 1152, 1920 });
+
+Time: 22335.810
+Total memory usage: 265.56MB
+#tocheck_compatible;
+5
+
+tocheck_compatible;
+[*[*
+    {* *},
+    {*
+        {* 2, 4, 6 *},
+        {* 2^^3, 4 *}
+    *},
+    <768, 1086051>
+*], 
+[*
+    {* *},
+    {*
+        {* 2, 4, 6 *},
+        {* 2^^3, 4 *}
+    *},
+    <768, 1086052>
+*],
+[*
+    {* *},
+    {*
+        {* 2, 4, 5 *},
+        {* 2, 4, 12 *}
+    *},
+    <1920, 240996>
+*],
+[*
+    {* *},
+    {*
+        {* 2, 4, 6 *},
+        {* 2, 4, 12 *}
+    *},
+    <1152, 157849>
+*],
+[*
+    {* *},
+    {*
+        {* 2, 4, 6 *},
+        {* 2, 4, 20 *}
+    *},
+    <960, 5719>
+*]*];
+
+ExistingSurfaces(tocheck_compatible);
+[* *]
+
+
+// Now we consider those triple having group order 1536
+
+// MAGMA kills the program if you run how_to_exclude on the entire list of triples with group order 1536.
+
+//Load tocheck list and select the triples having group order 1536
+
+A:=[* x : x in tocheck | x[3] eq 1536*];
+
+A;
+[*[*
+    {* *},
+    {*
+        {* 2, 3, 8 *},
+        {* 4^^3 *}
+    *},
+    1536
+*],
+[*
+    {* *},
+    {*
+        {* 2, 3, 12 *},
+        {* 2, 4, 8 *}
+    *},
+    1536
+*],
+[*
+    {* *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 8^^2 *}
+    *},
+    1536
+*],
+[*
+    {* *},
+    {*
+        {* 2, 4, 6 *},
+        {* 2, 4, 8 *}
+    *},
+    1536
+*],
+[*
+    {* *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2^^3, 4 *}
+    *},
+    1536
+*]*];
+
+////////////////////////////////////////////////
+
+tocheck:=[*A{1]*];
+
+Time: 161987.290 more or less 45 hours 
+
+Total memory usage: 740.16MB
+
+#tocheck_compatible_ordAbelTi;
+150
+#tocheck_compatible;
+0
+
+tocheck_compatible;
+[* *]
+
+////////////////////////////////////////////////
+
+tocheck:=[*A[2]*];
+
+Time: 162286.050
+
+Total memory usage: 740.16MB
+
+#tocheck_compatible_ordAbelTi;
+150
+#tocheck_compatible;
+0
+
+tocheck_compatible;
+[* *]
+
+////////////////////////////////////////////////
+
+tocheck:=[*A[3]*];
+
+Time: 162107.930
+
+Total memory usage: 740.16MB
+
+#tocheck_compatible_ordAbelTi;
+150
+#tocheck_compatible;
+0
+
+tocheck_compatible;
+[* *]
+
+////////////////////////////////////////////////
+
+tocheck:=[*A[4]*];
+
+Time: 162952.370
+
+Total memory usage: 759.66MB
+
+#tocheck_compatible_ordAbelTi;
+1688
+#tocheck_compatible;
+0
+
+tocheck_compatible;
+[* *]
+
+////////////////////////////////////////////////
+
+tocheck:=[*A[5]*];
+
+Time: 161627.150
+
+Total memory usage: 740.16MB
+
+#tocheck_compatible_ordAbelTi;
+150
+#tocheck_compatible;
+0
+
+tocheck_compatible;
+[* *]

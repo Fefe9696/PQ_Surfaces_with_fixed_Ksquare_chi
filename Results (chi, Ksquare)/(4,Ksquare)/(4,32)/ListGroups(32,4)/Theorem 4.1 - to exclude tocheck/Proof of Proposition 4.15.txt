@@ -1,0 +1,111 @@
+// We select only triples no.65 of Table 4
+
+List:=[* [*{**}, {*{*2,4,8*}^^2*}, 1024*]*];
+
+load"HowToExclude.txt";
+load"HowToExcludePG.txt";
+load"Signatures_Intermediate_Quotients.txt";
+
+
+List_Int_Quo:=List_Intermediate_Sign_from_a_triple(List[1],2); // This is Table 10 
+
+load"HowToExclude.txt";
+
+time tocheck_compatible, tocheck_compatible_ordAbelTi:=how_to_exclude(List_Int_Quo);
+
+Time: 14000.150
+
+ #tocheck_compatible;
+114
+
+ExSurf:=ExistingSurfaces(tocheck_compatible);
+
+ExSurf;
+[* [*
+    {* *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <512, 325>
+*], [*
+    {* *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <512, 335>
+*], [*
+    {* *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <512, 351>
+*] *]
+
+
+Ab:=SmallGroup(8,2);
+GroupName(Ab); // C4xC2
+T:=AllSubgroups(Ab);
+#T; // 8
+IdQuoT:={};
+for i in [1..#T] do 
+ Include(~IdQuoT,IdentifyGroup(quo<Ab|T[i ]>));
+end for;
+
+IdQuoT; // { <8, 2>, <4, 1>, <1, 1>, <4, 2>, <2, 1> }
+
+Final:=[**];
+tocheck_compatible1024:=[**];
+
+K:=SmallGroup(2,1);
+
+for x in ExSurf do 
+  H:=SmallGroup(x[3][1],x[3][2]);
+  AutH:=AutomorphismGroup(H);
+  r, P:=PermutationRepresentation(AutH);
+  ord2:={phi: phi in P| Order(phi) eq 2};
+  for phi in ord2 do 
+    t:=hom<K -> AutH| <K.1, phi @@ r>>;
+    G:=SemidirectProduct(H,K,t);
+    Append(~Final, [* x, phi, IdentifyGroup(quo<G|DerivedGroup(G)>)*]);
+    if IdentifyGroup(quo<G|DerivedGroup(G)>) in IdQuoT then
+       IdentifyGroup(quo<G|DerivedGroup(G)>);
+           if  ExSphSystem_givenG(G,{*2,4,8*}) then 
+             Append(~tocheck_compatible1024,[*{**},{*{*2,4,8*}^^2*},G*]); 
+           end if; 
+    end if;
+    
+  end for;
+end for;
+
+{x[3] : x in Final };
+{ <16, 10>, <8, 2>, <32, 21>, <8, 5> }
+
+Final_in_IdQuoT:=[*x: x in Final | x[3] in IdQuoT*];
+#Final_in_IdQuoT;
+640
+
+#[*x : x in Final_in_IdQuoT | x[1][3] eq ExSurf[1][3]*];
+128
+#[*x : x in Final_in_IdQuoT | x[1][3] eq ExSurf[2][3]*];
+384
+#[*x : x in Final_in_IdQuoT | x[1][3] eq ExSurf[3][3]*];
+128
+
+#tocheck_compatible1024;
+640
+
+
+ExSurf1024:=[**];
+
+for x in tocheck_compatible1024 do 
+       IdentifyGroup(quo<x[3]|DerivedGroup(x[3])>); // DEBUG
+       if ExistingSurfaces_triple_givenG(x) then  
+            Append(~ExSurf1024, x);
+          end if; 
+end for;
+
+#ExSurf1024;                                                             
+0
+
+Total memory usage: 302.78MB
+

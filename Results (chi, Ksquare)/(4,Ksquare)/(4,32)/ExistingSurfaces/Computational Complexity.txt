@@ -1,0 +1,10 @@
+// We load checked list from ListGroups(32,4);
+
+time ExSurf:=ExistingSurfaces(checked);
+
+Time: 587.860
+
+#ExSurf;
+86
+
+Total memory usage: 182.66MB

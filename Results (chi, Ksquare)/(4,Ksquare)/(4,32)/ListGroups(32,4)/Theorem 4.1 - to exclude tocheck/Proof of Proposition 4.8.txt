@@ -1,0 +1,18 @@
+// From Remark 4.6, it is sufficient to prove Lemma 4.7 
+
+// load "tocheck" list, that is the secondary output of ListGroups(32,4).
+
+load"HowToExcludePG.txt";
+
+List:=[* x : x in tocheck | x[3] eq 1024 or x[3] gt 2000 *];
+#List;
+65
+
+time tocheck_compatible:=how_to_excludePG(List);
+
+Time: 28.260
+Total memory usage: 216.94MB
+
+tocheck_compatible;
+[* *]
+

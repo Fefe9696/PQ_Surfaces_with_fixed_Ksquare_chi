@@ -1,0 +1,24 @@
+// We select only triples no.63,64 of Table 4
+
+List:=[* [*{**}, {*{*2,4,6*}^^2*}, 2304*],[*{**}, {*{*2,3,12*}^^2*}, 2304*]*];
+
+load"HowToExclude.txt";
+load"HowToExcludePG.txt";
+load"Signatures_Intermediate_Quotients.txt";
+
+
+List_Int_Quo:=List_Intermediate_Sign_from_a_triple(List[1],2) cat List_Intermediate_Sign_from_a_triple(List[2],2) cat List_Intermediate_Sign_from_a_triple(List[2],3);
+// This is Table 9
+
+
+load"HowToExclude.txt";
+
+time tocheck_compatible, tocheck_compatible_ordAbelTi:=how_to_exclude(List_Int_Quo);
+
+Time: 2300.170
+
+#tocheck_compatible;
+90
+
+ExistingSurfaces(tocheck_compatible);
+[* *]

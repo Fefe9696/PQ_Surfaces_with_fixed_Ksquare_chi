@@ -1,0 +1,34 @@
+// We load ExSurf list obtained from ExistingSurfaces(ListGroups(32,4)) and the list bad of bad triples 
+
+load"FindSurfaces_with_fixed_Ksquare_chi.txt";
+
+time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map(ExSurf: bad_triples:=bad);     
+
+Time: 135357.650
+
+ #FindSurf;      
+ 80;
+
+Total memory usage: 49788.06MB 
+
+// Let us discuss each of the cases of bad
+
+load"FindSurfaces_with_fixed_Ksquare_chi.txt";
+
+time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[1]*]);
+Killed
+
+time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[2]*]);
+Killed
+
+time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[3]*]);
+Killed
+
+time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[4]*]);
+Killed
+
+time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[5]*]);
+
+
+time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[6]*]);
+
