@@ -2,11 +2,15 @@
 
 A [Magma](http://magma.maths.usyd.edu.au/magma/) program which gives in input a pair of natural integers Ksquare and chi and returns all regular surfaces S of general type with Ksquare(S)=Ksquare and chi(S)=chi, which are Product-Quotient surfaces.
 
-The algorithm is explained in Section 4.8 of 
+The algorithm is explained in Section 3.1 of
+
+F. Fallucca, On the classification of regular product-quotient surfaces with low genus and applications, (2024)
+
+This program together with the theory behind is also completly explained in Section 4.8 of 
 
 [PhDThesis] F. Fallucca, [On the degree of the canonical map of surfaces of general type](https://fefe9696.github.io/federico.fallucca.github.io/Files/PhDThesis.pdf)
 
-In addition, each function in each script has a brief explanation of what it does and how it works. 
+Each function in each script has a brief explanation of what it does and how it works. 
 
 The algorithm uses also a database of topological types of Galois coverings of the projective line, which can be found here: [TipiTopo](https://mate.unipv.it/ghigi/tipitopo/)
 
