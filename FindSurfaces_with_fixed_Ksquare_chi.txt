@@ -10,20 +10,21 @@ load"gullinbursti14-Jul-23/magma/include/admissible.m";
 
 load"BasketAndInvariants.txt";
 
+load"Deg_can_map_PQ_pg3.txt";
+
 // This function takes in input a triple (basket, pairoftypes, IdentifyGroup(group)) and returns 
 // the list of all pairs of spherical systems of generators of group which are compatible with 
 // the pair of signatures pairoftypes and gives the prescribed basket as basket of singularities. 
 
-FindSurfaces:=function(basket, pairoftypes, IdG)
+FindSurfaces:=function(basket, pairoftypes, IdG: with_deg_can_map:=false)
    Pairs_Top_Types_comp_types:=[];
    G:=SmallGroup(IdG[1],IdG[2]);
 
 
    for type in pairoftypes do 
-      test, generators:=generatorsFromDb(G, MultisetToSequence(type)); 
-      //test, generators:=generatorsFromDb(G,IdG[1],IdG[2], MultisetToSequence(type));
+      test, generators:=generatorsFixedGroupFromDb(G,IdG[1],IdG[2], MultisetToSequence(type)); 
       if test then 
-        Include(~Pairs_Top_Types_comp_types, generators); 
+        Append(~Pairs_Top_Types_comp_types, generators); 
       elif generators eq "not present in database" then 
             Append(~Pairs_Top_Types_comp_types, FindGenerators(G, MultisetToSequence(type)));
       else
@@ -60,8 +61,13 @@ FindSurfaces:=function(basket, pairoftypes, IdG)
      PQ_from_V1V2:=CountingPQ_from_V1V2(pair_of_ssg_seq[1], pair_of_ssg_seq[2], G, r,P);
      for PQ in PQ_from_V1V2 do 
          if CheckSings(basket, PQ[1], PQ[2], G) then 
-             //Append(~PQ_from_V1V2_comp_with_basket[2], [* BasketAndInvariants(PQ, G)[1], BasketAndInvariants(PQ, G)[2], BasketAndInvariants(PQ, G)[3], BasketAndInvariants(PQ, G)[4], PQ*]); //This is to check that the produced surfaces have the right invariants.
-            Append(~PQ_from_V1V2_comp_with_basket[2], PQ);
+           if with_deg_can_map then 
+             Append(~PQ_from_V1V2_comp_with_basket[2], [* BasketAndInvariants(PQ, G)[1], BasketAndInvariants(PQ, G)[2], BasketAndInvariants(PQ, G)[3], BasketAndInvariants(PQ, G)[4], PQ,
+Deg_can_map(G,PQ[1],PQ[2])*]);
+           else
+             Append(~PQ_from_V1V2_comp_with_basket[2], [* BasketAndInvariants(PQ, G)[1], BasketAndInvariants(PQ, G)[2], BasketAndInvariants(PQ, G)[3], BasketAndInvariants(PQ, G)[4], PQ*]); //This is to check that the produced surfaces have the right invariants.
+          //  Append(~PQ_from_V1V2_comp_with_basket[2], PQ);
+         end if;
          end if;
      end for; 
    end for;
@@ -70,16 +76,36 @@ end function;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-FindSurfaces_with_Fixed_Ksquare_chi:=function(ExistingSurfaces)
+FindSurfaces_with_Fixed_Ksquare_chi:=function(ExistingSurfaces : bad_triples:=[**])
    AllSurfaces_with_Fixed_Ksquare_chi:=[**];
    
-   for triple in ExistingSurfaces do 
-      //triple ; //DEBUG
+   for j in [1..#ExistingSurfaces] do 
+      triple:=ExistingSurfaces[j];
+      if #[i : i in [1..#bad_triples] | bad_triples[i] eq triple] eq 0 then 
+        // triple ; //DEBUG
       Append(~AllSurfaces_with_Fixed_Ksquare_chi, FindSurfaces(triple[1], triple[2], triple[3]));
      // for x in FindSurfaces(triple[1], triple[2], triple[3]) do 
       //  Append(~AllSurfaces_with_Fixed_Ksquare_chi, x);
      // end for;
+      end if;
    end for;
+    
+   return AllSurfaces_with_Fixed_Ksquare_chi;
+end function;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map:=function(ExistingSurfaces : bad_triples:=[**])
+   AllSurfaces_with_Fixed_Ksquare_chi:=[**];
+   
+   for j  in [1..#ExistingSurfaces] do 
+      triple:=ExistingSurfaces[j];
+      if #[i : i in [1..#bad_triples] | bad_triples[i] eq triple] eq 0 then 
+          triple ; //DEBUG
+      Append(~AllSurfaces_with_Fixed_Ksquare_chi, FindSurfaces(triple[1], triple[2], triple[3]: with_deg_can_map:=true));
+      end if;
+   end for;
+    
    return AllSurfaces_with_Fixed_Ksquare_chi;
 end function;
 

@@ -1,0 +1,39 @@
+load"FindSurfaces_with_fixed_Ksquare_chi.txt"; 
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+how_to_excludePG:=function(tocheck: Interested_orders:={1..50001})
+
+tocheck_compatible:=[* *]; 
+
+  for pair in tocheck do
+    basket:=pair[1]; pairoftypes:=pair[2]; ord:=pair[3]; 
+    if ord in Interested_orders then 
+  
+    d:=IntegerRing()!ord;
+    PG:=PerfectGroupDatabase();
+  if NumberOfGroups(PG,d) eq 0
+       then ;
+  
+  else for n in [1..NumberOfGroups(PG,d)] do
+   G:=PermutationGroup(PG,d,n);
+    test:=true;
+      <d,n>; //DEBUG  
+        orderedtypes:=MultisetToSequence(pairoftypes); 
+        orderedtypes:=[orderedtypes[3-i] : i in [1..2]]; 
+
+        for T in orderedtypes do  
+        // ExSphSystem_givenG(G,T); // DEBUG
+       if not ExSphSystem_givenG(G,T) then test:=false; break T;
+       end if;
+    end for;
+    if test then Append(~tocheck_compatible, [* basket, pairoftypes, <d,n> *]); 
+    end if; 
+        end for;
+  end if; 
+  end if; 
+  end for;
+return tocheck_compatible;
+end function;
+

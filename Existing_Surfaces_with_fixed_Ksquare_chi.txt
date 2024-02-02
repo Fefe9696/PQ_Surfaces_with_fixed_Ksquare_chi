@@ -26,9 +26,9 @@ AbelianizationOrbifoldGroup:=function(type)
     GensVect:=[F.i : i in [1..l]];
     Prod:=Id(F);
     for g in GensVect do 
-        Prod:=Prod*g;
+       Prod:=Prod*g;
     end for;
-    Rels:=Append([F.i^type[i ]: i in [1..l]], Prod);
+    Rels:=Append([F.i^(Integers()!type[i ]): i in [1..l]], Prod);
     T, phi:=  quo< F | Rels>;
     AbelT:=quo<T|DerivedGroup(T)>;
     //GN:=GroupName(AbelT); debug
@@ -57,35 +57,38 @@ end function;
 // These skipped cases are listed in the second output, and must be
 // considered separately.
 
-ListGroups:=function(Ksquare, chi: badorders:={256,512,640,768,1152,1280,
-                                          1536,1728,1792,1920})
+ListGroups:=function(Ksquare, chi: badorders:={512,594,640,768,960,1152,
+                                          1536,1920})
   checked:=[* *]; tocheck:=[* *];
   for pair in ListOfTypes(Ksquare, chi) do
     basket:=pair[1]; types:=pair[2]; k:=Invk(basket);
   for pairoftypes in Multisets(types,2) do ord:=(Ksquare+k)/2;
-   // pairoftypes; //DEBUG
+       pairoftypes; //DEBUG
     for T in pairoftypes do ord:=ord/Theta(T);
     end for;
   if IsIntegral(ord) then
      ordAbelT:=[ AbelianizationOrbifoldGroup(T): T  in pairoftypes];
+     d:=IntegerRing()!ord;
   if GCD(ordAbelT ) eq 1 and
-     NumberOfGroups(PerfectGroupDatabase(),IntegerRing()!ord) eq 0
+     NumberOfGroups(PerfectGroupDatabase(),d) eq 0
        then ;
   elif ord gt 2000 or ord in Include(badorders,1024) then
      Append(~tocheck, [* basket, pairoftypes, ord *]);
-  else for G in SmallGroups(IntegerRing()!ord: Warning := false) do
+  else for n in [1..NumberOfSmallGroups(d)] do
     test:=true;
+    G:=SmallGroup(d,n);
     ordAbelG:=#quo<G|DerivedGroup(G)>;
     if IsDivisibleBy(ordAbelT[1], ordAbelG) then 
      if IsDivisibleBy(ordAbelT[2], ordAbelG) then 
-        groupData:=GroupData(G);
-        // IdentifyGroup(G);  //DEBUG
-        for T in pairoftypes do
-           if not ExSphSystem(groupData,T) then test:=false; break T;
+              <d,n>;  //DEBUG
+              orderedtypes:=MultisetToSequence(pairoftypes); 
+              orderedtypes:=[orderedtypes[3-i] : i in [1..2]]; 
+        for T in orderedtypes do  
+           if not ExSphSystem(d,n,T) then test:=false; break T;  
         end if;
         end for;
-      if test then Append(~checked, [* basket, pairoftypes, IdentifyGroup(G) *]);
-         //[* basket, pairoftypes, IdentifyGroup(G) *]; //DEBUG
+      if test then Append(~checked, [* basket, pairoftypes, <d,n> *]);
+         //[* basket, pairoftypes, <d,n> *]; //DEBUG
       end if; 
      end if;
     end if;
@@ -192,16 +195,9 @@ end function;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-// ExistingSurfaces runs on the first output of ListGroups(Ksquare,chi), 
-// and throws away all triples giving rise only to surfaces whose singularities 
-// do not correspond to the basket.
-
-ExistingSurfaces:=function(ListGrps)
-  X:=[**];
-  for triple in ListGrps do 
-     //triple; //DEBUG
-     basket:=triple[1]; pairoftypes:=triple[2]; G:=SmallGroup(triple[3][1], triple[3][2]);
+ExistingSurfaces_triple_givenG:=function(triple)
+    
+   basket:=triple[1]; pairoftypes:=triple[2]; G:=triple[3];
      groupData:=GroupData(G);
      
      seq_pairoftypes:=MultisetToSequence(pairoftypes);
@@ -215,12 +211,40 @@ ExistingSurfaces:=function(ListGrps)
       for conj_class2 in OrdConjClass2 do 
           seqconj_class1:=&cat[MultisetToSequence(conj_class1[j]): j in [1..#conj_class1]];
           seqconj_class2:=&cat[MultisetToSequence(conj_class2[j]): j in [1..#conj_class2]];
+            // ChekSings_Classes(basket, G, [seqconj_class1, seqconj_class2]); //DEBUG;
           if ChekSings_Classes(basket, G, [seqconj_class1, seqconj_class2]) then 
-            Append(~X, triple);
-            break conj_class1;
+            return true;
           end if; 
       end for;
      end for; 
+  
+    return false;
+
+end function;
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+ExistingSurfaces_triple:=function(triple)
+ 
+   G:=SmallGroup(triple[3][1], triple[3][2]);
+     if ExistingSurfaces_triple_givenG([*triple[1],triple[2],G*]) then 
+        return true;
+     end if;
+    return false;
+end function;
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ExistingSurfaces runs on the first output of ListGroups(Ksquare,chi), 
+// and throws away all triples giving rise only to surfaces whose singularities 
+// do not correspond to the basket.
+
+ExistingSurfaces:=function(ListGrps)
+  X:=[**];
+  for triple in ListGrps do 
+     if ExistingSurfaces_triple(triple) then 
+       Append(~X,triple);
+     end if;
    end for;
    return X;
 end function;

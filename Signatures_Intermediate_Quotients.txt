@@ -1,0 +1,102 @@
+// The main function of this script takes a triple (basket, pair of signatures (t_1,t_2) , order of the group ord) and a 
+// prime number p>=2 such that there is a group G of order ord admitting a normal subgroup H of index p and having a pair of spherical systems of generators of signatures t_1 and t_2 both satisfying the hypothesis of Proposition 4.1.
+// Hence it returns all the possible spherical systems of generators of H from the pair of signatures 
+// t_1 nad t_2. This function uses Proposition 4.1. 
+
+Sign_Intermediate_Quo:=function(sign, p)
+ 
+ S:=[x : x in sign| IsDivisibleBy(x,p)];
+ SetnewSigns:={};
+ newSign:=[];
+ if #S eq 2 then 
+   newSign:=newSign cat [Integers()!(x/p) : x in S | x/p ne 1];
+   for x in [x : x in sign|  not IsDivisibleBy(x,p)] do 
+      newSign:=newSign cat MultisetToSequence({*x^^p*});
+    end for;
+    Include(~SetnewSigns,SequenceToMultiset(newSign));
+ else
+  for t in [1..#S] do 
+    newSign:=[];
+    newSign:=newSign cat [Integers()!(S[i]/p) : i in [1..#S] | i ne t and S[i]/p ne 1];
+    newSign:=newSign cat MultisetToSequence({*S[t]^^p*});
+    for x in [x : x in sign|  not IsDivisibleBy(x,p)] do 
+      newSign:=newSign cat MultisetToSequence({*x^^p*});
+    end for;
+    Include(~SetnewSigns,SequenceToMultiset(newSign));
+ end for; 
+   if p ne 2 then 
+     newSign:=[0] cat [Integers()!(x/p) : x in S | x/p ne 1]; // 0 means the curve has genus p-1/2
+     for x in [x : x in sign|  not IsDivisibleBy(x,p)] do 
+      newSign:=newSign cat MultisetToSequence({*x^^p*});
+    end for;
+    Include(~SetnewSigns,SequenceToMultiset(newSign));
+   end if; 
+ end if; 
+ 
+ return SetnewSigns;
+end function;
+
+List_Intermediate_Sign_from_a_triple:=function(triple, p)
+   pairofsigns:=[];
+ for x in triple[2] do 
+   Append(~pairofsigns, MultisetToSequence(x));
+ end for; 
+ ord:=triple[3];
+
+ if pairofsigns[1] eq pairofsigns[2] then 
+   S:=Multisets(Sign_Intermediate_Quo(pairofsigns[1],p),2);
+ else 
+   S:={{*x , y*} : x in Sign_Intermediate_Quo(pairofsigns[1],p), y in Sign_Intermediate_Quo(pairofsigns[2],p)};
+ end if; 
+
+Result:=[**];
+for x in S do 
+    Append(~Result, [*triple[1], x, Integers()!(ord/p)*]);
+end for; 
+return Result; 
+end function;
+
+AbelianizationOrbifoldGroup:=function(type)
+    type:=MultisetToSequence(type);
+    l:=#type;
+    F:=FreeGroup(l);
+    GensVect:=[F.i : i in [1..l]];
+    Prod:=Id(F);
+    for g in GensVect do 
+        Prod:=Prod*g;
+    end for;
+    Rels:=Append([F.i^(Integers()!type[i ]): i in [1..l]], Prod);
+    T, phi:=  quo< F | Rels>;
+    AbelT:=quo<T|DerivedGroup(T)>;
+    //GN:=GroupName(AbelT); debug
+    return //GN, debug
+    #AbelT;
+end function;
+
+List_Intermediate_Sign:=function(List)
+  Result:=[**];
+  PerfectGroups:=[**];
+  NotSatisfyProp41:=[**];
+
+  for triple in List do
+    basket:=triple[1]; 
+   pairofsigns:=triple[2];
+    ord:=triple[3];
+    ordAbelT:=[ AbelianizationOrbifoldGroup(T): T  in pairofsigns];
+    if GCD(ordAbelT ) eq 1 then 
+      Append(~PerfectGroups, triple);
+    else 
+      if IsPrime(GCD(ordAbelT )) then 
+         p:=GCD(ordAbelT );
+         A:=[#[x : x in MultisetToSequence(sign)| IsDivisibleBy(x,p)]: sign in pairofsigns];
+         if  A[1] le 3 and A[2] le 3 then
+            Result:=Result cat List_Intermediate_Sign_from_a_triple(triple,p);
+         end if;
+      else 
+       Append(~NotSatisfyProp41, triple);
+      end if; 
+    end if; 
+  end for; 
+  return Result, NotSatisfyProp41, PerfectGroups;
+end function;
+

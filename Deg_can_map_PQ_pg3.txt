@@ -1,0 +1,177 @@
+load"CarattereCanGleissner.txt";
+
+
+/***************************/
+
+// The following function computes the natural integer mq-aq^chi-1 of Corollary 5.13. 
+
+multBLpoint:=function(h, G, CharT, char) 
+   H:=sub<G|h>;
+   charH:=Restriction(char,H);
+   m := Order(h);
+   F:=CyclotomicField(m);
+   CharH:=CharacterTable(H);
+   vecH:=[i : i in [1..#CharH] | InnerProduct(CharH[i ], charH) ne 0 ];
+   logvecH:=[ j : i in vecH | exists(j){ l : l in [0..m-1] | (F.1)^l eq CharH[i ](h)}]; 
+
+   a_qchar := Maximum({i : i in logvecH});
+   return m-a_qchar-1;
+end function; 
+
+/***************************/
+
+BaseLocusOfK_CG:=function(gens,G,CharT,char)
+  return [multBLpoint(gens[i], G, CharT, char): i in [1..#gens]];
+end function;
+
+/***************************/
+
+BaseLocusOfK_C1xC2G:=function(G,gens1,gens2)
+   CharT:=CharacterTable(G);
+   T_1:=[0]; T_2:=[0];
+     for g in gens1 do Append(~T_1,Order(g)); end for;
+     for g in gens2 do Append(~T_2,Order(g)); end for;
+   Can_Char_1:=chi_phi(G,gens1,T_1); Can_Char_2:=chi_phi(G,gens2,T_2); 
+     char_seq:=[];
+     test:=true;
+     for chi in CharT do
+       if InnerProduct(Can_Char_1,chi) ne 0 then 
+          if InnerProduct(Can_Char_2,ComplexConjugate(chi)) ne 0 then 
+             Append(~char_seq, chi);
+          end if;
+       end if;
+     end for;
+
+     if {char_seq[j](Id(G)) : j in [1..#char_seq]} eq {1} then 
+         s:=0;
+         for chi in char_seq do 
+             s:=s+InnerProduct(Can_Char_1,chi)*InnerProduct(Can_Char_2,ComplexConjugate(chi));
+         end for;
+         if s eq 3 then 
+            BaseLocus:=[**];
+            for chi in char_seq do  
+              for t in [1..InnerProduct(Can_Char_1,chi)*InnerProduct(Can_Char_2,ComplexConjugate(chi))] do 
+            Append(~BaseLocus, [BaseLocusOfK_CG(gens1,G,CharT,chi), BaseLocusOfK_CG(gens2,G,CharT,ComplexConjugate(chi))]);
+              end for;
+            end for;
+            return BaseLocus,test;
+         else test:=false;
+         end if; 
+     else 
+        test:=false;
+     end if;
+     return [**],test;
+end function;
+
+/***************************/
+
+FixedPartBaseLocusOfK_C1xC2G:=function(G,gens1,gens2)
+   BaseLocus:= BaseLocusOfK_C1xC2G(G,gens1,gens2);
+  return [[Minimum({x[1][i]: x in BaseLocus}) : i in [1..#gens1]], [Minimum({x[2][i]: x in BaseLocus}) : i in [1..#gens2]] ];
+end function;
+
+/***************************/
+
+MobilePartOfK_C1xC2G:=function(G,gens1,gens2)
+   BaseLocus:=BaseLocusOfK_C1xC2G(G,gens1,gens2);
+   FixedPart:=FixedPartBaseLocusOfK_C1xC2G(G,gens1,gens2);
+   BaseLocusOfMobilePart:=[**];
+   for i in [1..#BaseLocus] do 
+      Append(~BaseLocusOfMobilePart, [ [BaseLocus[i ][1][j]-FixedPart[1][j]: j in [1..#gens1] ], [BaseLocus[i ][2][j]-FixedPart[2][j]: j in [1..#gens2] ] ]);
+   end for;
+   return BaseLocusOfMobilePart;
+end function;
+
+/***************************/
+
+HurwitzFormula:=function(G,gens)
+   genus:=-2;
+   for g in gens do 
+      genus:=genus+(1-1/Order(g));
+   end for;
+   return 1/2*Order(G)*genus+1;
+end function;
+
+/***************************/
+
+SelfIntersectionftheMobilePart:=function(G,gens1,gens2)
+     genus1:=HurwitzFormula(G,gens1);  genus2:=HurwitzFormula(G,gens2); 
+     genera:=[genus1,genus2];
+     FixedPart:=FixedPartBaseLocusOfK_C1xC2G(G,gens1,gens2);
+     K_C1xC2Square:=8*(genus1-1)*(genus2-1);
+
+     K_C1xC2SquareVSFixedPart:=0;
+     Vec1:=[FixedPart[1][j]*Order(G)*(2*genus2-2)/Order(gens1[j]) : j in [1..#gens1]];
+     Vec2:=[FixedPart[2][j]*Order(G)*(2*genus1-2)/Order(gens2[j]) : j in [1..#gens2]];
+     for j in [1..#gens1] do 
+        K_C1xC2SquareVSFixedPart:=K_C1xC2SquareVSFixedPart+Vec1[j];
+     end for;
+     for j in [1..#gens2] do 
+        K_C1xC2SquareVSFixedPart:=K_C1xC2SquareVSFixedPart+Vec2[j];
+     end for;
+     
+     FixedPartSquare:=0;
+     for i in [1..#gens1] do 
+        for j in [1..#gens2] do 
+            FixedPartSquare:=FixedPartSquare+FixedPart[1][i ]*FixedPart[2][j]*Order(G)^2/(Order(gens1[i ])*Order(gens2[j]));
+        end for;
+     end for;
+     FixedPartSquare:=2*FixedPartSquare;
+     MobilePartSquare:=K_C1xC2Square-2*K_C1xC2SquareVSFixedPart+FixedPartSquare;
+     return MobilePartSquare;
+end function;
+
+/***************************/
+
+CorrectionTermFormula:=function(a,b,c,d);
+   return Minimum(a*b,a*d+b*c);
+end function;
+
+/***************************/
+
+CorrectionTermOfaBasePoint:=function(x);
+   if [0,0] in x then return 0; end if;
+   if x[1][2] eq 0 then a:=x[1][1]; 
+      if x[2][1] eq 0 then b:=x[2][2]; c:=x[3][1]; d:=x[3][2];
+      else 
+         b:=x[3][2]; c:=x[2][1]; d:=x[2][2];
+      end if;
+   else 
+       if x[1][1] eq 0 then 
+        if x[2][2] eq 0 then a:=x[2][1]; b:=x[1][2]; c:=x[3][1]; d:=x[3][2];
+        else 
+         a:=x[3][1]; b:=x[1][2]; c:=x[2][1]; d:=x[2][2];
+        end if; 
+     else 
+       if x[2][1] ne 0 then a:=x[2][1]; b:=x[3][2]; c:=x[1][1]; d:=x[1][2]; 
+         else
+           a:=x[3][1]; b:=x[2][2]; c:=x[1][1]; d:=x[1][2]; 
+       end if;
+       end if;
+    end if; 
+   return CorrectionTermFormula(a,b,c,d);
+end function;
+
+
+/***************************/
+
+CorrectionTerm:=function(G,gens1,gens2)
+  MobilePart:=MobilePartOfK_C1xC2G(G,gens1,gens2);
+   CT:=0;
+  for i in [1..#gens1] do
+   for j in [1..#gens2] do 
+    CT:=CT+CorrectionTermOfaBasePoint([[MobilePart[k][1][i],MobilePart[k][2][j]] : k in [1..3]])*Order(G)^2/(Order(gens1[i])*Order(gens2[j]));
+   end for;
+  end for;
+  return CT;
+end function;
+
+/***************************/
+
+Deg_can_map:=function(G,gens1,gens2)
+  BaseLocus,test:=BaseLocusOfK_C1xC2G(G,gens1,gens2);
+  if test then 
+  return 1/Order(G)*(SelfIntersectionftheMobilePart(G,gens1,gens2)-CorrectionTerm(G,gens1,gens2));
+  else return false;
+  end if;
+end function;

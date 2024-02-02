@@ -105,24 +105,37 @@ end function;
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// We can now state the main script ExSphSyst. 
-// It takes in input a group G and a signature 
-// M and returns true if there exists at least one spherical system of generators of G 
-// compatible with that signature, and false otherwise. 
+// This function takes a signature M=[m_1,...m_r] and returns the order of
+// the abelianization of the associated orbifold group
+// T=<f1,..fr| fi^{m_i}, f1*..*fr>.
 
-ExSphSystem:=function(groupData, M)
-   test, reason, G:=generatorsFromDb(groupData`group,MultisetToSequence(M));
-   CC_G:=ConjugacyClasses(G);
+AbelianizationOrbifoldGroup:=function(type)
+    type:=MultisetToSequence(type);
+    l:=#type;
+    F:=FreeGroup(l);
+    GensVect:=[F.i : i in [1..l]];
+    Prod:=Id(F);
+    for g in GensVect do 
+        Prod:=Prod*g;
+    end for;
+    
+    Rels:=Append([F.i^(Integers()!type[i ]): i in [1..l]], Prod);
+    T, phi:=  quo< F | Rels>;
+    AbelT:=quo<T|DerivedGroup(T)>;
+    //GN:=GroupName(AbelT); debug
+    return //GN, debug
+    #AbelT;
+end function;
 
-   if test then
-     if #reason ne 0 then 
-      return test;
-     end if;
-   else
-      if reason eq "not present in database" then 
-          //f:=ClassMap(G);
-          Length:=#MultisetToSequence(M);
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+ExSphSystem_givenG:=function(G,M)
+
+    Length:=#MultisetToSequence(M);
           l:=#MultisetToSet(M);
+        
+       if IsDivisibleBy(AbelianizationOrbifoldGroup(M),#quo<G|DerivedGroup(G)>) then
+         groupData:=GroupData(G);
          check, orderedConjClasses:=OrderedConjClasses_compatible_with_M(groupData, M);
          for C in orderedConjClasses do 
             seqC :=[];
@@ -134,6 +147,39 @@ ExSphSystem:=function(groupData, M)
              return true;
            end if; 
          end for;
+
+        end if; 
+     return false;
+end function;
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// We can now state the main script ExSphSyst. 
+// It takes in input a group G and a signature 
+// M and returns true if there exists at least one spherical system of generators of G 
+// compatible with that signature, and false otherwise. 
+
+ExSphSystem:=function(d,n,M)
+   G:=SmallGroup(d,n);
+   
+   test, reason:=generatorsFixedGroupFromDb(G,d,n,MultisetToSequence(M));
+   
+
+   if test then
+     if #reason ne 0 then 
+      return test;
+     end if;
+   else
+      if reason eq "not present in database" then 
+          
+         if ExSphSystem_givenG(G,M) then 
+            return true; 
+         end if;
+
       end if;
    end if; 
    return false;

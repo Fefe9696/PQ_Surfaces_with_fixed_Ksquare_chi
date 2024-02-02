@@ -1,0 +1,44 @@
+load"FindSurfaces_with_fixed_Ksquare_chi.txt"; 
+
+// We use this function only to exclude those triples of the secondary output "tocheck" of ListGroups having group orders less than 2000 and that make low the function ListGroups. Hence, this function does the same thing as ListGroups but only on the prescribed list of triples "tocheck". Furthermore, we can also filter triples of "tocheck" that have group orders belonging to "Interested_orders". 
+
+
+how_to_exclude:=function(tocheck: Interested_orders:={1..2000})
+
+tocheck_compatible:=[* *]; 
+  tocheck_compatible_ordAbelTi:=[**];
+
+  for pair in tocheck do
+    basket:=pair[1]; pairoftypes:=pair[2]; ord:=pair[3]; 
+    if ord in Interested_orders then 
+    ordAbelT:=[ AbelianizationOrbifoldGroup(T): T  in pairoftypes];
+    d:=IntegerRing()!ord;
+  if GCD( ordAbelT) eq 1 and
+     NumberOfGroups(PerfectGroupDatabase(),IntegerRing()!ord) eq 0
+       then ;
+  else  for n in [1..NumberOfSmallGroups(d)] do
+   G:=SmallGroup(d,n);
+    //<d,n>; // DEBUG
+    test:=true;
+    ordAbelG:=#quo<G|DerivedGroup(G)>;
+    if IsDivisibleBy(ordAbelT[1], ordAbelG) then 
+     if IsDivisibleBy(ordAbelT[2], ordAbelG) then 
+        Append(~tocheck_compatible_ordAbelTi, [* basket, pairoftypes, <d,n> *]); 
+      <d,n>; //DEBUG  
+        orderedtypes:=MultisetToSequence(pairoftypes); 
+        orderedtypes:=[orderedtypes[3-i] : i in [1..2]]; 
+        for T in orderedtypes do  
+       if not ExSphSystem(d,n,T) then test:=false; break T;
+       end if;
+    end for;
+    if test then Append(~tocheck_compatible, [* basket, pairoftypes, <d,n> *]); 
+    end if; 
+    end if;
+    end if;
+end for;
+  end if; end if; end for;
+return tocheck_compatible, tocheck_compatible_ordAbelTi; 
+end function;
+
+// time tocheck_compatible, tocheck_compatible_ordAbelTi:=how_to_exclude(tocheck:Interested_orders:={1..2000});
+

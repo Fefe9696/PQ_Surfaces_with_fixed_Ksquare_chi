@@ -1,0 +1,54 @@
+// ================================================================================================
+//This file is used to determine the character of the representation "phi" defined in my thesis in 
+//Section 1.3) from a generating vector V (corresponding to the Galois cover C --> C/G) with the help 
+//of the Chevalley-Weil formula (Theorem 1.3.3). We also use the code in the paper "Mixed Threefolds 
+//Isogenous to a Product". Any citations below e.g. Lemma 1.3.6 refer to my thesis. 
+//==================================================================================================*/
+
+//* Let X  be a character of the group G and g be a group element. The script "pol" determines the 
+//characteristic polynomial of "rho(g)", where "rho" is a representation affording the character X. 
+//The coefficients of the characteristic polynomial are determined from the power sums of the eigenvalues 
+//X(g^i) by the MAGMA function "PowerSumToCoefficients" (cf. Lemma 1.3.6).*/
+ 
+pol:=function(X,g)
+d:=Degree(X); L:=[];
+	for i in [1..d] do
+		Append(~L,X(g^i));
+	end for;
+return Polynomial(PowerSumToCoefficients(L)); end function;
+
+//* Recall that the roots of pol(X,g) are of the form exp(a*2*pi*i/n), where 0 <= a <= n-1 and n is //the 
+//order of g. The script "ListNa" produces the list of elements of the form [a,Na], where exp(a*2*pi*i/n) 
+//is a root of pol(X,g) with multiplicity Na and 0 <= a <= n-1 (see Definition 1.3.1).*/
+
+ListNa:=function(pol,n)
+	L:=[]; F:=CyclotomicField(n); z:=F.1;            // z is equal to exp(2*pi*i/n)
+		for r in Roots(Polynomial(F,pol),F) do
+			for a in [0..n-1] do 
+				if r[1] eq z^a then            
+					Append(~L,[a,r[2]]); break a; 
+				end if;
+		end for; end for;
+return L; end function;
+
+
+
+ChevWeil:=function(V,T,X,G)
+h:=T[1]; ram:=[V[i] : i in [1..#T-1]];    // ram is the ramification part of V i.e. (h1,...,hr)
+mult:=(h-1)*X(Id(G));
+	for g in ram do 
+		n:=Order(g); 
+			for t in ListNa(pol(X,g),n) do
+				mult:=t[1]*t[2]/n + mult;
+			end for; 
+	end for;
+return mult; end function;
+
+
+
+chi_phi:=function(G,V,T)
+CT:=CharacterTable(G); h:=T[1]; char:= h*CT[1];       // CT[1] is the trivial character of G
+	for i in [2..#CT] do 
+		X:=CT[i]; m:=ChevWeil(V,T,X,G); char:=char + m*X;
+	end for;
+return char; end function;
