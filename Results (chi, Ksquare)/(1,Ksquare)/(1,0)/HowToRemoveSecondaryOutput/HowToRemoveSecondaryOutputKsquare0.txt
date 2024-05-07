@@ -118,7 +118,7 @@ Res;
 
 // Hence <1080, 260> or <1080, 487> should be a normal subgroup H of index 2 of a group  G of order 2160.
 
-// If [g_1,g_2,g_3] is a ssg of signature [2,3,8], then g_1 has order two and from Proposition 4.2 is not contained in H. Furthermore, by Remark 4.9(1) we have G is a semidrect product of H and Z_2 by an automorphism phi of order two. 
+// If [g_1,g_2,g_3] is a ssg of signature [2,3,8], then g_1 has order two and from Proposition 3.3 of our paper is not contained in H. Furthermore, by Remark 3.10(1) we have G is a semidrect product of H and Z_2 by an automorphism phi of order two. 
 
 // <1080, 260> 
 

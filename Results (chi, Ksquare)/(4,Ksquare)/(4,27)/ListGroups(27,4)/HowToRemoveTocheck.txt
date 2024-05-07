@@ -1,0 +1,239 @@
+ {*tocheck[i][3]: i in [1..#tocheck]*};  
+
+{* 640^^5, 768^^2, 960^^10, 1920^^2, 2016, 2112, 2160^^4, 2520, 2952, 3240, 
+3936^^2, 4320, 4428, 5040, 5760, 7872 *}
+
+// No one of the groups of the list can be perfect: 
+
+time how_to_excludePG(tocheck);
+
+[* *]
+
+Time: 7.290
+
+// Let us exclude those triples having group order {640,960,1920};
+
+time Result:=how_to_exclude(tocheck: Interested_orders:={640,960,1920}); 
+
+Time: 256.800
+
+Result;
+[* [*
+    {* 1/5, 4/5 *},
+    {*
+        {* 2, 4, 10 *}^^2
+    *},
+    <640, 21461>
+*], [*
+    {* 1/5, 4/5 *},
+    {*
+        {* 2, 4, 10 *}^^2
+    *},
+    <640, 21462>
+*], [*
+    {* 1/5, 4/5 *},
+    {*
+        {* 2, 4, 10 *}^^2
+    *},
+    <640, 21467>
+*] *]
+
+ExistingSurfaces(Result);
+[* *]
+
+time Result:=how_to_exclude(tocheck: Interested_orders:={768});
+
+Time: 2177.430
+
+Result;                                                        
+[* *]
+
+
+// In this way we have excluded all groups of tocheck less or equal than 2000. 
+
+////////////////////////////////////////////////////////////
+
+List:=[*x : x in tocheck | x[3] gt 2000*];
+
+Result, NotSatisfyProp33, PerfectGroups:=List_Intermediate_Sign(List);
+
+#Result;
+14
+> #NotSatisfyProp33;
+0
+> #PerfectGroups;
+4
+
+// Since we have already excluded that no one of the groups of tocheck is perfect, then we can automatically exclude the triples stored in PerfectGroups;
+
+{* x[3]: x in Result*};
+{* 984, 1008, 1056, 1080^^2, 1476, 1620, 1968^^4, 2160, 2880, 3936 *}
+
+
+time Res,ResAb:=how_to_exclude(Result);
+
+Time: 215.560
+
+Res;
+[* *]
+
+
+Result_group_gt_2000:=[* x : x in Result | x[3] gt 2000*];
+
+time how_to_excludePG(Result_group_gt_2000);
+
+[* *]
+Time: 0.310
+
+Result_2, NotSatisfyProp33_2, PerfectGroups_2:=List_Intermediate_Sign(Result_group_gt_2000);
+
+Result_2; 
+[* [*
+    {* 1/5, 4/5 *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    576
+*], [*
+    {* 1/3, 1/2^^2, 2/3 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    1312
+*] *]     
+
+NotSatisfyProp33_2;
+[* *]
+#PerfectGroups_2; 
+1
+
+time Res_2,ResAb_2:=how_to_exclude(Result_2);
+
+Time: 4401.530
+
+#Res_2;
+185
+
+{*x[3][1]: x in Res_2*};
+{* 576^^183, 1312^^2 *}
+
+FinRes_2_576:=[**];
+Baskets:=[* {**},{*1/5*},{*2/5*},{*3/5*},{*4/5*},
+{*1/5^^2*},{*1/5,2/5*},{*1/5,3/5*},{*1/5,4/5*},
+{*2/5^^2*},{*2/5,3/5*},{*2/5,4/5*},
+{*3/5^^2*},{*3/5,4/5*},
+{*4/5^^2*}*];
+
+Res_2_576:=[*x: x in Res_2 | x[3][1] eq 576*];
+for x in Res_2_576 do 
+   for b in Baskets do
+     Append(~FinRes_2_576, [*b, x[2],x[3]*]);
+   end for;
+end for;
+
+ExSurf:=ExistingSurfaces(Res_2_576); 
+
+ExSurf;                                                                                                                                                                                               
+[* [*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    <576, 1459>
+*], [*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    <576, 1725>
+*], [*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    <576, 7828>
+*], [*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    <576, 8093>
+*], [*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    <576, 8380>
+*], [*
+    {* *},
+    {*
+        {* 2^^5 *}^^2
+    *},
+    <576, 8391>
+*] *]
+
+// They come from 
+
+Result_group_gt_2000[2];
+[*
+    {* 1/5, 4/5 *},
+    {*
+        {* 2, 5^^2 *}^^2
+    *},
+    2880
+*]
+
+Final:=[**];
+tocheck_compatible2880:=[**];
+
+K:=SmallGroup(5,1);
+
+for x in ExSurf do 
+  H:=SmallGroup(x[3][1],x[3][2]);
+  AutH:=AutomorphismGroup(H); 
+  r, P:=PermutationRepresentation(AutH);
+  ord5:={phi: phi in P| Order(phi) eq 5}; {*Order(phi): phi in P*};
+  for phi in ord5 do 
+    t:=hom<K -> AutH| <K.1, phi @@ r>>;
+    G:=SemidirectProduct(H,K,t);
+    Append(~Final, [* x, phi, IdentifyGroup(quo<G|DerivedGroup(G)>)*]);
+    if IdentifyGroup(quo<G|DerivedGroup(G)>) eq <5,1> then
+       IdentifyGroup(quo<G|DerivedGroup(G)>);
+           if  ExSphSystem_givenG(G,{*2,5,5*}) then 
+             Append(~tocheck_compatible2880,[*{*1/5,4/5*},{*{*2,5,5*}^^2*},G*]); 
+           end if; 
+    end if;
+    
+  end for;
+end for;
+
+#Final;
+0
+
+#tocheck_compatible2880;
+0
+
+FinRes_2_1312:=[**];
+
+Baskets:=[* *];
+A:={1/3,2/3,1/2};
+
+for i in [0..4] do 
+  for x in Multisets(A,i) do
+    Append(~Baskets, x);
+  end for;
+end for;
+
+Res_2_1312:=[*x: x in Res_2 | x[3][1] eq 1312*];
+for x in Res_2_1312 do 
+   for b in Baskets do
+     Append(~FinRes_2_1312, [*b, x[2],x[3]*]);
+   end for;
+end for;
+
+ExSurf:=ExistingSurfaces(Res_2_1312); 
+
+ExSurf;
+[* *]
+
+// In this way we have excluded all the cases of Result list. Since there are no cases stored in NotSatisfyProp33, then we have automatically excluded all the cases stored in the secondary output of ListGroups(27,4);

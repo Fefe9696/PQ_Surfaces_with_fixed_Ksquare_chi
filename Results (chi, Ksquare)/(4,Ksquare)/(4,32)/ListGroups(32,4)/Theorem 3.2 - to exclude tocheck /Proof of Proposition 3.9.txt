@@ -1,4 +1,4 @@
-// From Remark 4.6, it is sufficient to prove Lemma 4.7 
+// From Remark 3.7, it is sufficient to prove Lemma 3.8 
 
 // load "tocheck" list, that is the secondary output of ListGroups(32,4).
 

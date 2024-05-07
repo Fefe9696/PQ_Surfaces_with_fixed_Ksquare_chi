@@ -1,0 +1,50 @@
+
+
+load"FindSurfaces_with_fixed_Ksquare_chi.txt";
+
+time ListOfTyp:=ListOfTypes(23,4);
+
+Time: 307723.250
+
+Total memory usage: 105044.84MB
+
+// Now we run ListGroups on the output ListOfTyp
+
+Ksquare:=23;  badorders:={512,594,640,768,960,1152,1536,1920};
+
+checked:=[* *]; tocheck:=[* *];
+  for pair in ListOfTyp do
+    basket:=pair[1]; types:=pair[2]; k:=Invk(basket);
+  for pairoftypes in Multisets(types,2) do ord:=(Ksquare+k)/2;
+       pairoftypes; //DEBUG
+    for T in pairoftypes do ord:=ord/Theta(T);
+    end for;
+  if IsIntegral(ord) then
+     ordAbelT:=[ AbelianizationOrbifoldGroup(T): T  in pairoftypes];
+     d:=IntegerRing()!ord;
+  if GCD(ordAbelT ) eq 1 and
+     NumberOfGroups(PerfectGroupDatabase(),d) eq 0
+       then ;
+  elif ord gt 2000 or ord in Include(badorders,1024) then
+     Append(~tocheck, [* basket, pairoftypes, ord *]);
+  else for n in [1..NumberOfSmallGroups(d)] do
+    test:=true;
+    G:=SmallGroup(d,n);
+    ordAbelG:=#quo<G|DerivedGroup(G)>;
+    if IsDivisibleBy(ordAbelT[1], ordAbelG) then 
+     if IsDivisibleBy(ordAbelT[2], ordAbelG) then 
+              <d,n>;  //DEBUG
+              orderedtypes:=MultisetToSequence(pairoftypes); 
+              orderedtypes:=[orderedtypes[3-i] : i in [1..2]]; 
+        for T in orderedtypes do  
+           if not ExSphSystem(d,n,T) then test:=false; break T;  
+        end if;
+        end for;
+      if test then Append(~checked, [* basket, pairoftypes, <d,n> *]);
+         //[* basket, pairoftypes, <d,n> *]; //DEBUG
+      end if; 
+     end if;
+    end if;
+    end for;
+    
+  end if; end if; end for; end for;

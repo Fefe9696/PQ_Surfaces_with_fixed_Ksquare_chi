@@ -1,0 +1,840 @@
+ {*tocheck[i][3]: i in [1..#tocheck]*};  
+
+{* 512^^4, 640^^14, 768^^13, 960^^36, 1152^^14, 1536^^2, 1920^^6, 2016^^10, 
+2040, 2088, 2112, 2160^^18, 2240, 2268^^2, 2304^^3, 2400^^4, 2448^^2, 2520^^16, 
+2592^^2, 2688^^3, 2700, 2800, 2880^^4, 3000^^2, 3024^^3, 3150, 3240^^3, 3360^^3,
+3456, 3600^^5, 4032^^2, 4200, 4320^^3, 4536, 4860, 5040^^5, 5600, 5760, 6000, 
+6048^^2, 6720, 7200, 7560^^3, 8064, 8352, 8640, 15120 *}
+
+
+// No one of the groups of the list can be perfect: 
+
+time how_to_excludePG(tocheck);
+
+[* *]
+
+Time: 31.040
+
+// Let us exclude those triples having group order {512,640,960,1152,1920};
+
+time Result:=how_to_exclude(tocheck: Interested_orders:={512,640,960,1152,1920}); 
+
+Time: 8882.060
+
+Result;
+[* [*
+    {* 3/5^^2 *},
+    {*
+        {* 2, 4, 10 *}^^2
+    *},
+    <640, 21461>
+*], [*
+    {* 3/5^^2 *},
+    {*
+        {* 2, 4, 10 *}^^2
+    *},
+    <640, 21462>
+*], [*
+    {* 3/5^^2 *},
+    {*
+        {* 2, 4, 10 *}^^2
+    *},
+    <640, 21467>
+*] *]
+
+ExistingSurfaces(Result);
+[* *]
+
+time Result:=how_to_exclude(tocheck: Interested_orders:={768});
+
+Time: 14261.790
+
+Result;                                                        
+[* *]
+
+
+// We now exclude the two cases of group order 1536. These cases are the following:
+
+[*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 64 *}
+    *},
+    1536
+*],
+[*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 32 *}
+    *},
+    1536
+*]
+
+// However, from Proposition 3.3 of "The classification of minimal product-quotient surfaces with pg=0" by Bauer-Pignatelli, there is only one group of order 1536 admitting an appropriate spherical system of generators of signature {2,3,8} having abelianization of order 2. This group is <1536, 408544637>. Let us consider 
+
+Result:=[*[*
+ {* 1/4^^2, 1/2 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 64 *}
+    *},
+    <1536, 408544637>
+*],
+[*
+ {* 1/2^^4 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 32 *}
+    *},
+    <1536, 408544637>
+*]
+*];
+
+ExistingSurfaces(Result);
+[* *]
+
+// In this way we have excluded all groups of tocheck less or equal than 2000. 
+
+////////////////////////////////////////////////////////////
+
+List:=[*x : x in tocheck | x[3] gt 2000*];
+
+Result, NotSatisfyProp33, PerfectGroups:=List_Intermediate_Sign(List);
+
+ #Result;
+102
+> #NotSatisfyProp33;
+4
+> #PerfectGroups;
+38
+
+// Since we have already excluded that no one of the groups of tocheck is perfect, then we can automatically exclude the triples stored in PerfectGroups;
+
+{* x[3]: x in Result*};
+{* 672^^2, 696, 720^^3, 756^^2, 900, 1008^^15, 1020, 1056, 1080^^10, 1120^^3, 
+1152^^3, 1200^^8, 1224, 1260^^5, 1296^^2, 1344^^3, 1400, 1440^^6, 1512^^2, 1575,
+1620^^2, 1680^^5, 1728, 1800^^4, 2016^^4, 2100, 2160^^5, 2520, 2800, 2880, 3000,
+3360, 3600, 4032, 4176, 4320 *}
+
+time Res,ResAb:=how_to_exclude(Result);
+
+Time: 847.320
+
+#Res;
+11
+
+Res;
+[* [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 2^^3, 3 *},
+        {* 2^^3, 8 *}
+    *},
+    <720, 764>
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 2^^3, 4 *},
+        {* 4^^3 *}
+    *},
+    <720, 766>
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <720, 584>
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <720, 585>
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <720, 763>
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <720, 765>
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <720, 766>
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <720, 773>
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <720, 776>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <672, 1046>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <672, 1255>
+*] *]
+
+// The basket of these intermediate quotients can be only [* {**},{*1/2*},{*1/2^^3*},{*1/2^^4*} *] 
+for the last two cases 
+
+Res_1:=[*[*
+    {* 1/2^^4 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <672, 1046>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <672, 1255>
+*] *];
+
+FinRes:=[**];
+Baskets:=[* {**},{*1/2*},{*1/2^^2*},{*1/2^^3*}, {*1/2^^4*}*];
+for x in Res_1 do 
+   for b in Baskets do
+     Append(~FinRes, [*b, x[2],x[3]*]);
+   end for;
+end for;
+
+ExistingSurfaces(FinRes);
+[* *]
+
+// Instead, the intermediate basket of {* 1/4^^2, 1/2 *} can at most be 
+Baskets:=[* {**},{*1/4*},{*1/2*},{*3/4*},
+   {*1/4^^2*},{*1/4,1/2*},{*1/4,3/4*},
+   {*1/2^^2*}, {*1/2,3/4*},
+   {*3/4^^2*}, 
+   
+   {*1/4,1/2*},
+   {*1/4^^2,1/2*},{*1/4,1/2^^2*},{*1/4,3/4,1/2*},
+   {*1/2^^3*}, {*1/2^^2,3/4*},
+   {*3/4^^2,1/2*}
+*];
+
+Res_2:=[*x: x in Res| x[1] eq {* 1/4^^2, 1/2 *} *];
+
+FinRes:=[**];
+for x in Res_2 do 
+   for b in Baskets do
+     Append(~FinRes, [*b, x[2],x[3]*]);
+   end for;
+end for;
+
+ExistingSurfaces(FinRes);
+[* *]
+
+Result_group_gt_2000:=[* x : x in Result | x[3] gt 2000*];
+
+time how_to_excludePG(Result_group_gt_2000);
+
+[* *]
+Time: 1.400
+
+Result_2, NotSatisfyProp33_2, PerfectGroups_2:=List_Intermediate_Sign(Result_group_gt_2000);
+
+#Result_2;
+15
+NotSatisfyProp33_2;
+[* *]
+#PerfectGroups_2; 
+8
+
+time Res_2,ResAb_2:=how_to_exclude(Result_2);
+
+Time: 5141.060
+
+#Res_2;
+220
+
+B:={*x[1]: x in Res_2*};
+B;
+{*
+    {* 1/4^^2, 1/2 *}^^25,
+    {* 1/2^^4 *}^^12,
+    {* 3/5^^2 *}^^183
+*}
+
+FinRes_2:=[**];
+for x in Res_2 do 
+   if x[1] eq {* 1/4^^2, 1/2 *} then 
+   Baskets:=[* {**},{*1/4*},{*1/2*},{*3/4*},
+   {*1/4^^2*},{*1/4,1/2*},{*1/4,3/4*},
+   {*1/2^^2*}, {*1/2,3/4*},
+   {*3/4^^2*}, 
+   
+   {*1/4,1/2*},
+   {*1/4^^2,1/2*},{*1/4,1/2^^2*},{*1/4,3/4,1/2*},
+   {*1/2^^3*}, {*1/2^^2,3/4*},
+   {*3/4^^2,1/2*}
+*];
+   for b in Baskets do
+     Append(~FinRes_2, [*b, x[2],x[3]*]);
+   end for;
+  elif x[1] eq {* 1/2^^4 *} then 
+   Baskets:=[*{**},{*1/2*},{*1/2^^2*},{*1/2^^3*},{*1/2^^4*}*]; 
+    for b in Baskets do
+     Append(~FinRes_2, [*b, x[2],x[3]*]);
+   end for;
+  elif x[1] eq {* 3/5^^2 *} then 
+    Baskets:=[* {**}, {*1/5*}, {*2/5*}, {*3/5*}, {*4/5*}, 
+      {*1/5^^2*},{*1/5,2/5*},{*1/5,3/5*},{*1/5,4/5*}, 
+      {*2/5^^2*},{*2/5,3/5*},{*2/5,4/5*},
+      {*3/5^^2*},{*3/5,4/5*},
+      {*4/5^^2*}*];
+     for b in Baskets do
+     Append(~FinRes_2, [*b, x[2],x[3]*]);
+   end for;
+  end if;
+end for;
+
+#FinRes_2;
+3230
+
+ExSurf:=ExistingSurfaces(FinRes_2);
+
+ExSurf;
+[* [*
+    {* *},
+    {*  
+        {* 2^^5 *}^^2
+    *},
+    <576, 1459>
+*], [*
+    {* *},
+    {*  
+        {* 2^^5 *}^^2
+    *},
+    <576, 1725>
+*], [*
+    {* *},
+    {*  
+        {* 2^^5 *}^^2
+    *},
+    <576, 7828>
+*], [*
+    {* *},
+    {*  
+        {* 2^^5 *}^^2
+    *},
+    <576, 8093>
+*], [*
+    {* *},
+    {*  
+        {* 2^^5 *}^^2
+    *},
+    <576, 8380>
+*], [*
+    {* *},
+    {*  
+        {* 2^^5 *}^^2
+    *},
+    <576, 8391>
+*] *]
+
+// These cases comes from 
+
+Result_group_gt_2000[2];
+[*
+    {* 3/5^^2 *},
+    {*
+        {* 2, 5^^2 *}^^2
+    *},
+    2880
+*]
+
+// From Prop. 3.3 and Remark 3.10(1) of our paper, we have that a group of order 2880 satisfying the required algebraic data should be a semidirect product of one of the groups H stored by ExistingSurfaces(FinRes_2) and a cyclic group of order 5 by an automorphism phi of order 5. 
+
+Final:=[**];
+tocheck_compatible2880:=[**];
+
+K:=SmallGroup(5,1);
+
+for x in ExSurf do 
+  H:=SmallGroup(x[3][1],x[3][2]);
+  AutH:=AutomorphismGroup(H); 
+  r, P:=PermutationRepresentation(AutH);
+  ord5:={phi: phi in P| Order(phi) eq 5}; {*Order(phi): phi in P*};
+  for phi in ord5 do 
+    t:=hom<K -> AutH| <K.1, phi @@ r>>;
+    G:=SemidirectProduct(H,K,t);
+    Append(~Final, [* x, phi, IdentifyGroup(quo<G|DerivedGroup(G)>)*]);
+    if IdentifyGroup(quo<G|DerivedGroup(G)>) eq <5,1> then
+       IdentifyGroup(quo<G|DerivedGroup(G)>);
+           if  ExSphSystem_givenG(G,{*2,5,5*}) then 
+             Append(~tocheck_compatible2880,[*{*3/5^^2*},{*{*2,5,5*}^^2*},G*]); 
+           end if; 
+    end if;
+    
+  end for;
+end for;
+
+#Final;
+0
+
+#tocheck_compatible2880;
+0
+
+// In this way we have excluded all the cases of Result list. Now we have to exclude the last two cases stored in NotSatisfyProp33
+
+NotSatisfyProp33;
+[* [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 2, 3, 12 *}^^2
+    *},
+    2160
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 2, 4, 6 *}^^2
+    *},
+    2160
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 3, 12 *}^^2
+    *},
+    2016
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 4, 6 *}^^2
+    *},
+    2016
+*] *]
+
+time how_to_excludePG(NotSatisfyProp33);
+[* *]
+Time: 0.430
+
+// The abelianization of the orbifold group of signature {* 2, 3, 12 *} is C6, hence the abelianization of G may be at most either C2, C3, or C6. If the abelianization is C6, then it there exists a normal subgroup of G with index 2, the inverse image of a index 2 subgroup of C6 by the abelianization map of G. 
+
+
+List_Intermediate_Sign_from_a_triple(NotSatisfyProp33[1],2);
+[* [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 3^^2, 6 *}^^2
+    *},
+    1080
+*] *]
+
+> List_Intermediate_Sign_from_a_triple(NotSatisfyProp33[1],3);
+[* [*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 2^^3, 4 *}^^2
+    *},
+    720
+*] *]
+
+L:=[*
+[*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 3^^2, 6 *}^^2
+    *},
+    1080
+*],
+[*
+    {* 1/4^^2, 1/2 *},
+    {*
+        {* 2^^3, 4 *}^^2
+    *},
+    720
+*]*];
+
+time Res,Res_Ab:=how_to_exclude(L);
+Time: 6.140
+
+#Res;
+10
+
+FinRes:=[**];
+Baskets:=[* {**},{*1/4*},{*1/2*},{*3/4*},
+   {*1/4^^2*},{*1/4,1/2*},{*1/4,3/4*},
+   {*1/2^^2*}, {*1/2,3/4*},
+   {*3/4^^2*}, 
+   
+   {*1/4,1/2*},
+   {*1/4^^2,1/2*},{*1/4,1/2^^2*},{*1/4,3/4,1/2*},
+   {*1/2^^3*}, {*1/2^^2,3/4*},
+   {*3/4^^2,1/2*}
+*];
+for x in Res do 
+   for b in Baskets do
+     Append(~FinRes, [*b, x[2],x[3]*]);
+   end for;
+end for;
+
+ExistingSurfaces(FinRes);
+[* *]
+
+// We have excluded NotSatisfyProp33[1];
+
+// We now exclude NotSatisfyProp33[2], whose orbifold group has abelianization C2^2. Hence G has abelianization either C2 or C2^2. However 
+
+L:=List_Intermediate_Sign_from_a_triple(NotSatisfyProp33[2],2);
+
+L;
+[* [*
+    {* 1/4^^2, 1/2 *},
+    {*  
+        {* 2^^3, 3 *},
+        {* 3, 4^^2 *}
+    *},
+    1080
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*  
+        {* 2, 6^^2 *},
+        {* 3, 4^^2 *}
+    *},
+    1080
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*  
+        {* 2, 6^^2 *}^^2
+    *},
+    1080
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*  
+        {* 2, 6^^2 *},
+        {* 2^^3, 3 *}
+    *},
+    1080
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*  
+        {* 2^^3, 3 *}^^2
+    *},
+    1080
+*], [*
+    {* 1/4^^2, 1/2 *},
+    {*  
+        {* 3, 4^^2 *}^^2
+    *},
+    1080
+*] *]
+
+time Res,Res_Ab:=how_to_exclude(L);
+
+Time: 521.380
+ 
+Res;                               
+[* *]
+
+// We now exclude NotSatisfyProp33[3], whose orbifold group has abelianization C6. Hence G has abelianization either C2 or C2^2. 
+
+List_Intermediate_Sign_from_a_triple(NotSatisfyProp33[3],2);
+[* [*
+    {* 1/2^^4 *},
+    {*
+        {* 3^^2, 6 *}^^2
+    *},
+    1008
+*] *]
+
+
+List_Intermediate_Sign_from_a_triple(NotSatisfyProp33[3],3);
+[* [*
+    {* 1/2^^4 *},
+    {*
+        {* 2^^3, 4 *}^^2
+    *},
+    672
+*] *]
+
+L:=[* [*
+    {* 1/2^^4 *},
+    {*
+        {* 3^^2, 6 *}^^2
+    *},
+    1008
+*],
+[*
+    {* 1/2^^4 *},
+    {*
+        {* 2^^3, 4 *}^^2
+    *},
+    672
+*] *];
+
+time Res,Res_Ab:=how_to_exclude(L);
+Time: 3.610
+
+#Res;
+7
+
+
+FinRes:=[**];
+Baskets:=[* {**},{*1/2*},{*1/2^^2*},{*1/2^^3*},{*1/2^^4*}*];
+for x in Res do 
+   for b in Baskets do
+     Append(~FinRes, [*b, x[2],x[3]*]);
+   end for;
+end for;
+
+ExistingSurfaces(FinRes);
+[* *]
+
+// We have excluded NotSatisfyProp33[3];
+
+// It remains to exclude NotSatisfyProp33[4], whose orbifold group has abelianization C2^2. Hence G has abelianization either C2 or C2^2. 
+
+L:=List_Intermediate_Sign_from_a_triple(NotSatisfyProp33[4],2);
+
+L;
+[* [*
+    {* 1/2^^4 *},
+    {*
+        {* 2^^3, 3 *},
+        {* 3, 4^^2 *}
+    *},
+    1008
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 6^^2 *},
+        {* 3, 4^^2 *}
+    *},
+    1008
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 6^^2 *}^^2
+    *},
+    1008
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 6^^2 *},
+        {* 2^^3, 3 *}
+    *},
+    1008
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    1008
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 3, 4^^2 *}^^2
+    *},
+    1008
+*] *]
+
+time Res,Res_Ab:=how_to_exclude(L);
+
+Time: 171.870
+
+Res;
+[* [*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 6^^2 *}^^2
+    *},
+    <1008, 882>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 6^^2 *}^^2
+    *},
+    <1008, 908>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 6^^2 *}^^2
+    *},
+    <1008, 936>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    <1008, 880>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    <1008, 881>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 3, 4^^2 *}^^2
+    *},
+    <1008, 883>
+*] *]
+
+// From Prop. 3.3 and Remark 3.10(1) of our paper, we have that a group of order 2016 satisfying the required algebraic data no. 1,2,3,6 should be a semidirect product of one of the groups H stored in L and the cyclic group of order 2 by an automorphism phi of order 2. 
+
+ExSurf:=[*
+[*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 6^^2 *}^^2
+    *},
+    <1008, 882>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 6^^2 *}^^2
+    *},
+    <1008, 908>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 6^^2 *}^^2
+    *},
+    <1008, 936>
+*],
+[*
+    {* 1/2^^4 *},
+    {*
+        {* 3, 4^^2 *}^^2
+    *},
+    <1008, 883>
+*]*];
+
+
+Final:=[**];
+tocheck_compatible2016:=[**];
+
+K:=SmallGroup(2,1);
+
+for x in ExSurf do 
+  H:=SmallGroup(x[3][1],x[3][2]);
+  AutH:=AutomorphismGroup(H); 
+  r, P:=PermutationRepresentation(AutH);
+  ord2:={phi: phi in P| Order(phi) eq 2}; {*Order(phi): phi in P*};
+  for phi in ord2 do 
+    t:=hom<K -> AutH| <K.1, phi @@ r>>;
+    G:=SemidirectProduct(H,K,t);
+    Append(~Final, [* x, phi, IdentifyGroup(quo<G|DerivedGroup(G)>)*]);
+    if IdentifyGroup(quo<G|DerivedGroup(G)>) in {<2,1>,<4,2>} then
+       IdentifyGroup(quo<G|DerivedGroup(G)>);
+           if  ExSphSystem_givenG(G,{*2,4,6*}) then 
+             Append(~tocheck_compatible2016,[*{*1/2^^4*},{*{*2,4,6*}^^2*},G*]); 
+           end if; 
+    end if;
+    
+  end for;
+end for;
+
+{x[3] : x in Final };
+{ <24, 15>, <4, 2>, <12, 5> }
+
+#tocheck_compatible2016;
+162
+
+ExSurf2016:=[**];
+
+for x in tocheck_compatible2016 do 
+       IdentifyGroup(quo<x[3]|DerivedGroup(x[3])>); // DEBUG
+       if ExistingSurfaces_triple_givenG(x) then  
+            Append(~ExSurf2016, x);
+          end if; 
+end for;
+
+ExSurf2016;
+[* *]
+
+// It remains
+
+ExSurf:=[*[*
+    {* 1/2^^4 *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    <1008, 880>
+*], [*
+    {* 1/2^^4 *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    <1008, 881>
+*]*];
+
+// They come from 
+
+[*
+    {* 1/2^^4 *},
+    {*
+        {* 2, 4, 6 *}^^2
+    *},
+    2016
+*]
+
+// We observe that if g3 is the element of the group G having order 6, then g3^3 has order 2 in G. Moreover, g3^3 does not belong to the group H of order 1008 otherwise H=g3^3H=(g3H)^3=g3H and so we would have g3 belonging to H, which is a contradiction since g3 is a ramification point for G/H=C2.  
+
+// We can now apply Remark 3.10(1) to say that G is a semidirect product of a group of order 1008 and C2 
+
+Final:=[**];
+tocheck_compatible2016:=[**];
+
+K:=SmallGroup(2,1);
+
+for x in ExSurf do 
+  H:=SmallGroup(x[3][1],x[3][2]);
+  AutH:=AutomorphismGroup(H); 
+  r, P:=PermutationRepresentation(AutH);
+  ord2:={phi: phi in P| Order(phi) eq 2}; {*Order(phi): phi in P*};
+  for phi in ord2 do 
+    t:=hom<K -> AutH| <K.1, phi @@ r>>;
+    G:=SemidirectProduct(H,K,t);
+    Append(~Final, [* x, phi, IdentifyGroup(quo<G|DerivedGroup(G)>)*]);
+    if IdentifyGroup(quo<G|DerivedGroup(G)>) in {<2,1>,<4,2>} then
+       IdentifyGroup(quo<G|DerivedGroup(G)>);
+           if  ExSphSystem_givenG(G,{*2,4,6*}) then 
+             Append(~tocheck_compatible2016,[*{*1/2^^4*},{*{*2,4,6*}^^2*},G*]); 
+           end if; 
+    end if;
+    
+  end for;
+end for;
+
+#tocheck_compatible2016;
+94
+
+ExSurf2016:=[**];
+
+for x in tocheck_compatible2016 do 
+       IdentifyGroup(quo<x[3]|DerivedGroup(x[3])>); // DEBUG
+       if ExistingSurfaces_triple_givenG(x) then  
+            Append(~ExSurf2016, x);
+          end if; 
+end for;
+
+ExSurf2016;
+[* *]
+
+// We have excluded all the cases stored in the secondary output of ListGroups(30,4);

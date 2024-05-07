@@ -12,12 +12,12 @@ List:=[*x : x in tocheck | x[3] gt 2000 or x[3] eq 1024*]; //This is Tables 3 an
 // Now we consider only those triples that have not perfect groups and have abelianization that is a prime number. We then generate the intermediate signatures of G' for each of these triples
 
 
-Result, NotSatisfyProp41, PerfectGroups:=List_Intermediate_Sign(List);
+Result, NotSatisfyProp33, PerfectGroups:=List_Intermediate_Sign(List);
 
 #PerfectGroups; // These are the first 18 lines of Table 3 
 18
 
-NotSatisfyProp41;
+NotSatisfyProp33;
 [* [*
     {* *},
     {*
@@ -183,7 +183,7 @@ List3;
     2880
 *] *]
 
-Result2, NotSatisfyProp41_2, PerfectGroups_2:=List_Intermediate_Sign(List3);
+Result2, NotSatisfyProp33_2, PerfectGroups_2:=List_Intermediate_Sign(List3);
 
 Result2;
 [* [*

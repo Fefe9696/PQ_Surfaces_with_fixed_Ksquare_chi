@@ -1,0 +1,261 @@
+ {*tocheck[i][3]: i in [1..#tocheck]*};  
+
+{* 512^^3, 640^^5, 768^^7, 960^^15, 1152^^7, 1536, 1920^^2, 2016, 2160^^11, 
+2268, 2304, 2400^^3, 2448, 2520^^7, 2592^^2, 2688, 2700, 2800, 2880^^3, 3000^^2,
+3240^^2, 3360, 3456, 3600^^5, 4320^^2, 4860, 5040^^2, 6000, 6048, 7200, 7560^^3,
+8640, 15120 *}
+
+// No one of the groups of the list can be perfect: 
+
+time how_to_excludePG(tocheck);
+
+[* *]
+
+Time: 16.300
+
+// Let us exclude those triples having group order {512,640,960,1152,1920};
+
+time Result:=how_to_exclude(tocheck: Interested_orders:={512,640,960,1152,1920}); 
+
+Time: 6056.660
+
+Result;
+[* *]
+
+time Result:=how_to_exclude(tocheck: Interested_orders:={768});
+
+Time: 7619.310
+
+Result;                                                        
+[* *]
+
+
+// We now exclude the unique case of group order 1536. This case is the following:
+
+ [*
+    {* 1/2^^2 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 64 *}
+    *},
+    1536
+*]
+
+// However, from Proposition 3.3 of "The classification of minimal product-quotient surfaces with pg=0" by Bauer-Pignatelli, there is only one group of order 1536 admitting an appropriate spherical system of generators of signature {2,3,8} having abelianization of order 2. This group is <1536, 408544637>. Let us consider 
+
+Result:=[*[*
+ {* 1/2^^2 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 64 *}
+    *},
+    <1536, 408544637>
+*]*];
+
+ExistingSurfaces(Result);
+[* *]
+
+// In this way we have excluded all groups of tocheck less or equal than 2000. 
+
+////////////////////////////////////////////////////////////
+
+List:=[*x : x in tocheck | x[3] gt 2000*];
+
+Result, NotSatisfyProp33, PerfectGroups:=List_Intermediate_Sign(List);
+
+#Result;
+45
+> #NotSatisfyProp33;
+2
+> #PerfectGroups;
+24
+
+// Since we have already excluded that no one of the groups of tocheck is perfect, then we can automatically exclude the triples stored in PerfectGroups;
+
+{* x[3]: x in Result*};
+{* 720^^3, 756, 900, 1008^^3, 1080^^7, 1152, 1200^^7, 1296^^2, 1400, 1440^^5, 
+1620, 1680, 1728, 1800^^4, 2160^^4, 3000, 3600, 4320 *}
+
+time Res,ResAb:=how_to_exclude(Result);
+
+Time: 530.180
+
+#Res;
+9
+
+// The basket of these intermediate quotients can be only [* {**},{*1/2*},{*1/2^^2*} *]
+
+FinRes:=[**];
+Baskets:=[* {**},{*1/2*},{*1/2^^2*} *];
+for x in Res do 
+   for b in Baskets do
+     Append(~FinRes, [*b, x[2],x[3]*]);
+   end for;
+end for;
+
+ExistingSurfaces(FinRes);
+[* *]
+
+Result_group_gt_2000:=[* x : x in Result | x[3] gt 2000*];
+
+time how_to_excludePG(Result_group_gt_2000);
+
+[* *]
+Time: 0.980
+
+Result_2, NotSatisfyProp33_2, PerfectGroups_2:=List_Intermediate_Sign(Result_group_gt_2000);
+
+ #Result_2;       
+6
+> NotSatisfyProp33_2;
+[* *]
+> #PerfectGroups_2; 
+3
+
+time Res_2,ResAb_2:=how_to_exclude(Result_2);
+
+Time: 707.410
+
+#Res_2;
+25
+
+FinRes_2:=[**];
+Baskets:=[* {**},{*1/2*},{*1/2^^2*} *];
+for x in Res_2 do 
+   for b in Baskets do
+     Append(~FinRes_2, [*b, x[2],x[3]*]);
+   end for;
+end for;
+
+ExistingSurfaces(FinRes_2);
+[* *]
+
+// In this way we have excluded all the cases of Result list. Now we have to exclude the last two cases stored in NotSatisfyProp33
+
+NotSatisfyProp33;
+[* [*
+    {* 1/2^^2 *},
+    {*
+        {* 2, 3, 12 *}^^2
+    *},
+    2160
+*], [*
+    {* 1/2^^2 *},
+    {*
+        {* 2, 4, 6 *}^^2
+    *},
+    2160
+*] *];
+
+time how_to_excludePG(NotSatisfyProp33);
+[* *]
+
+// The abelianization of the orbifold group of signature {* 2, 3, 12 *} is C6, hence the abelianization of G may be at most either C2, C3, or C6. If the abelianization if C6, then it there exists a normal subgroup of G with index 2, the inverse image of a index 2 subgroup of C6 by the abelianization map of G. 
+
+
+List_Intermediate_Sign_from_a_triple(NotSatisfyProp33[1],2);
+[* [*
+    {* 1/2^^2 *},
+    {*
+        {* 3^^2, 6 *}^^2
+    *},
+    1080
+*] *]
+> List_Intermediate_Sign_from_a_triple(NotSatisfyProp33[1],3);
+[* [*
+    {* 1/2^^2 *},
+    {*
+        {* 2^^3, 4 *}^^2
+    *},
+    720
+*] *]
+
+L:=[*
+[*
+    {* 1/2^^2 *},
+    {*
+        {* 3^^2, 6 *}^^2
+    *},
+    1080
+*],
+[*
+    {* 1/2^^2 *},
+    {*
+        {* 2^^3, 4 *}^^2
+    *},
+    720
+*]*];
+
+time Res,Res_Ab:=how_to_exclude(L);
+Time: 5.470
+
+#Res;
+10
+
+FinRes:=[**];
+Baskets:=[* {**},{*1/2*},{*1/2^^2*} *];
+for x in Res do 
+   for b in Baskets do
+     Append(~FinRes, [*b, x[2],x[3]*]);
+   end for;
+end for;
+
+ExistingSurfaces(FinRes);
+[* *]
+
+// We have excluded NotSatisfyProp33[1];
+
+// It only remains to exclude NotSatisfyProp33[2], whose orbifold group has abelianization C2^2. Hence G has abelianization either C2 or C2^2. However 
+
+L:=List_Intermediate_Sign_from_a_triple(NotSatisfyProp33[2],2);
+
+L;
+[* [*
+    {* 1/2^^2 *},
+    {*  
+        {* 2^^3, 3 *},
+        {* 3, 4^^2 *}
+    *},
+    1080
+*], [*
+    {* 1/2^^2 *},
+    {*  
+        {* 2, 6^^2 *},
+        {* 3, 4^^2 *}
+    *},
+    1080
+*], [*
+    {* 1/2^^2 *},
+    {*  
+        {* 2, 6^^2 *}^^2
+    *},
+    1080
+*], [*
+    {* 1/2^^2 *},
+    {*  
+        {* 2, 6^^2 *},
+        {* 2^^3, 3 *}
+    *},
+    1080
+*], [*
+    {* 1/2^^2 *},
+    {*  
+        {* 2^^3, 3 *}^^2
+    *},
+    1080
+*], [*
+    {* 1/2^^2 *},
+    {*  
+        {* 3, 4^^2 *}^^2
+    *},
+    1080
+*] *];
+
+time Res,Res_Ab:=how_to_exclude(L);
+
+Time: 496.660
+ 
+Res;                               
+[* *]
+
+// We have excluded all the cases stored in the secondary output of ListGroups(30,4);

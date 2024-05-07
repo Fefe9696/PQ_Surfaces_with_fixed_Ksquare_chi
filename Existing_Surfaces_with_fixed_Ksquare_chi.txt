@@ -242,6 +242,7 @@ end function;
 ExistingSurfaces:=function(ListGrps)
   X:=[**];
   for triple in ListGrps do 
+     // triple; // debug;
      if ExistingSurfaces_triple(triple) then 
        Append(~X,triple);
      end if;

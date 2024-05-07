@@ -1,0 +1,11 @@
+// We load ExSurf list obtained from ExistingSurfaces(ListGroups(29,4)) and the list bad of bad triples 
+
+load"FindSurfaces_with_fixed_Ksquare_chi.txt";
+
+time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map(ExSurf: bad_triples:=bad);
+
+Time: 41850.600
+
+Total memory usage: 290.62MB
+
+// We still need to find surfaces from the triples listed in bad_triples. You can find these surfaces in FindSurf_bad_triples folder

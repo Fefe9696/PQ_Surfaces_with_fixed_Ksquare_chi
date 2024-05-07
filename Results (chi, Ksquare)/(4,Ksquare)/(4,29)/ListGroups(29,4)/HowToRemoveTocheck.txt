@@ -1,0 +1,211 @@
+ {*tocheck[i][3]: i in [1..#tocheck]*};  
+
+{* 594, 768^^4, 960^^6, 1152^^3, 1536, 1920, 2112^^4, 2304, 2376, 2400, 2448, 
+2520, 2640, 2688^^2, 3168, 3300, 4224, 4752, 5280, 8448 *}
+
+// No one of the groups of the list can be perfect: 
+
+time how_to_excludePG(tocheck);
+
+[* [*
+    {* 1/3, 2/3 *},
+    {*
+        {* 2, 3, 9 *},
+        {* 2, 3, 17 *}
+    *},
+    <2448, 1>
+*] *]
+
+Time: 4.920
+
+PG:=PerfectGroupDatabase();
+G:=PermutationGroup(PG,2448,1);
+
+triple:=[*{* 1/3, 2/3 *},
+    {*
+        {* 2, 3, 9 *},
+        {* 2, 3, 17 *}
+    *},
+    G*];
+
+ExistingSurfaces_triple_givenG(triple);
+false 
+
+
+// Let us exclude those triples having group order {594,960,1152,1920};
+
+time Result:=how_to_exclude(tocheck: Interested_orders:={594,960,1152,1920}); 
+
+Time: 282.620
+
+Result;
+[* *]
+
+time Result:=how_to_exclude(tocheck: Interested_orders:={768});
+
+Time: 4396.670
+
+Result;
+[* [*
+    {* 1/3, 2/3 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 4, 6, 8 *}
+    *},
+    <768, 1085341>
+*] *]
+
+ExistingSurfaces(Result);
+[* *]
+
+// We now exclude the unique case of group order 1536. This case is the following:
+
+ [*
+    {* 1/3, 2/3 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 48 *}
+    *},
+    1536
+*]
+
+// However, from Proposition 3.3 of "The classification of minimal product-quotient surfaces with pg=0" by Bauer-Pignatelli, there is only one group of order 1536 admitting an appropriate spherical system of generators of signature {2,3,8} having abelianization of order 2. This group is <1536, 408544637>. Let us consider 
+
+Result:=[*[*
+ {* 1/3, 2/3 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 48 *}
+    *},
+    <1536, 408544637>
+*]*];
+
+ExistingSurfaces(Result);
+[* *]
+
+// In this way we have excluded all groups of tocheck less or equal than 2000. 
+
+////////////////////////////////////////////////////////////
+
+List:=[*x : x in tocheck | x[3] gt 2000*];
+
+Result, NotSatisfyProp33, PerfectGroups:=List_Intermediate_Sign(List);
+
+#Result;
+20
+> #NotSatisfyProp33;
+1
+> #PerfectGroups;
+3
+
+// Since we have already excluded that no one of the groups of tocheck is perfect, then we can automatically exclude the triples stored in PerfectGroups;
+
+{* x[3]: x in Result*};
+{* 792, 1056^^5, 1152, 1200, 1320^^3, 1344, 1584^^2, 1650, 2112^^3, 2640, 4224 
+*}
+
+time Res,ResAb:=how_to_exclude(Result);
+
+Time: 271.360
+
+Res;
+[* *]
+
+
+Result_group_gt_2000:=[* x : x in Result | x[3] gt 2000*];
+
+time how_to_excludePG(Result_group_gt_2000);
+[* *]
+Time: 0.000
+
+Result_2, NotSatisfyProp33_2, PerfectGroups_2:=List_Intermediate_Sign(Result_group_gt_2000);
+
+#Result_2;
+3
+NotSatisfyProp33_2;
+[* *]
+#PerfectGroups_2; 
+2
+
+time Res_2,ResAb_2:=how_to_exclude(Result_2);
+
+Time: 414.430
+
+Res_2; 
+[* *]
+
+
+// In this way we have excluded all the cases of Result list. Now we have to exclude the last case stored in NotSatisfyProp33
+
+NotSatisfyProp33;
+[* [*
+    {* 1/3, 2/3 *},
+    {*
+        {* 2, 4, 6 *}^^2
+    *},
+    2112
+*] *]
+
+
+time how_to_excludePG(NotSatisfyProp33);
+[* *]
+Time: 0.000
+
+// The abelianization of the orbifold group of signature {* 2, 4, 6 *} is C2^2, hence the abelianization of G may be at most either C2 or C2^2. If the abelianization if C2^2, then it there exists a normal subgroup of G with index 2, the inverse image of a index 2 subgroup of C2^2 by the abelianization map of G. 
+
+
+L:=List_Intermediate_Sign_from_a_triple(NotSatisfyProp33[1],2);
+L;
+[* [*
+    {* 1/3, 2/3 *},
+    {*
+        {* 2^^3, 3 *},
+        {* 3, 4^^2 *}
+    *},
+    1056
+*], [*
+    {* 1/3, 2/3 *},
+    {*
+        {* 2, 6^^2 *},
+        {* 3, 4^^2 *}
+    *},
+    1056
+*], [*
+    {* 1/3, 2/3 *},
+    {*
+        {* 2, 6^^2 *}^^2
+    *},
+    1056
+*], [*
+    {* 1/3, 2/3 *},
+    {*
+        {* 2, 6^^2 *},
+        {* 2^^3, 3 *}
+    *},
+    1056
+*], [*
+    {* 1/3, 2/3 *},
+    {*
+        {* 2^^3, 3 *}^^2
+    *},
+    1056
+*], [*
+    {* 1/3, 2/3 *},
+    {*
+        {* 3, 4^^2 *}^^2
+    *},
+    1056
+*] *];
+
+
+time Res,Res_Ab:=how_to_exclude(L);
+Time: 159.030
+
+Res;
+[* *]
+
+
+
+// We have excluded NotSatisfyProp33[1];
+
+// We have excluded all the cases stored in the secondary output of ListGroups(29,4);

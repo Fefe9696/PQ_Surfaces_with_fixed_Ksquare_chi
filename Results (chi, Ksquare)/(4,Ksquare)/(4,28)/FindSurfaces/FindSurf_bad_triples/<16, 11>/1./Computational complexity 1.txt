@@ -1,0 +1,14 @@
+bad:=[*[*
+    {* 1/2^^4 *},
+    {*
+        {* 2^^3, 4^^3 *},
+        {* 2^^5 *}
+    *},
+    <16, 11>
+*]*];
+
+time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map(bad);
+
+Time: 72.760
+
+Total memory usage: 51.19MB

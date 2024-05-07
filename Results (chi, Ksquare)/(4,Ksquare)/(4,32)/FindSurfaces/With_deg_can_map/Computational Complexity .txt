@@ -19,7 +19,8 @@ time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[1]*]);
 Killed
 
 time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[2]*]);
-Killed
+Time: 56131.820
+Total memory usage: 214.19MB
 
 time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[3]*]);
 Killed
@@ -28,7 +29,9 @@ time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[4]*]);
 Killed
 
 time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[5]*]);
-
+Time: 341875.600  
+Total memory usage: 5893.69MB
 
 time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map([*bad[6]*]);
-
+Time: 137615.330
+Total memory usage: 214.19MB

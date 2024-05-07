@@ -1,0 +1,12 @@
+bad:=[*[*
+    {* 1/3, 2/3 *},
+    {*
+        {* 2^^10, 3 *},
+        {* 3, 4^^2 *}
+    *},
+    <24, 12>
+*]*];
+
+time FindSurf:=FindSurfaces_with_Fixed_Ksquare_chi_and_deg_can_map(bad);
+
+Killed

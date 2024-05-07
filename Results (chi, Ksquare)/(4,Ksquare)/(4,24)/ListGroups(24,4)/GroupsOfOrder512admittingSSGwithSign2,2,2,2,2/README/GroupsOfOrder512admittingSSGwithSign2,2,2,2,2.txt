@@ -1,0 +1,271 @@
+// This script needs to determine all groups of order 512 admitting a spherical system of generators of signature [2,2,2,2,2]
+
+NumberOfSmallGroups(512);
+10494213
+
+S:={<2,1>, <4,2>, <8,5>, <16,14>};
+
+for x in S do                   
+for> GroupName(SmallGroup(x[1],x[2]));
+for> end for;
+C2^4
+C2^2
+C2^3
+C2
+
+GoodCandidates:=[];
+
+for i in [1..NumberOfSmallGroups(512)] do
+
+
+G:=SmallGroup(512, i); <512, i>;
+if not IsAbelian(G) then 
+AbelG:=IdentifyGroup(quo<G|DerivedGroup(G)>); AbelG;
+if AbelG in S then 
+  Append(~GoodCandidates, <512, i >);
+end if;
+end if; 
+
+end for; 
+
+#GoodCandidates;
+257974
+
+Maximum({i[2]: i in GoodCandidates});
+420514
+
+> #{i : i in GoodCandidates | i[2] le 60000};
+8844
+> #{i : i in GoodCandidates | i[2] ge 60000 and i[2] le 70000};
+4179
+> #{i : i in GoodCandidates | i[2] ge 70000 and i[2] le 100000};
+15104
+> #{i : i in GoodCandidates | i[2] ge 100000 and i[2] le 420514}; 
+229847
+
+
+
+// Load GoodCandidates List
+
+// We slightly modify HowToExclude function:
+
+load"HowToExclude.txt";
+
+HowToExclude512:=function(a , b, GoodCandidates)
+
+tocheck:=[*
+[*{**},
+{*{*2^^5*}^^2*},
+512*]*];
+
+tocheck_compatible:=[* *]; 
+  
+
+  for pair in tocheck do
+    basket:=pair[1]; pairoftypes:=pair[2]; ord:=pair[3]; 
+      for x in GoodCandidates do
+     if x[2] ge a and x[2] le b  then
+   G:=SmallGroup(x[1],x[2]);
+    x; 
+    test:=true;
+      
+        orderedtypes:=MultisetToSequence(pairoftypes); 
+        orderedtypes:=[orderedtypes[3-i] : i in [1..2]]; 
+       // for T in orderedtypes do  
+       if not ExSphSystem(x[1],x[2],orderedtypes[1]) then test:=false; // break T;
+       end if;
+  //  end for;
+    if test then Append(~tocheck_compatible, [* basket, pairoftypes, x *]); 
+    end if; 
+  end if;
+end for;
+  end for;
+  return tocheck_compatible;
+end function;
+
+// Commenti:
+
+time tocheck_compatible_ge_1_le_60000:=HowToExclude512(1,60000, GoodCandidates);
+Time: 10424.360
+#tocheck_compatible_ge_1_le_60000;
+37
+
+time tocheck_compatible_ge_60001_le_64016:=HowToExclude512(60001, 64016, GoodCandidates);
+Time: 204497.350
+#tocheck_compatible_ge_60001_le_64016;                                       
+9
+
+time tocheck_compatible_ge_64017_le_65017:=HowToExclude512(64017, 65017, GoodCandidates);
+Time: 604790.730
+#tocheck_compatible_ge_64017_le_65017;                                       
+0
+
+time tocheck_compatible_ge_65018_le_66018:=HowToExclude512(65018, 66018, GoodCandidates);
+Time: 478433.190
+#tocheck_compatible_ge_65018_le_66018;                                       
+0
+
+time tocheck_compatible_ge_66019_le_67019:=HowToExclude512(66019, 67019, GoodCandidates);
+Time: 506545.660
+#tocheck_compatible_ge_66019_le_67019;                                       
+1
+
+time tocheck_compatible_ge_67020_le_68020:=HowToExclude512(67020, 68020, GoodCandidates);
+Time: 224908.110
+#tocheck_compatible_ge_67020_le_68020;                                       
+0
+
+time tocheck_compatible_ge_68021_le_69021:=HowToExclude512(68021, 69021, GoodCandidates);
+Time: 0.320
+#tocheck_compatible_ge_68021_le_69021;
+0
+
+time tocheck_compatible_ge_69022_le_70000:=HowToExclude512(69022, 70000, GoodCandidates);
+Time: 0.130
+#tocheck_compatible_ge_69022_le_70000;
+0
+
+time tocheck_compatible_ge_70000_le_100000:=HowToExclude512(70000, 100000, GoodCandidates); 
+Time: 25831.400
+#tocheck_compatible_ge_70000_le_100000;
+32
+
+time tocheck_compatible_ge_100000_le_150000:=HowToExclude512(100000, 150000, GoodCandidates);
+Time: 68060.590
+#tocheck_compatible_ge_100000_le_150000;                                     
+0
+
+time tocheck_compatible_ge_150001_le_200000:=HowToExclude512(150001, 200000, GoodCandidates);
+Time: 126750.080
+#tocheck_compatible_ge_150001_le_200000;                                     
+129
+
+time tocheck_compatible_ge_200001_le_250000:=HowToExclude512(200001, 250000, GoodCandidates);
+Time: 68207.000
+#tocheck_compatible_ge_200001_le_250000;                                     
+110
+
+time tocheck_compatible_ge_250001_le_300000:=HowToExclude512(250001, 300000, GoodCandidates);
+Time: 39764.760
+#tocheck_compatible_ge_250001_le_300000;                                     
+0
+
+time tocheck_compatible_ge_300001_le_303001:=HowToExclude512(300001, 303001, GoodCandidates);
+Time: 139383.710
+#tocheck_compatible_ge_300001_le_303001;                                     
+0
+
+time tocheck_compatible_ge_303002_le_306002:=HowToExclude512(303002, 306002, GoodCandidates);
+Time: 75075.460
+#tocheck_compatible_ge_303002_le_306002;                                     
+0
+
+time tocheck_compatible_ge_306003_le_309003:=HowToExclude512(306003, 309003, GoodCandidates);
+Time: 54776.570
+#tocheck_compatible_ge_306003_le_309003;                                     
+0
+
+time tocheck_compatible_ge_309004_le_312004:=HowToExclude512(309004, 312004, GoodCandidates);
+Time: 48097.930
+#tocheck_compatible_ge_309004_le_312004;                                     
+0
+
+time tocheck_compatible_ge_312005_le_315005:=HowToExclude512(312005, 315005, GoodCandidates);
+Time: 79936.620
+#tocheck_compatible_ge_312005_le_315005;                                     
+0
+
+time tocheck_compatible_ge_315006_le_318006:=HowToExclude512(315006, 318006, GoodCandidates);
+Time: 41518.630
+#tocheck_compatible_ge_315006_le_318006;                                     
+0
+
+time tocheck_compatible_ge_318007_le_321007:=HowToExclude512(318007, 321007, GoodCandidates);
+Time: 45610.460
+#tocheck_compatible_ge_318007_le_321007;                                     
+0
+
+time tocheck_compatible_ge_321008_le_325022:=HowToExclude512(321008, 325022, GoodCandidates);
+Time: 67126.870
+#tocheck_compatible_ge_321008_le_325022;                                     
+21
+
+time tocheck_compatible_ge_325023_le_330023:=HowToExclude512(325023, 330023, GoodCandidates);
+Time: 144746.870
+#tocheck_compatible_ge_325023_le_330023;                                     
+7
+
+time tocheck_compatible_ge_330024_le_335024:=HowToExclude512(330024, 335024, GoodCandidates);
+Time: 98407.410
+#tocheck_compatible_ge_330024_le_335024;                                     
+0
+
+
+time tocheck_compatible_ge_335025_le_340025:=HowToExclude512(335025, 340025, GoodCandidates);
+Time: 89006.280
+#tocheck_compatible_ge_335025_le_340025;                                     
+0
+
+time tocheck_compatible_ge_340026_le_345026:=HowToExclude512(340026, 345026, GoodCandidates);
+Time: 91139.700
+#tocheck_compatible_ge_340026_le_345026;                                     
+0
+
+time tocheck_compatible_ge_345027_le_350027:=HowToExclude512(345027, 350027, GoodCandidates);
+Time: 76483.670
+#tocheck_compatible_ge_345027_le_350027;                                     
+0
+
+time tocheck_compatible_ge_350028_le_355028:=HowToExclude512(350028, 355028, GoodCandidates);
+#tocheck_compatible_ge_350028_le_355028;                                     
+0
+
+time tocheck_compatible_ge_355029_le_360029:=HowToExclude512(355029, 360029, GoodCandidates); 
+Time: 95290.020
+#tocheck_compatible_ge_355029_le_360029;
+0
+
+time tocheck_compatible_ge_360030_le_365030:=HowToExclude512(360030, 365030, GoodCandidates);
+Time: 98493.770
+#tocheck_compatible_ge_360030_le_365030;                                     
+21
+
+time tocheck_compatible_ge_365031_le_370031:=HowToExclude512(365031, 370031, GoodCandidates);
+Time: 74239.980
+#tocheck_compatible_ge_365031_le_370031;                                     
+0
+
+time tocheck_compatible_ge_370032_le_375032:=HowToExclude512(370032, 375032, GoodCandidates);
+Time: 72097.200
+#tocheck_compatible_ge_370032_le_375032;                                     
+0
+
+time tocheck_compatible_ge_375033_le_380033:=HowToExclude512(375033, 380033, GoodCandidates);
+Time: 68492.560
+#tocheck_compatible_ge_375033_le_380033;                                     
+0
+
+time tocheck_compatible_ge_380034_le_385034:=HowToExclude512(380034, 385034, GoodCandidates);
+Time: 62523.350
+#tocheck_compatible_ge_380034_le_385034;                                     
+5
+
+time tocheck_compatible_ge_385035_le_390035:=HowToExclude512(385035, 390035, GoodCandidates);
+Time: 21004.870
+#tocheck_compatible_ge_385035_le_390035;                                     
+0
+
+time tocheck_compatible_ge_390036_le_395036:=HowToExclude512(390036, 395036, GoodCandidates);
+Time: 11824.140
+#tocheck_compatible_ge_390036_le_395036;                                     
+84
+
+time tocheck_compatible_ge_395037_le_400037:=HowToExclude512(395037, 400037, GoodCandidates);
+Time: 5870.060
+#tocheck_compatible_ge_395037_le_400037;
+95
+
+time tocheck_compatible_ge_400038_le_420514:=HowToExclude512(400038, 420514, GoodCandidates);
+Time: 45728.860
+#tocheck_compatible_ge_400038_le_420514;
+150

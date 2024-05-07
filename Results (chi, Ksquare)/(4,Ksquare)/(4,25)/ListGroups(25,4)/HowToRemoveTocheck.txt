@@ -1,0 +1,325 @@
+ {*tocheck[i][3]: i in [1..#tocheck]*};  
+
+{* 640, 768^^13, 960^^18, 1152^^8, 1536^^3, 1920^^2, 2016^^2, 2052, 2088,
+2112^^2, 2184, 2232^^3, 2280^^2, 2304^^4, 2520^^3, 2688, 2736^^3, 2850, 2940,
+2952, 3420, 3648^^2, 3936^^2, 4104, 4428, 4560, 5040, 5360, 6048, 7296, 7584,
+7632, 7872, 8352, 8928^^3 *}
+
+// No one of the groups of the list can be perfect: 
+
+time how_to_excludePG(tocheck);
+
+[* [*
+    {* 1/3, 1/2^^4, 2/3 *},
+    {*
+        {* 2, 3, 9 *},
+        {* 2, 3, 10 *}
+    *},
+    <3420, 1>
+*] *]
+
+Time: 16.300
+
+PG:=PerfectGroupDatabase();
+G:=PermutationGroup(PG,3420,1);
+
+triple:=[*{* 1/3, 1/2^^4, 2/3 *},
+    {*
+        {* 2, 3, 9 *},
+        {* 2, 3, 10 *}
+    *},
+    G*];
+
+ExistingSurfaces_triple_givenG(triple);
+false
+
+// Let us exclude those triples having group order {640,960,1152,1920};
+
+time Result:=how_to_exclude(tocheck: Interested_orders:={640,960,1152,1920}); 
+
+Time: 642.920
+
+Result;
+[* *]
+
+time Result:=how_to_exclude(tocheck: Interested_orders:={768});
+
+Time: 14197.320
+
+Result;                                                        
+[* *]
+
+
+// We now exclude the unique case of group order 1536. This case is the following:
+
+tocheck[10];
+[*
+    {* 1/5, 1/4, 11/20 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 128 *}
+    *},
+    1536
+*]
+tocheck[29];
+[*  
+    {* 3/20, 1/4, 2/5 *},
+    {*  
+        {* 2, 3, 8 *},
+        {* 2, 4, 128 *}
+    *},
+    1536
+*]
+tocheck[39];                                                                                                                                                                                          
+[*
+    {* 1/8, 1/4, 5/8 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 128 *}
+    *},
+    1536
+*]
+
+
+// However, from Proposition 3.3 of "The classification of minimal product-quotient surfaces with pg=0" by Bauer-Pignatelli, there is only one group of order 1536 admitting an appropriate spherical system of generators of signature {2,3,8} having abelianization of order 2. This group is <1536, 408544637>. Let us consider 
+
+Result:=[*[*
+  {* 1/5, 1/4, 11/20 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 128 *}
+    *},
+    <1536, 408544637>
+*],
+[*  
+    {* 3/20, 1/4, 2/5 *},
+    {*  
+        {* 2, 3, 8 *},
+        {* 2, 4, 128 *}
+    *},
+    <1536, 408544637>
+*],
+[*
+    {* 1/8, 1/4, 5/8 *},
+    {*
+        {* 2, 3, 8 *},
+        {* 2, 4, 128 *}
+    *},
+    <1536, 408544637>
+*]
+*];
+
+ExistingSurfaces(Result);
+[* *]
+
+// In this way we have excluded all groups of tocheck less or equal than 2000. 
+
+////////////////////////////////////////////////////////////
+
+List:=[*x : x in tocheck | x[3] gt 2000*];
+
+Result, NotSatisfyProp33, PerfectGroups:=List_Intermediate_Sign(List);
+
+#Result;
+43
+> #NotSatisfyProp33;
+0
+> #PerfectGroups;
+8
+
+// Since we have already excluded that no one of the groups of tocheck is perfect, then we can automatically exclude the triples stored in PerfectGroups;
+
+{* x[3]: x in Result*};
+{* 684, 696, 744^^3, 912^^2, 984, 1008^^2, 1056^^2, 1140^^4, 1152^^4, 1368^^2, 1425, 1470, 1476, 1824^^4, 1968^^4, 2280, 2680, 3648, 3792, 3816, 3936, 4176, 4464^^3 *}
+
+
+time Res,ResAb:=how_to_exclude(Result);
+
+Time: 645.000
+
+Res;
+[* *]
+
+Result_group_gt_2000:=[* x : x in Result | x[3] gt 2000*];
+
+time how_to_excludePG(Result_group_gt_2000);
+
+[* *]
+Time: 0.000
+
+Result_2, NotSatisfyProp33_2, PerfectGroups_2:=List_Intermediate_Sign(Result_group_gt_2000);
+
+ #Result_2;
+10
+> #NotSatisfyProp33_2;
+0
+> #PerfectGroups_2; 
+0
+
+{*x[3]: x in Result_2*};
+{* 536, 760, 1216, 1264, 1272, 1312, 1392, 1488^^3 *}
+
+time Res_2,ResAb_2:=how_to_exclude(Result_2: Interested_orders:={536, 760, 1216, 1312, 1392, 1488 });
+
+Time: 1119.140
+
+#Res_2;
+4
+
+IntBasket:=function(a, j)
+  IntB:=[];
+  B:={k/a : k in [1..a-1]};
+  for i in [0..j] do 
+    Append(~IntB, Multisets(B, i));
+  end for;
+  Fin:={};
+  for i in [1..#IntB] do 
+    for s in IntB[i] do 
+      Include(~Fin, s);
+    end for;
+  end for;
+  return Fin;
+end function;
+
+FinIntBasket:=function(basket)
+  Final:=[**];
+
+  t:={* Denominator(r): r in basket*};
+  Seq:=[[a,#[ x : x in t | x eq a]]: a in MultisetToSet(t)];
+  A:=[];
+  for s in Seq do 
+     Append(~A, IntBasket(s[1],s[2]));
+  end for;  
+  for x in CartesianProduct(A) do  
+   int_bas:={**};
+   for l in x do 
+    for y in l do 
+      Include(~int_bas, y); 
+    end for;
+   end for;
+   Append(~Final, int_bas);
+  end for; 
+  return {x : x in Final};
+end function;
+
+FinRes_2:=[**];
+
+for x in Res_2 do 
+  for bas in FinIntBasket(x[1]) do 
+    Append(~FinRes_2, [*bas, x[2], x[3]*]);
+  end for;
+end for;
+
+time ExSurf:=ExistingSurfaces(FinRes_2);
+
+Time: 2168.610
+ExSurf;
+[* *]
+
+// Let us discuss the group of order 1264. This comes from 
+
+Result_group_gt_2000[3];
+
+[*
+    {* 1/4, 1/3, 2/3, 3/4 *},
+    {*
+        {* 3^^2, 4 *}^^2
+    *},
+    3792
+*]
+
+
+time Res_2,ResAb_2:=how_to_exclude(Result_2: Interested_orders:={1264});
+
+// This does not end, so we have to use the following: 
+
+// From Prop. 3.3 and Remark 3.10(1) of our paper, we have that a group of order 3792 satisfying the required algebraic data should be a semidirect product of one of a group H of order 1264 and a cyclic group of order 3 by an automorphism phi of order 3. 
+
+Final:=[**];
+tocheck_compatible3792:=[**];
+
+K:=SmallGroup(3,1);
+
+for i in [1..NumberOfSmallGroups(1264)] do 
+x:=[*
+    {* 1/4, 1/3, 2/3, 3/4 *},
+    {*  
+        {* 4^^3 *}^^2
+    *},
+    <1264, i>
+*];
+ 
+  H:=SmallGroup(x[3][1],x[3][2]);
+  AutH:=AutomorphismGroup(H); 
+  r, P:=PermutationRepresentation(AutH);
+  ord3:={phi: phi in P| Order(phi) eq 3}; {*Order(phi): phi in P*};
+  for phi in ord3 do 
+    t:=hom<K -> AutH| <K.1, phi @@ r>>;
+    G:=SemidirectProduct(H,K,t);
+    Append(~Final, [* x, phi, IdentifyGroup(quo<G|DerivedGroup(G)>)*]);
+    if IdentifyGroup(quo<G|DerivedGroup(G)>) eq <3,1> then
+       IdentifyGroup(quo<G|DerivedGroup(G)>);
+           if  ExSphSystem_givenG(G,{* 3^^2, 4 *}) then 
+             Append(~tocheck_compatible3792,[*{* 1/4, 1/3, 2/3, 3/4 *},{*{* 3^^2, 4 *}^^2*},G*]); 
+           end if; 
+    end if;
+    
+  end for;
+end for;
+
+tocheck_compatible3792;
+[* *]
+
+// Let us discuss the group of order 1272. This comes from 
+
+Result_group_gt_2000[1];
+[*
+    {* 3/8, 1/2^^2, 5/8 *},
+    {*
+        {* 3^^2, 4 *}^^2
+    *},
+    3816
+*]
+
+time Res_2,ResAb_2:=how_to_exclude(Result_2: Interested_orders:={1272});
+
+// This does not end, so we have to use the following: 
+
+// From Prop. 3.3 and Remark 3.10(1) of our paper, we have that a group of order 3816 satisfying the required algebraic data should be a semidirect product of one of a group H of order 1272 and a cyclic group of order 3 by an automorphism phi of order 3. 
+
+Final:=[**];
+tocheck_compatible3816:=[**];
+
+K:=SmallGroup(3,1);
+
+for i in [1..NumberOfSmallGroups(1272)] do 
+x:=[*
+    {* 3/8, 1/2^^2, 5/8 *},
+    {*
+        {* 4^^3 *}^^2
+    *},
+    <1272, i>
+*];
+ 
+  H:=SmallGroup(x[3][1],x[3][2]);
+  AutH:=AutomorphismGroup(H); 
+  r, P:=PermutationRepresentation(AutH);
+  ord3:={phi: phi in P| Order(phi) eq 3}; {*Order(phi): phi in P*};
+  for phi in ord3 do 
+    t:=hom<K -> AutH| <K.1, phi @@ r>>;
+    G:=SemidirectProduct(H,K,t);
+    Append(~Final, [* x, phi, IdentifyGroup(quo<G|DerivedGroup(G)>)*]);
+    if IdentifyGroup(quo<G|DerivedGroup(G)>) eq <3,1> then
+       IdentifyGroup(quo<G|DerivedGroup(G)>);
+           if  ExSphSystem_givenG(G,{* 3^^2, 4 *}) then 
+             Append(~tocheck_compatible3816,[*{* 3/8, 1/2^^2, 5/8 *},{*{* 3^^2, 4 *}^^2*},G*]); 
+           end if; 
+    end if;
+    
+  end for;
+end for;
+
+tocheck_compatible3816;
+[* *]
+
+// In this way we have excluded all the cases of Result list. Since there are no cases stored in NotSatisfyProp33, then we have excluded all the cases stored in the secondary output of ListGroups(25,4)
