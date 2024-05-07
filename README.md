@@ -8,7 +8,7 @@ F. Fallucca, On the classification of product-quotient surfaces with q=0, pg=3 a
 
 An extended version how the program works is also explained in Section 4.8 of 
 
-[PhDThesis] F. Fallucca, [On the degree of the canonical map of surfaces of general type](https://github.com/Fefe9696/FedericoFallucca/Files/PhDThesis.pdf)
+[PhDThesis] F. Fallucca, [On the degree of the canonical map of surfaces of general type](https://github.com/Fefe9696/FedericoFallucca/Files/PhDThesis.pdf#page=23)
 
 Each function in each script has a brief explanation of what it does and how it works. 
 
