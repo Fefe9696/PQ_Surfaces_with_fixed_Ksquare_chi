@@ -2,9 +2,9 @@
 
 A [Magma](http://magma.maths.usyd.edu.au/magma/) program which gives in input a pair of natural integers Ksquare and chi and returns all regular surfaces S of general type with Ksquare(S)=Ksquare and chi(S)=chi, which are Product-Quotient surfaces.
 
-The algorithm is explained in Section 2.1 of
+The algorithm is explained in Subsection 2.1 of
 
-F. Fallucca, On the classification of regular product-quotient surfaces with low genus and applications, (2024)
+F. Fallucca, On the classification of product-quotient surfaces with q=0, pg=3 and and their canonical map, (2024)
 
 An extended version how the program works is also explained in Section 4.8 of 
 
@@ -44,5 +44,8 @@ In this way, each Product-Quotient surface S of the family given by that pair of
 The main function of this script is "ExSphSyst", which takes in input a group G and a signature M and returns true if there exists at least one spherical system of generators of G compatible with that signature, and false otherwise. 
 
 ### CountingPQ_from_pair_top_typ_SSG.txt
-This is the main original result of Section 1 of the present paper. It takes in input a pair of spherical systems V1 and V2 of a group G
-and produces the set of pairwise distinct families of Product-Quotient surfaces given by the pair of topological types of G-coverings of V1 and V2. 
+This is the main original result in Section 1 of 
+
+F. Fallucca, On the classification of product-quotient surfaces with q=0, pg=3 and and their canonical map, (2024)
+
+It takes in input a pair of spherical systems V1 and V2 of a group G and produces the set of pairwise distinct families of Product-Quotient surfaces given by the pair of topological types of G-coverings of V1 and V2. 
